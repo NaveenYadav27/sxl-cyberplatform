@@ -64,12 +64,16 @@ button{font:inherit}
 .side-collapse-btn:hover{border-color:var(--accent);color:var(--accent)}
 .theme-btn{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:6px 12px;border-radius:20px;cursor:pointer;font-size:11.5px;display:flex;align-items:center;gap:6px;font-weight:700}
 .theme-btn:hover{border-color:var(--accent)}
-.app{display:grid;grid-template-columns:310px 1fr;min-height:calc(100vh - 56px);transition:grid-template-columns .2s ease;position:relative}
-.app.nav-collapsed{grid-template-columns:0px 1fr}
+:root{--nav-width:260px}
+.app{display:grid;grid-template-columns:var(--nav-width, 260px) minmax(0, 1fr);min-height:calc(100vh - 56px);transition:grid-template-columns .2s ease;position:relative}
+.app.nav-collapsed{grid-template-columns:0px minmax(0, 1fr) !important}
 .app.nav-collapsed .sidebar{display:none !important}
-.sidebar{border-right:1px solid var(--line);background:var(--sidebar-bg);overflow:auto;height:calc(100vh - 56px);position:sticky;top:56px}
-.floating-nav-pill{display:none;position:fixed;left:14px;top:66px;z-index:25;background:var(--accent);color:#fff;border:none;padding:6px 12px;border-radius:20px;cursor:pointer;font-size:11px;font-weight:800;box-shadow:0 4px 12px rgba(227,30,36,.35);align-items:center;gap:5px}
-.floating-nav-pill:hover{background:var(--accent2)}
+.sidebar{border-right:1px solid var(--line);background:var(--sidebar-bg);overflow-y:auto;overflow-x:hidden;height:calc(100vh - 56px);position:sticky;top:56px;width:var(--nav-width, 260px);box-sizing:border-box}
+.nav-size-btn{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:5px;padding:2px 6px;font-size:10px;font-weight:800;cursor:pointer;transition:all .15s ease}
+.nav-size-btn:hover{border-color:var(--accent);color:var(--text)}
+.nav-size-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.floating-nav-pill{display:none;position:fixed;left:14px;top:66px;z-index:40;background:var(--accent);color:#fff;border:none;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:11px;font-weight:800;box-shadow:0 4px 14px rgba(227,30,36,.4);align-items:center;gap:6px;transition:all .15s ease}
+.floating-nav-pill:hover{background:var(--accent2);transform:translateY(-1px)}
 .app.nav-collapsed .floating-nav-pill{display:flex}
 .sidehead{padding:14px 16px;border-bottom:1px solid var(--line)} .sidehead h2{font-size:14px;margin:0} .progress{height:6px;background:var(--line);border-radius:8px;overflow:hidden} .bar{height:100%;background:var(--accent);width:0}
 .progressrow{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:6px}
@@ -163,44 +167,36 @@ button{font:inherit}
 .classhead{border:1px solid var(--line);border-radius:14px;background:var(--card-bg);padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
 .classhead h2{font-size:22px;margin:6px 0;color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif}
 .classhead p{color:var(--muted);line-height:1.6;font-size:13px;margin:0}
-.objectives{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.obj{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:11px;background:var(--panel);color:var(--text)}
+.objectives{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin-top:12px}
+.obj{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:11px;background:var(--panel);color:var(--text);word-break:break-word;overflow-wrap:break-word}
 .obj b{display:block;color:var(--accent);font-size:9px;margin-bottom:3px;letter-spacing:.05em}
 
-.timeline{display:flex;gap:8px;margin:12px 0 14px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 8px;align-items:stretch}
-.stagebtn{flex:1 1 0;min-width:115px;min-height:56px;height:56px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:7px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-sizing:border-box;flex-shrink:0;transition:all .15s ease}
+.timeline{display:flex;gap:8px;margin:12px 0 14px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 8px;align-items:stretch;scrollbar-width:thin}
+.stagebtn{flex:1 1 0;min-width:120px;min-height:56px;height:56px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:7px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-sizing:border-box;flex-shrink:0;transition:all .15s ease}
 .stagebtn:hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px)}
 .stagebtn.active{border-color:var(--accent);color:var(--accent);background:var(--subtle);font-weight:bold;box-shadow:0 0 0 1.5px var(--accent) inset}
 .stagebtn.done .stage-title:after{content:" ✓";color:var(--good);font-weight:900}
 
-.academy-main{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.65fr);gap:16px;min-height:550px}
-.card{border:1px solid var(--line);border-radius:14px;background:var(--card-bg);padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
-.meta{display:flex;justify-content:space-between;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.1em}
+.academy-main{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:16px;min-height:550px}
+@media(max-width:1120px){.academy-main{grid-template-columns:1fr;gap:16px}}
+.card{border:1px solid var(--line);border-radius:14px;background:var(--card-bg);padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.04);word-break:break-word}
+.meta{display:flex;justify-content:space-between;color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.1em;gap:8px;flex-wrap:wrap}
 .card h3{font-size:20px;margin:6px 0;color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif}
 .explain{line-height:1.75;font-size:13.5px;color:var(--text);margin:8px 0}
-.worked{padding:12px;border:1px solid var(--line);background:var(--subtle);border-radius:10px;line-height:1.6;font-size:12px;margin-top:10px}
-.teach{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
-.teach div{border:1px solid var(--line);border-radius:9px;padding:9px;background:var(--card-bg)}
+.worked{padding:12px;border:1px solid var(--line);background:var(--subtle);border-radius:10px;line-height:1.6;font-size:12px;margin-top:10px;word-break:break-word}
+.teach{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.teach div{border:1px solid var(--line);border-radius:9px;padding:9px 12px;background:var(--card-bg);word-break:break-word;overflow-wrap:break-word}
 .teach b{display:block;color:var(--accent);font-size:9px;letter-spacing:.1em;margin-bottom:3px}
 .teach span{color:var(--muted);font-size:11px;line-height:1.5}
-.box{margin-top:9px;padding:10px;border-radius:9px;font-size:11.5px;line-height:1.55}
+.box{margin-top:9px;padding:10px;border-radius:9px;font-size:11.5px;line-height:1.55;word-break:break-word}
 .mistake{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);color:var(--text)}
 .think{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);color:var(--text)}
 .box b{display:block;font-size:9px;letter-spacing:.1em;margin-bottom:3px}
 .mistake b{color:#ef4444}.think b{color:var(--good)}
 
 .question{margin-top:14px;border:1.5px solid var(--line);border-radius:11px;padding:14px;background:var(--panel)}
-.question h4{margin:0 0 9px;font-size:12.5px;color:var(--text)}
+.question h4{margin:0 0 9px;font-size:12.5px;color:var(--text);line-height:1.5}
 .choices{display:grid;gap:7px}
-.choice{text-align:left;padding:9px 12px;border:1px solid var(--line);background:var(--card-bg);color:var(--text);border-radius:8px;cursor:pointer;font-size:11.5px;transition:all .15s ease}
-.choice:hover{border-color:var(--accent)}
-.choice.selected{border-color:var(--accent);background:var(--subtle)}
-.choice.correct{border-color:var(--good);background:rgba(16,185,129,.12);color:var(--good);font-weight:bold}
-.choice.wrong{border-color:#ef4444;background:rgba(239,68,68,.12);color:#ef4444;font-weight:bold}
-.feedback{min-height:20px;font-size:11.5px;font-weight:900;margin-top:7px}
-.good{color:var(--good)}.bad{color:#ef4444}
-
-.command-box{margin-top:12px;padding:12px;border:1px dashed var(--line);border-radius:10px;background:var(--panel)}
 .cmd{display:block;margin:6px 0;font-size:11.5px;color:var(--accent2);font-weight:bold;font-family:ui-monospace,monospace}
 .run-btn,.continue-btn{border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:7px;padding:7px 12px;cursor:pointer;font-weight:800;font-size:11px;transition:all .15s}
 .run-btn:hover,.continue-btn:hover{background:#ff2e34}
@@ -287,9 +283,14 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 <div class="app">
 <aside class="sidebar">
   <div class="sidehead">
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <h2>Learning Path</h2>
-      <button onclick="toggleNavigator()" class="side-collapse-btn" title="Collapse Navigator to Expand Workspace">◀ Collapse</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+      <h2 style="font-size:13px;margin:0;font-weight:800;color:var(--text)">Learning Path</h2>
+      <div style="display:flex;align-items:center;gap:3px">
+        <button onclick="setNavWidth(210)" class="nav-size-btn" id="navSizeS" title="Compact Size (210px)">S</button>
+        <button onclick="setNavWidth(260)" class="nav-size-btn active" id="navSizeM" title="Standard Size (260px)">M</button>
+        <button onclick="setNavWidth(330)" class="nav-size-btn" id="navSizeL" title="Comfort Size (330px)">L</button>
+        <button onclick="toggleNavigator()" class="side-collapse-btn" title="Collapse Navigator [Ctrl+B]">◀</button>
+      </div>
     </div>
     <div class="progress" style="margin-top:10px"><div class="bar" id="bar"></div></div>
     <div class="progressrow"><span id="progressText">0 / 45 completed</span><span id="pct">0%</span></div>
@@ -337,16 +338,29 @@ applyTheme(currentTheme);
 // ── NAVIGATOR COLLAPSE & LAYOUT STATE ──
 let navCollapsed = localStorage.getItem('shadowx_nav_collapsed') === 'true';
 
+let currentNavWidth = parseInt(localStorage.getItem('shadowx_nav_width') || '260', 10);
+function setNavWidth(w) {
+  currentNavWidth = w;
+  document.documentElement.style.setProperty('--nav-width', w + 'px');
+  localStorage.setItem('shadowx_nav_width', w);
+  document.getElementById('navSizeS')?.classList.toggle('active', w <= 230);
+  document.getElementById('navSizeM')?.classList.toggle('active', w > 230 && w <= 290);
+  document.getElementById('navSizeL')?.classList.toggle('active', w > 290);
+}
+setNavWidth(currentNavWidth);
+
 function applyNavCollapse(collapsed) {
   navCollapsed = collapsed;
   const app = document.querySelector('.app');
   const btn = document.getElementById('navToggleBtn');
   const icon = document.getElementById('navToggleIcon');
   const text = document.getElementById('navToggleText');
+  const pill = document.getElementById('floatingNavPill');
   if (app) app.classList.toggle('nav-collapsed', collapsed);
   if (btn) btn.classList.toggle('collapsed', collapsed);
   if (icon) icon.textContent = collapsed ? '▶' : '◀';
-  if (text) text.textContent = collapsed ? 'Show Navigator (45 Labs)' : 'Hide Navigator';
+  if (text) text.textContent = collapsed ? 'Show Navigator' : 'Hide Navigator';
+  if (pill) pill.textContent = '☰ Show Navigator';
   localStorage.setItem('shadowx_nav_collapsed', collapsed ? 'true' : 'false');
 }
 
