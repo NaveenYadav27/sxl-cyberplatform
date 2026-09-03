@@ -14,6 +14,14 @@ if exist "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" (
     echo [!] Note: VirtualBox not found in default path.
 )
 
+:: Check and install Python dependencies if missing
+python -c "import uvicorn, fastapi" >nul 2>&1
+if %errorlevel% neq 0 (
+    echo [*] Checking Python dependencies...
+    echo [*] Installing required packages from backend\requirements.txt...
+    pip install -r "%~dp0backend\requirements.txt"
+)
+
 echo.
 echo [*] Starting ShadowXLab Backend & VirtualBox API on port 8000...
 start "ShadowXLab Backend Core" cmd /k "cd /d %~dp0backend && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"

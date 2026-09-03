@@ -57,6 +57,23 @@ def check_virtualbox():
     else:
         print("[!] Oracle VirtualBox not found in default directories.")
 
+def check_and_install_dependencies():
+    missing = []
+    for pkg in ["fastapi", "uvicorn", "pydantic", "httpx"]:
+        try:
+            __import__(pkg)
+        except ImportError:
+            missing.append(pkg)
+    if missing:
+        print(f"[*] Missing Python packages ({', '.join(missing)}).")
+        print("[*] Automatically installing backend dependencies via pip...")
+        req_file = os.path.join(BACKEND_DIR, "requirements.txt")
+        if os.path.exists(req_file):
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", req_file])
+        else:
+            subprocess.check_call([sys.executable, "-m", "pip", "install"] + missing)
+        print("[+] All dependencies installed successfully.\n")
+
 def start_backend():
     print("\n[*] Starting ShadowXLab Core API & VirtualBox Engine on port 8000...")
     sys.path.insert(0, BACKEND_DIR)
@@ -74,6 +91,7 @@ def start_frontend_vite():
 def main():
     print_banner()
     check_virtualbox()
+    check_and_install_dependencies()
 
     # Determine if Vite can be run (requires both Node.js and src/main.tsx)
     has_src = os.path.exists(os.path.join(ROOT_DIR, "src", "main.tsx"))
