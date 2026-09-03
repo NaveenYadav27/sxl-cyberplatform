@@ -108,7 +108,6 @@ export const SocL1InteractiveLabs: React.FC = () => {
           src="/soc-interactive-labs.html"
           title="ShadowX SOC Interactive Labs"
           className="w-full h-full border-none block"
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
         />
       </div>
     </div>
