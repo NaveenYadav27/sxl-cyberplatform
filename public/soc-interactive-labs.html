@@ -2586,16 +2586,9 @@ function renderAcademySidebar() {
       const isActive = idx === academyCourseIdx;
       return `
         <div class="labitem ${isActive ? 'active' : ''}" onclick="selectAcademyCourse(${idx})">
-          <div class="labitem-top" style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:3px">
-            <span class="labid" style="font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;background:var(--subtle);color:var(--accent);border:1px solid var(--line);letter-spacing:0.04em">${c.id}</span>
-            <span style="font-size:10.5px;font-family:ui-monospace,monospace;color:var(--muted);font-weight:600">${c.service}</span>
-          </div>
-          <div class="labtitle" style="font-size:12.5px;font-weight:700;line-height:1.35;margin:3px 0 4px">${esc(c.title)} ${isDone ? '✓' : ''}</div>
-          <div class="labsub" style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px">
-            <span style="color:var(--accent);font-weight:700">${c.stages.length} Stages</span>
-            <span>•</span>
-            <span>Investigation</span>
-          </div>
+          <div class="num" style="min-width:28px;font-weight:800;color:var(--accent);font-family:ui-monospace,monospace">${c.id}</div>
+          <div class="labname" style="font-size:12.5px;font-weight:${isActive ? '800' : '600'};color:var(--text)">${esc(c.title)}</div>
+          ${isDone ? '<div class="check" style="margin-left:auto;color:var(--good);font-weight:800">✓</div>' : ''}
         </div>
       `;
     })
