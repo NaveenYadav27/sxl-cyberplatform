@@ -554,7 +554,7 @@ window.NetworkingTools = (function () {
         </div>
 
         <div style="overflow-x:auto">
-          <table style="width:100%;border-collapse:collapse;font-size:11.5px;font-family:ui-monospace,monospace">
+          <table style="width:100%;min-width:680px;border-collapse:collapse;font-size:11.5px;font-family:ui-monospace,monospace;white-space:nowrap">
             <thead>
               <tr style="background:var(--card-bg);border-bottom:1px solid var(--line);color:var(--muted);text-align:left">
                 <th style="padding:8px">Subnet Name</th>
@@ -655,7 +655,8 @@ window.NetworkingTools = (function () {
           <span>NEW MASK: <strong style="color:var(--accent)">/${newPrefix} (${intToIp(prefixToMaskInt(newPrefix))})</strong></span>
           <span>USABLE HOSTS PER SUBNET: <strong>${blockSize - 2}</strong></span>
         </div>
-        <table style="width:100%;border-collapse:collapse;font-size:11.5px;font-family:ui-monospace,monospace">
+        <div style="overflow-x:auto">
+          <table style="width:100%;min-width:550px;border-collapse:collapse;font-size:11.5px;font-family:ui-monospace,monospace;white-space:nowrap">
           <thead>
             <tr style="background:var(--card-bg);border-bottom:1px solid var(--line);color:var(--muted);text-align:left">
               <th style="padding:6px">#</th>
@@ -675,6 +676,7 @@ window.NetworkingTools = (function () {
             `).join('')}
           </tbody>
         </table>
+        </div>
       </div>
     `;
   }
