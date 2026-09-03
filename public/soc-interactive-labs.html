@@ -2586,12 +2586,16 @@ function renderAcademySidebar() {
       const isActive = idx === academyCourseIdx;
       return `
         <div class="labitem ${isActive ? 'active' : ''}" onclick="selectAcademyCourse(${idx})">
-          <div class="labitem-top">
-            <span class="labid">${c.id}</span>
-            <span class="labcat">60-MIN CLASS</span>
+          <div class="labitem-top" style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:3px">
+            <span class="labid" style="font-size:11px;font-weight:900;padding:2px 8px;border-radius:6px;background:var(--subtle);color:var(--accent);border:1px solid var(--line);letter-spacing:0.04em">${c.id}</span>
+            <span style="font-size:10.5px;font-family:ui-monospace,monospace;color:var(--muted);font-weight:600">${c.service}</span>
           </div>
-          <div class="labtitle">${esc(c.title)} ${isDone ? '✓' : ''}</div>
-          <div class="labsub" style="font-size:10.5px;color:var(--muted)">${c.stages.length} Stages • ${c.service}</div>
+          <div class="labtitle" style="font-size:12.5px;font-weight:700;line-height:1.35;margin:3px 0 4px">${esc(c.title)} ${isDone ? '✓' : ''}</div>
+          <div class="labsub" style="font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px">
+            <span style="color:var(--accent);font-weight:700">${c.stages.length} Stages</span>
+            <span>•</span>
+            <span>Investigation</span>
+          </div>
         </div>
       `;
     })
@@ -2628,7 +2632,7 @@ function renderAcademyClass(cIdx, sIdx) {
     <div class="academy-wrap">
       <!-- ── Class Header with Objectives ── -->
       <section class="classhead">
-        <div class="eyebrow">${course.id} · 60-MINUTE SOC CLASS</div>
+        <div class="eyebrow">${course.id} · SOC INVESTIGATION MODULE</div>
         <h2>${esc(course.title)}</h2>
         <p>${esc(course.description)}</p>
         <div class="objectives">
@@ -2648,8 +2652,8 @@ function renderAcademyClass(cIdx, sIdx) {
           const isDone = doneStages.includes(i);
           return `
             <button class="stagebtn ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" onclick="selectAcademyStage(${i})">
-              ${String(i * 10).padStart(2, '0')}–${String((i + 1) * 10).padStart(2, '0')} MIN<br>
-              <strong>${esc(st.name)}</strong>
+              <span style="font-size:9.5px;color:var(--muted);font-weight:800;letter-spacing:0.04em">STAGE ${i + 1}</span><br>
+              <strong style="font-size:11px">${esc(st.name)}</strong>
             </button>
           `;
         }).join('')}
@@ -2660,8 +2664,8 @@ function renderAcademyClass(cIdx, sIdx) {
         <!-- Left: Stage Card & 5W1H Engine -->
         <section class="card">
           <div class="meta">
-            <span>${String(sIdx * 10).padStart(2, '0')}–${String((sIdx + 1) * 10).padStart(2, '0')} MIN</span>
-            <span>STAGE ${(sIdx + 1)} / ${course.stages.length} · ${esc(stage.name.toUpperCase())}</span>
+            <span>STAGE ${(sIdx + 1)} OF ${course.stages.length}</span>
+            <span>${esc(stage.name.toUpperCase())}</span>
           </div>
           <h3>${esc(stage.name)}</h3>
           <p class="explain">${esc(stage.explain)}</p>
