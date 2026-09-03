@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  shadowxlab-backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: shadowxlab-backend
+    restart: always
+    environment:
+      - SHADOWXLAB_DATA_DIR=/var/lib/shadowxlab
+      - MGMT_INTERFACE=eth0
+      - LAB_INTERFACE=eth1
+      - LAB_CIDR=10.10.10.0/24
+    volumes:
+      - shadowxlab-data:/var/lib/shadowxlab
+    ports:
+      - "8000:8000"   # REST API & WebSockets
+      - "8088:8088"   # Splunk HEC Ingest Receiver
+      - "514:514/udp" # Syslog UDP
+      - "514:514/tcp" # Syslog TCP
+    networks:
+      - mgmt-net
+      - lab-net
+
+  shadowxlab-ui:
+    image: nginx:alpine
+    container_name: shadowxlab-ui
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../dist:/usr/share/nginx/html:ro
+    depends_on:
+      - shadowxlab-backend
+    networks:
+      - mgmt-net
+
+volumes:
+  shadowxlab-data:
+    driver: local
+
+networks:
+  mgmt-net:
+    driver: bridge
+  lab-net:
+    driver: bridge

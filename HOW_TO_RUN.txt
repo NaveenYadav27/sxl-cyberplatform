@@ -1,0 +1,46 @@
+======================================================================
+         SHADOWXLAB CYBER RANGE APPLIANCE · ENTERPRISE EDITION
+         45 SOC Analyst Master Labs & VirtualBox Hypervisor Engine
+======================================================================
+
+HOW TO RUN THE PLATFORM ON YOUR MACHINE:
+
+METHOD 1: Quick Run with Python (Recommended - Zero Setup)
+----------------------------------------------------------
+1. Open a terminal or Command Prompt in this folder.
+2. Run:
+      python desktop_launcher.py
+
+   This will automatically:
+   - Check for Oracle VirtualBox and list your running VMs
+   - Start the FastAPI backend and hypervisor engine on port 8000
+   - Launch the web console on localhost and open your default browser!
+
+
+METHOD 2: Running with Node.js / Vite (Development Mode)
+--------------------------------------------------------
+1. Open a terminal in this folder.
+2. Run:
+      npm install
+      npm run dev
+3. In a second terminal, start the backend:
+      cd backend
+      python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+4. Open http://localhost:3000 in your browser.
+
+
+METHOD 3: Compile Standalone Windows Executable (ShadowXLab.exe)
+----------------------------------------------------------------
+Every Windows computer has the built-in Microsoft .NET C# compiler (csc.exe).
+To generate ShadowXLab.exe locally:
+1. Open PowerShell or Command Prompt in this folder.
+2. Run:
+      C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:exe /out:ShadowXLab.exe ShadowXLabLauncher.cs
+3. Double-click the generated ShadowXLab.exe to run!
+
+
+PORT REFERENCE:
+- Web Console Interface      : http://localhost:3000 (or http://localhost:8000)
+- 45 Interactive SOC Labs    : http://localhost:3000/soc-interactive-labs.html
+- VirtualBox Range REST API  : http://127.0.0.1:8000/api/v1/virtualbox/vms
+======================================================================

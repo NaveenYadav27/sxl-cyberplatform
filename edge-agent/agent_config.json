@@ -1,0 +1,21 @@
+{
+  "control_plane_url": "http://127.0.0.1:8000",
+  "control_plane_ws": "ws://127.0.0.1:8000/ws/agent",
+  "agent_id": "AGENT-4207E29E",
+  "installation_id": "inst-52d9c1cd06e444cf",
+  "hostname": "ShadowXLab",
+  "local_ip": "100.95.175.46",
+  "public_key_pem": "-----BEGIN PUBLIC KEY-----\n136557493f0f44a9bf6fed5c1a6f386e\n-----END PUBLIC KEY-----",
+  "certificate_pem": "-----BEGIN SHADOWXLAB AGENT CERTIFICATE-----\nAGENT_ID:AGENT-4207E29E\nINSTALL_ID:inst-52d9c1cd06e444cf\nEXPIRES:2026-11-28T10:27:40.943474\nFP:53a4a8870609044cc819d58eb7d129b1\n-----END SHADOWXLAB AGENT CERTIFICATE-----",
+  "proxmox": {
+    "enabled": false,
+    "host": "https://100.118.161.17:8006",
+    "token_id": "root@pam!shadowxlab-token",
+    "token_secret": "",
+    "node": "pve",
+    "verify_ssl": false
+  },
+  "virtualbox": {
+    "enabled": false
+  }
+}

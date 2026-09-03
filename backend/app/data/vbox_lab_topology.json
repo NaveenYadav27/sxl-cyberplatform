@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-09-03T01:49:35.971095Z",
+  "vms": {},
+  "roles": {
+    "pfsense vm": {
+      "role": "pfSense Perimeter Gateway",
+      "target_labs": [
+        19,
+        28,
+        45
+      ],
+      "ip": "10.10.20.1"
+    },
+    "kali linux": {
+      "role": "SOC Analyst / Attacker",
+      "target_labs": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ip": "192.168.1.33"
+    },
+    "Metasploitable VM": {
+      "role": "Vulnerable Target Web Server",
+      "target_labs": [
+        20,
+        21,
+        24,
+        25,
+        27
+      ],
+      "ip": "10.10.20.15"
+    },
+    "Cybersecurity LabVM Worksation 20250409": {
+      "role": "Corporate Windows / Linux Endpoint",
+      "target_labs": [
+        1,
+        2,
+        5,
+        40
+      ],
+      "ip": "10.10.20.44"
+    }
+  }
+}
