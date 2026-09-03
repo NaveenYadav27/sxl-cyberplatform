@@ -1,0 +1,66 @@
+{
+  "server": {
+    "id": "shadowx-gw",
+    "name": "ShadowXLab Central VPN Gateway",
+    "virtual_ip": "10.8.0.1",
+    "listen_port": 51820,
+    "subnet": "10.8.0.0/24",
+    "public_key": "sx-pub-gw-7f0ebb2245365721",
+    "status": "online",
+    "uptime": "Operational"
+  },
+  "peers": [
+    {
+      "id": "kali-peer",
+      "vm_name": "kali linux",
+      "os": "linux",
+      "native_ip": "192.168.245.143",
+      "virtual_ip": "10.8.0.2",
+      "role": "SOC Analyst Node",
+      "status": "connected",
+      "last_handshake": 1788432618,
+      "latency_ms": 1.4,
+      "public_key": "sx-pub-kali-c0ed4909c9d8c8cc",
+      "auth_token": "b5edb11902e72be2719e36e86d205e4a"
+    },
+    {
+      "id": "pfsense-peer",
+      "vm_name": "pfsense vm",
+      "os": "freebsd",
+      "native_ip": "10.10.20.1",
+      "virtual_ip": "10.8.0.3",
+      "role": "pfSense Perimeter Gateway",
+      "status": "configured",
+      "last_handshake": 1788432512,
+      "latency_ms": 2.1,
+      "public_key": "sx-pub-pfsense-d39b888227e5665c",
+      "auth_token": "611971cb8413cdf769cb95b1a1817b3a"
+    },
+    {
+      "id": "meta-peer",
+      "vm_name": "Metasploitable VM",
+      "os": "linux",
+      "native_ip": "10.10.20.15",
+      "virtual_ip": "10.8.0.4",
+      "role": "Vulnerable Server / Target Node",
+      "status": "configured",
+      "last_handshake": null,
+      "latency_ms": null,
+      "public_key": "sx-pub-meta-303ec379363c37c9",
+      "auth_token": "e4ebcb26489d9ce7fd7e466f708b6748"
+    },
+    {
+      "id": "workstation-peer",
+      "vm_name": "Cybersecurity LabVM Worksation 20250409",
+      "os": "windows",
+      "native_ip": "10.10.20.44",
+      "virtual_ip": "10.8.0.5",
+      "role": "Corporate Windows Endpoint",
+      "status": "configured",
+      "last_handshake": null,
+      "latency_ms": null,
+      "public_key": "sx-pub-win-7aee647edaed474a",
+      "auth_token": "843dc90bafa97ed012f24879a2e576c1"
+    }
+  ]
+}

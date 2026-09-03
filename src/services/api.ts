@@ -136,5 +136,15 @@ export const ApplianceAPI = {
     body: JSON.stringify(payload)
   }),
   deleteAsset: (assetId: string) => request<any>(`/assets/${assetId}`, { method: "DELETE" }),
-  scanAsset: (assetId: string) => request<any>(`/assets/${assetId}/scan`, { method: "POST" })
+  scanAsset: (assetId: string) => request<any>(`/assets/${assetId}/scan`, { method: "POST" }),
+
+  // VPN Mesh & Cross-Network VM Bridge
+  getVpnStatus: () => request<any>("/vpn/status"),
+  getVpnPeers: () => request<any[]>("/vpn/peers"),
+  autoDetectVms: () => request<any>("/vpn/auto-detect-vms", { method: "POST" }),
+  getPeerScript: (peerId: string) => request<any>(`/vpn/peers/${peerId}/script`),
+  pingPeer: (peerId: string) => request<any>("/vpn/ping-peer", {
+    method: "POST",
+    body: JSON.stringify({ peer_id: peerId })
+  })
 };
