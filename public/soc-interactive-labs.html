@@ -167,11 +167,11 @@ button{font:inherit}
 .obj{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:11px;background:var(--panel);color:var(--text)}
 .obj b{display:block;color:var(--accent);font-size:9px;margin-bottom:3px;letter-spacing:.05em}
 
-.timeline{display:flex;gap:6px;margin:12px 0;overflow-x:auto;padding-bottom:4px}
-.stagebtn{flex:1;min-width:105px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:9px 10px;text-align:left;cursor:pointer;font-size:10px;transition:all .15s ease}
-.stagebtn:hover{border-color:var(--accent);color:var(--text)}
-.stagebtn.active{border-color:var(--accent);color:var(--accent);background:var(--subtle);font-weight:bold;box-shadow:0 0 0 1px var(--accent) inset}
-.stagebtn.done:after{content:" ✓";color:var(--good);font-weight:900}
+.timeline{display:flex;gap:8px;margin:12px 0 14px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 8px;align-items:stretch}
+.stagebtn{flex:1 1 0;min-width:115px;min-height:56px;height:56px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:7px 12px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-sizing:border-box;flex-shrink:0;transition:all .15s ease}
+.stagebtn:hover{border-color:var(--accent);color:var(--text);transform:translateY(-1px)}
+.stagebtn.active{border-color:var(--accent);color:var(--accent);background:var(--subtle);font-weight:bold;box-shadow:0 0 0 1.5px var(--accent) inset}
+.stagebtn.done .stage-title:after{content:" ✓";color:var(--good);font-weight:900}
 
 .academy-main{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.65fr);gap:16px;min-height:550px}
 .card{border:1px solid var(--line);border-radius:14px;background:var(--card-bg);padding:18px;box-shadow:0 3px 12px rgba(0,0,0,.04)}
@@ -246,6 +246,7 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 
 </style>
 <script src="academy_data.js"></script>
+<script src="networking_tools.js"></script>
 </head>
 <body>
 <header class="top">
@@ -262,6 +263,9 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
     </button>
     <button id="trackLabsBtn" class="track-btn" onclick="switchTrack('labs')">
       ⚡ 45 Hands-On Labs
+    </button>
+    <button id="trackToolsBtn" class="track-btn" onclick="switchTrack('tools')">
+      🛠️ Networking Tools &amp; Calculators
     </button>
     <button id="trackPrereqBtn" class="track-btn" onclick="switchTrack('prereq')">
       📋 Prerequisites Matrix
@@ -2540,6 +2544,7 @@ function switchTrack(track) {
   
   document.getElementById('trackAcademyBtn')?.classList.toggle('active', track === 'academy');
   document.getElementById('trackLabsBtn')?.classList.toggle('active', track === 'labs');
+  document.getElementById('trackToolsBtn')?.classList.toggle('active', track === 'tools');
   document.getElementById('trackPrereqBtn')?.classList.toggle('active', track === 'prereq');
 
   const sidebar = document.querySelector('.sidebar');
@@ -2548,6 +2553,9 @@ function switchTrack(track) {
   if (track === 'prereq') {
     if (sidebar) sidebar.style.display = 'none';
     renderPrerequisitesView();
+  } else if (track === 'tools') {
+    if (sidebar) sidebar.style.display = 'none';
+    if (window.NetworkingTools) window.NetworkingTools.render();
   } else if (track === 'academy') {
     if (sidebar) sidebar.style.display = 'block';
     if (searchInput) searchInput.placeholder = 'Filter 25 SOC academy classes...';
@@ -2645,8 +2653,8 @@ function renderAcademyClass(cIdx, sIdx) {
           const isDone = doneStages.includes(i);
           return `
             <button class="stagebtn ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" onclick="selectAcademyStage(${i})">
-              <span style="font-size:9.5px;color:var(--muted);font-weight:800;letter-spacing:0.04em">STAGE ${i + 1}</span><br>
-              <strong style="font-size:11px">${esc(st.name)}</strong>
+              <div style="font-size:9.5px;color:var(--muted);font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase">STAGE ${i + 1}</div>
+              <div class="stage-title" style="font-size:11.5px;font-weight:750;color:${isActive ? 'var(--accent)' : 'var(--text)'};line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(st.name)}</div>
             </button>
           `;
         }).join('')}

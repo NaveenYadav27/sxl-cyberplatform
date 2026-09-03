@@ -233,6 +233,22 @@ if os.path.exists(DIST_DIR):
             return FileResponse(labs_public)
         return FileResponse(os.path.join(DIST_DIR, "index.html"))
 
+    @app.get("/academy_data.js")
+    async def serve_academy_data():
+        for d in [DIST_DIR, PUBLIC_DIR]:
+            f = os.path.join(d, "academy_data.js")
+            if os.path.exists(f):
+                return FileResponse(f, media_type="application/javascript")
+        return {"error": "academy_data.js not found"}
+
+    @app.get("/networking_tools.js")
+    async def serve_networking_tools():
+        for d in [DIST_DIR, PUBLIC_DIR]:
+            f = os.path.join(d, "networking_tools.js")
+            if os.path.exists(f):
+                return FileResponse(f, media_type="application/javascript")
+        return {"error": "networking_tools.js not found"}
+
     @app.get("/")
     async def serve_index():
         return FileResponse(os.path.join(DIST_DIR, "index.html"))
