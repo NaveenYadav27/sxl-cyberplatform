@@ -183,11 +183,10 @@ button{font:inherit}
   </div>
   <div class="lablist" id="lablist"></div>
 </aside>
-<main class="main" id="main">
-  <button class="floating-nav-pill" id="floatingNavPill" onclick="toggleNavigator()" title="Show Learning Path Navigator">
-    ☰ Show Navigator (45 Labs)
-  </button>
-</main>
+<button class="floating-nav-pill" id="floatingNavPill" onclick="toggleNavigator()" title="Show Learning Path Navigator">
+  ☰ Show Navigator (45 Labs)
+</button>
+<main class="main" id="main"></main>
 </div>
 
 <script>
@@ -1293,9 +1292,6 @@ function openLab(id) {
   const main = document.getElementById('main');
   if (!main) return;
   main.innerHTML = `
-  <button class="floating-nav-pill" id="floatingNavPill" onclick="toggleNavigator()" title="Show Learning Path Navigator">
-    ☰ 45 Labs Navigator
-  </button>
   <div class="labview">
     <section class="instructions">
       <div class="pathbar">
