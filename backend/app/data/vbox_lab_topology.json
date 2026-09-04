@@ -46,5 +46,127 @@
       ],
       "ip": "10.10.20.44"
     }
+  },
+  "lab_bindings": {
+    "L08": {
+      "lab_id": "L08",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L10": {
+      "lab_id": "L10",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L16": {
+      "lab_id": "L16",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L20": {
+      "lab_id": "L20",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L35": {
+      "lab_id": "L35",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L38": {
+      "lab_id": "L38",
+      "vm_uuid": "0066f031-8bfe-4fa5-982d-b13702f77a5c",
+      "ip": "192.168.1.33",
+      "name": "kali linux"
+    },
+    "L40": {
+      "lab_id": "L40",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L01": {
+      "lab_id": "L01",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L02": {
+      "lab_id": "L02",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L06": {
+      "lab_id": "L06",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L30": {
+      "lab_id": "L30",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L31": {
+      "lab_id": "L31",
+      "vm_uuid": "90331ce1-a53b-4ee5-bee4-6405b9a76f26",
+      "ip": "10.10.20.44",
+      "name": "Cybersecurity LabVM Worksation 20250409"
+    },
+    "L21": {
+      "lab_id": "L21",
+      "vm_uuid": "f8ee9506-2eec-4653-931f-013c39f0407b",
+      "ip": "10.10.20.15",
+      "name": "Metasploitable VM"
+    },
+    "L22": {
+      "lab_id": "L22",
+      "vm_uuid": "f8ee9506-2eec-4653-931f-013c39f0407b",
+      "ip": "10.10.20.15",
+      "name": "Metasploitable VM"
+    },
+    "L27": {
+      "lab_id": "L27",
+      "vm_uuid": "f8ee9506-2eec-4653-931f-013c39f0407b",
+      "ip": "10.10.20.15",
+      "name": "Metasploitable VM"
+    },
+    "L36": {
+      "lab_id": "L36",
+      "vm_uuid": "f8ee9506-2eec-4653-931f-013c39f0407b",
+      "ip": "10.10.20.15",
+      "name": "Metasploitable VM"
+    },
+    "L14": {
+      "lab_id": "L14",
+      "vm_uuid": "65a79998-0426-4294-acc3-f91b43fa467b",
+      "ip": "10.10.20.1",
+      "name": "pfsense vm"
+    },
+    "L19": {
+      "lab_id": "L19",
+      "vm_uuid": "65a79998-0426-4294-acc3-f91b43fa467b",
+      "ip": "10.10.20.1",
+      "name": "pfsense vm"
+    },
+    "L26": {
+      "lab_id": "L26",
+      "vm_uuid": "65a79998-0426-4294-acc3-f91b43fa467b",
+      "ip": "10.10.20.1",
+      "name": "pfsense vm"
+    },
+    "L32": {
+      "lab_id": "L32",
+      "vm_uuid": "65a79998-0426-4294-acc3-f91b43fa467b",
+      "ip": "10.10.20.1",
+      "name": "pfsense vm"
+    }
   }
 }

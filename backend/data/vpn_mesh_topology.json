@@ -18,8 +18,8 @@
       "virtual_ip": "10.8.0.2",
       "role": "SOC Analyst Node",
       "status": "connected",
-      "last_handshake": 1788432618,
-      "latency_ms": 1.4,
+      "last_handshake": 1788501477,
+      "latency_ms": 43.0,
       "public_key": "sx-pub-kali-c0ed4909c9d8c8cc",
       "auth_token": "b5edb11902e72be2719e36e86d205e4a"
     },
@@ -32,7 +32,7 @@
       "role": "pfSense Perimeter Gateway",
       "status": "configured",
       "last_handshake": 1788432512,
-      "latency_ms": 2.1,
+      "latency_ms": null,
       "public_key": "sx-pub-pfsense-d39b888227e5665c",
       "auth_token": "611971cb8413cdf769cb95b1a1817b3a"
     },

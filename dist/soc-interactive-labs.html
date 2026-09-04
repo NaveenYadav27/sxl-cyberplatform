@@ -262,6 +262,15 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 .timeline{display:flex;gap:7px;margin:12px 0 14px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 8px;align-items:stretch;scrollbar-width:thin}
 .stagebtn{flex:0 0 auto;min-width:115px;min-height:54px;height:54px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:6px 10px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-sizing:border-box;transition:all .15s ease}
 
+
+/* ─── Dynamic VM IP Binding & Modal ─── */
+.vm-edit-btn{background:var(--card-bg);border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:3px 9px;font-size:10px;font-weight:800;cursor:pointer;transition:all .15s}
+.vm-edit-btn:hover{background:var(--accent);color:#fff}
+.autobind-btn{background:linear-gradient(135deg,#E31E24,#ff4d4d);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:11px;font-weight:800;cursor:pointer;margin:8px 12px 4px;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 2px 8px rgba(227,30,36,.25);transition:all .15s;width:calc(100% - 24px);box-sizing:border-box}
+.autobind-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.vm-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(3px)}
+.vm-modal-content{background:var(--card-bg);border:1.5px solid var(--line);border-radius:14px;max-width:480px;width:100%;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.35);font-family:inherit}
+
 </style>
 <script src="academy_data.js"></script>
 <script src="networking_tools.js"></script>
@@ -2605,6 +2614,205 @@ function switchTrack(track) {
   }
 }
 
+// ─── DYNAMIC VM IP RESOLUTION & VIRTUALBOX BINDINGS ────────────────────────
+window.LAB_VM_BINDINGS = JSON.parse(localStorage.getItem('shadowx_vm_bindings') || '{}');
+window.DISCOVERED_VBOX_VMS = [];
+
+async function syncVBoxBindings() {
+  try {
+    const res = await fetch('/api/v1/virtualbox/lab-bindings');
+    if (res.ok) {
+      const data = await res.json();
+      if (data.bindings) {
+        window.LAB_VM_BINDINGS = { ...window.LAB_VM_BINDINGS, ...data.bindings };
+        localStorage.setItem('shadowx_vm_bindings', JSON.stringify(window.LAB_VM_BINDINGS));
+      }
+    }
+    const resVms = await fetch('/api/v1/virtualbox/vms');
+    if (resVms.ok) {
+      const dataVms = await resVms.json();
+      window.DISCOVERED_VBOX_VMS = dataVms.vms || [];
+    }
+    renderAcademySidebar();
+    if (currentTrack === 'academy' && window.ACADEMY_COURSES) {
+      renderAcademyClass(academyCourseIdx, academyStageIdx);
+    }
+  } catch (e) {
+    console.debug('VirtualBox live sync notice:', e);
+  }
+}
+syncVBoxBindings();
+
+function getEffectiveVm(course) {
+  const binding = (window.LAB_VM_BINDINGS || {})[course.id];
+  if (binding && binding.ip) {
+    return {
+      name: binding.name || course.vm?.name || 'sxl-node',
+      os: binding.os || course.vm?.os || 'Linux / Windows',
+      ip: binding.ip,
+      role: binding.role || course.vm?.role || 'Active SOC Lab Node',
+      vpnAgent: binding.vpnAgent || course.vm?.vpnAgent || 'mesh-01 (10.240.0.1)',
+      status: binding.status || course.vm?.status || 'ONLINE ●',
+      isBound: true,
+      vmUuid: binding.vm_uuid
+    };
+  }
+  return {
+    ...course.vm,
+    isBound: false
+  };
+}
+
+function resolveDynamicText(text, course, effectiveVm) {
+  if (!text || !course.vm?.ip || !effectiveVm.ip) return text || '';
+  if (course.vm.ip === effectiveVm.ip) return text;
+  return text.split(course.vm.ip).join(effectiveVm.ip);
+}
+
+function openVmBindingModal(labId) {
+  const course = (window.ACADEMY_COURSES || []).find(c => c.id === labId);
+  if (!course) return;
+  const eff = getEffectiveVm(course);
+
+  let modal = document.getElementById('vmBindingModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'vmBindingModal';
+    modal.className = 'vm-modal-overlay';
+    document.body.appendChild(modal);
+  }
+
+  const vms = window.DISCOVERED_VBOX_VMS || [];
+
+  modal.innerHTML = `
+    <div class="vm-modal-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px">
+        <h3 style="margin:0;font-size:15px;color:var(--text);font-family:'Space Grotesk',sans-serif">
+          ⚙️ Target Lab VM &amp; Dynamic IP: <span style="color:var(--accent)">${course.id}</span>
+        </h3>
+        <button onclick="closeVmBindingModal()" style="border:none;background:transparent;color:var(--muted);font-size:16px;cursor:pointer">✕</button>
+      </div>
+
+      <div style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5">
+        Bind an active VirtualBox VM or assign a custom IP address for <b>${esc(course.title)}</b>. All commands, evidence, and network maps will dynamically update to this live IP.
+      </div>
+
+      <div style="display:grid;gap:12px;font-size:12px">
+        <div>
+          <label style="display:block;font-size:10px;font-weight:800;color:var(--accent);margin-bottom:4px">SELECT FROM DETECTED VIRTUALBOX VMS</label>
+          <select id="modalVmSelect" onchange="onModalVmSelectChange(this)" style="width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:8px;font-size:12px">
+            <option value="">-- Choose Detected VirtualBox VM --</option>
+            ${vms.map(v => `<option value="${v.uuid}" data-name="${esc(v.name)}" data-ip="${v.ip_address || ''}">${esc(v.name)} (${v.status} · IP: ${v.ip_address || 'Resolving...'})</option>`).join('')}
+          </select>
+        </div>
+
+        <div>
+          <label style="display:block;font-size:10px;font-weight:800;color:var(--accent);margin-bottom:4px">TARGET VM HOSTNAME</label>
+          <input type="text" id="modalVmName" value="${esc(eff.name)}" style="width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:8px;box-sizing:border-box;font-size:12px" />
+        </div>
+
+        <div>
+          <label style="display:block;font-size:10px;font-weight:800;color:var(--accent);margin-bottom:4px">TARGET IP ADDRESS (DYNAMIC)</label>
+          <input type="text" id="modalVmIp" value="${esc(eff.ip)}" placeholder="e.g. 192.168.208.50" style="width:100%;background:var(--panel);border:1px solid var(--line);color:var(--accent);font-weight:800;font-family:ui-monospace,monospace;padding:8px 10px;border-radius:8px;box-sizing:border-box;font-size:13px" />
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;border-top:1px solid var(--line);padding-top:12px">
+        <button onclick="resetVmBinding('${course.id}')" style="background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:7px;font-size:11px;cursor:pointer">
+          Reset to Default (${course.vm ? course.vm.ip : '10.10.20.10'})
+        </button>
+        <div style="display:flex;gap:8px">
+          <button onclick="closeVmBindingModal()" style="background:transparent;border:1px solid var(--line);color:var(--text);padding:6px 14px;border-radius:7px;font-size:11px;cursor:pointer">
+            Cancel
+          </button>
+          <button onclick="saveVmBinding('${course.id}')" style="background:var(--accent);border:1px solid var(--accent);color:#fff;padding:6px 16px;border-radius:7px;font-size:11px;font-weight:800;cursor:pointer">
+            Save &amp; Bind IP
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  modal.style.display = 'flex';
+}
+
+function onModalVmSelectChange(sel) {
+  const opt = sel.options[sel.selectedIndex];
+  if (opt && opt.dataset.name) {
+    const elName = document.getElementById('modalVmName');
+    if (elName) elName.value = opt.dataset.name;
+  }
+  if (opt && opt.dataset.ip) {
+    const elIp = document.getElementById('modalVmIp');
+    if (elIp) elIp.value = opt.dataset.ip;
+  }
+}
+
+function closeVmBindingModal() {
+  const modal = document.getElementById('vmBindingModal');
+  if (modal) modal.style.display = 'none';
+}
+
+async function saveVmBinding(labId) {
+  const name = document.getElementById('modalVmName')?.value.trim();
+  const ip = document.getElementById('modalVmIp')?.value.trim();
+  const sel = document.getElementById('modalVmSelect');
+  const vmUuid = sel ? sel.value : null;
+
+  if (!ip) {
+    alert('Please enter a target IP address.');
+    return;
+  }
+
+  window.LAB_VM_BINDINGS[labId] = {
+    lab_id: labId,
+    vm_uuid: vmUuid || null,
+    name: name,
+    ip: ip
+  };
+  localStorage.setItem('shadowx_vm_bindings', JSON.stringify(window.LAB_VM_BINDINGS));
+
+  try {
+    await fetch('/api/v1/virtualbox/lab-bindings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        lab_id: labId,
+        vm_uuid: vmUuid || null,
+        custom_ip: ip,
+        custom_name: name
+      })
+    });
+  } catch (e) {}
+
+  closeVmBindingModal();
+  renderAcademyClass(academyCourseIdx, academyStageIdx);
+  renderAcademySidebar();
+}
+
+function resetVmBinding(labId) {
+  delete window.LAB_VM_BINDINGS[labId];
+  localStorage.setItem('shadowx_vm_bindings', JSON.stringify(window.LAB_VM_BINDINGS));
+  closeVmBindingModal();
+  renderAcademyClass(academyCourseIdx, academyStageIdx);
+  renderAcademySidebar();
+}
+
+async function autoBindAllVms() {
+  try {
+    const res = await fetch('/api/v1/virtualbox/lab-bindings/auto-bind', { method: 'POST' });
+    if (res.ok) {
+      const data = await res.json();
+      window.LAB_VM_BINDINGS = { ...window.LAB_VM_BINDINGS, ...data.bindings };
+      localStorage.setItem('shadowx_vm_bindings', JSON.stringify(window.LAB_VM_BINDINGS));
+      renderAcademyClass(academyCourseIdx, academyStageIdx);
+      renderAcademySidebar();
+      alert(`✓ Successfully auto-bound ${data.bound_count} SOC labs to detected active VirtualBox VMs!`);
+    }
+  } catch (e) {
+    alert(`Could not auto-bind: ${e.message}`);
+  }
+}
+
 function renderAcademySidebar() {
   const list = document.getElementById('lablist');
   if (!list || !window.ACADEMY_COURSES) return;
@@ -2657,7 +2865,12 @@ function renderAcademySidebar() {
     });
   });
 
-  list.innerHTML = html;
+  list.innerHTML = `
+    <button onclick="autoBindAllVms()" class="autobind-btn" title="Auto-detect running VirtualBox VMs and bind their live IPs across matching SOC labs">
+      🔄 Auto-Bind Active VirtualBox VMs
+    </button>
+    ${html}
+  `;
 }
 
 function selectAcademyCourse(idx) {
@@ -2688,9 +2901,14 @@ function renderAcademyClass(cIdx, sIdx) {
   const main = document.getElementById('main');
   if (!main) return;
 
+  const effectiveVm = getEffectiveVm(course);
   academySelectedChoice = null;
   const doneStages = academyDone[course.id] || [];
   const isClassDone = doneStages.length >= course.stages.length;
+
+  const dynCommand = resolveDynamicText(stage.command, course, effectiveVm);
+  const dynWorked = resolveDynamicText(stage.worked, course, effectiveVm);
+  const dynExplain = resolveDynamicText(stage.explain, course, effectiveVm);
 
   main.innerHTML = `
     <div class="academy-wrap">
@@ -2705,14 +2923,19 @@ function renderAcademyClass(cIdx, sIdx) {
         <div class="vm-ident-card">
           <div class="vm-header">
             <span class="vm-badge">🖥️ TARGET LAB VM / TELEMETRY NODE</span>
-            <span class="vm-status-pill online"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:5px"></span>${esc(course.vm.status || 'ONLINE ●')}</span>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button class="vm-edit-btn" onclick="openVmBindingModal('${course.id}')" title="Configure target IP or bind live VirtualBox VM">
+                ✏️ Edit IP / Bind Live VM
+              </button>
+              <span class="vm-status-pill online"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:5px"></span>${esc(effectiveVm.status || 'ONLINE ●')}</span>
+            </div>
           </div>
           <div class="vm-grid">
-            <div class="vm-item"><span class="vm-lbl">VM Hostname</span><b class="vm-val">${esc(course.vm.name)}</b></div>
-            <div class="vm-item"><span class="vm-lbl">OS / Environment</span><b class="vm-val">${esc(course.vm.os)}</b></div>
-            <div class="vm-item"><span class="vm-lbl">Target IP Address</span><b class="vm-val monospaced">${esc(course.vm.ip)}</b></div>
-            <div class="vm-item"><span class="vm-lbl">Infrastructure Role</span><b class="vm-val">${esc(course.vm.role)}</b></div>
-            <div class="vm-item"><span class="vm-lbl">VPN Mesh Agent</span><b class="vm-val monospaced">${esc(course.vm.vpnAgent)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">VM Hostname</span><b class="vm-val">${esc(effectiveVm.name)} ${effectiveVm.isBound ? '<span style="color:var(--accent);font-size:9px;font-weight:900">[BOUND]</span>' : ''}</b></div>
+            <div class="vm-item"><span class="vm-lbl">OS / Environment</span><b class="vm-val">${esc(effectiveVm.os)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Target IP Address</span><b class="vm-val monospaced" style="font-size:13px;color:var(--accent)">${esc(effectiveVm.ip)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Infrastructure Role</span><b class="vm-val">${esc(effectiveVm.role)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">VPN Mesh Agent</span><b class="vm-val monospaced">${esc(effectiveVm.vpnAgent)}</b></div>
             <div class="vm-item"><span class="vm-lbl">Service / Ports</span><b class="vm-val monospaced">${esc(course.service)}</b></div>
           </div>
         </div>
@@ -2751,11 +2974,11 @@ function renderAcademyClass(cIdx, sIdx) {
             <span>${esc(stage.name.toUpperCase())}</span>
           </div>
           <h3>${esc(stage.name)}</h3>
-          <p class="explain">${esc(stage.explain)}</p>
+          <p class="explain">${esc(dynExplain)}</p>
 
           <div class="worked">
             <b style="color:var(--accent);display:block;margin-bottom:4px">WORKED CASE EVIDENCE & TECHNICAL BREAKDOWN</b>
-            <div style="white-space:pre-wrap;font-family:inherit">${esc(stage.worked)}</div>
+            <div style="white-space:pre-wrap;font-family:inherit">${esc(dynWorked)}</div>
           </div>
 
           <!-- 5W1H Grid -->
@@ -2794,7 +3017,7 @@ function renderAcademyClass(cIdx, sIdx) {
           <!-- Hands-on Evidence Command Runner -->
           <div class="command-box">
             <b style="color:var(--accent);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Hands-On Investigation Evidence &amp; Simulator</b>
-            <code class="cmd">$ ${esc(stage.command)}</code>
+            <code class="cmd">$ ${esc(dynCommand)}</code>
             <button class="run-btn" onclick="runAcademyCommand(${cIdx}, ${sIdx})">
               ▶ Run on target VM simulator
             </button>
