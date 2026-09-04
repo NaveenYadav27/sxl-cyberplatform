@@ -52,10 +52,10 @@
     {
       "id": "workstation-peer",
       "vm_name": "Cybersecurity LabVM Worksation 20250409",
-      "os": "windows",
-      "native_ip": "10.10.20.44",
+      "os": "linux",
+      "native_ip": "192.168.1.44",
       "virtual_ip": "10.8.0.5",
-      "role": "Corporate Windows Endpoint",
+      "role": "Corporate Endpoint",
       "status": "configured",
       "last_handshake": null,
       "latency_ms": null,

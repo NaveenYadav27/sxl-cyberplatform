@@ -247,8 +247,20 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 .pre-path b{display:block;color:var(--accent);font-size:9.5px;letter-spacing:.08em;margin-bottom:4px}
 .pre-path span{font-size:11px;color:var(--muted);line-height:1.5}
 .prereq-note{margin:0 14px 14px;padding:11px 13px;border-radius:9px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:var(--text);font-size:11.5px;line-height:1.6}
-@media(max-width:1100px){.academy-main{grid-template-columns:1fr}.side-case{position:static}.prereq-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:800px){.prereq-grid{grid-template-columns:1fr}.objectives,.teach{grid-template-columns:1fr}}
+/* ─── Target Lab VM Identifier Card & 13-Stage Timeline ─── */
+.vm-ident-card{border:1.5px solid var(--accent);border-radius:12px;background:var(--panel);padding:14px 16px;margin:14px 0 10px;box-shadow:0 3px 12px rgba(227,30,36,.06)}
+.vm-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.vm-badge{font-size:11px;font-weight:950;letter-spacing:.12em;color:var(--accent);display:flex;align-items:center;gap:6px}
+.vm-status-pill{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:20px;letter-spacing:.05em}
+.vm-status-pill.online{background:rgba(16,185,129,.12);color:var(--good);border:1px solid rgba(16,185,129,.3)}
+.vm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.vm-item{display:flex;flex-direction:column;gap:2px}
+.vm-lbl{font-size:9px;color:var(--muted);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.vm-val{font-size:11.5px;color:var(--text);font-weight:750;word-break:break-word}
+.vm-val.monospaced{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;color:var(--accent)}
+.sidebar-module-header{padding:12px 14px 4px;font-size:9.5px;font-weight:900;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;border-top:1px solid var(--line);margin-top:8px}
+.timeline{display:flex;gap:7px;margin:12px 0 14px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 8px;align-items:stretch;scrollbar-width:thin}
+.stagebtn{flex:0 0 auto;min-width:115px;min-height:54px;height:54px;border:1px solid var(--line);background:var(--card-bg);color:var(--muted);border-radius:9px;padding:6px 10px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-sizing:border-box;transition:all .15s ease}
 
 </style>
 <script src="academy_data.js"></script>
@@ -265,7 +277,7 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
   </div>
   <div class="track-switcher">
     <button id="trackAcademyBtn" class="track-btn active" onclick="switchTrack('academy')">
-      🎓 25-Class Academy
+      🎓 40-Lab Foundation Track
     </button>
     <button id="trackLabsBtn" class="track-btn" onclick="switchTrack('labs')">
       ⚡ 45 Hands-On Labs
@@ -2582,7 +2594,7 @@ function switchTrack(track) {
     if (window.NetworkingTools) window.NetworkingTools.render();
   } else if (track === 'academy') {
     if (app) app.classList.remove('full-width');
-    if (searchInput) searchInput.placeholder = 'Filter 25 SOC academy classes...';
+    if (searchInput) searchInput.placeholder = 'Filter 40 foundation labs...';
     renderAcademySidebar();
     renderAcademyClass(academyCourseIdx, academyStageIdx);
   } else {
@@ -2600,31 +2612,52 @@ function renderAcademySidebar() {
   const query = (document.getElementById('search')?.value || '').toLowerCase();
   const courses = window.ACADEMY_COURSES;
   
-  const completedCount = Object.keys(academyDone).filter(k => (academyDone[k] || []).length >= 6).length;
+  const completedCount = Object.keys(academyDone).filter(k => {
+    const c = courses.find(item => item.id === k);
+    return c && (academyDone[k] || []).length >= c.stages.length;
+  }).length;
   const pct = Math.round((completedCount / courses.length) * 100);
   const bar = document.getElementById('bar');
   const txt = document.getElementById('progressText');
   const ptxt = document.getElementById('pct');
   if (bar) bar.style.width = pct + '%';
-  if (txt) txt.textContent = `${completedCount} / ${courses.length} classes done`;
+  if (txt) txt.textContent = `${completedCount} / ${courses.length} labs completed`;
   if (ptxt) ptxt.textContent = pct + '%';
 
-  list.innerHTML = courses
-    .map((c, idx) => {
-      const match = c.title.toLowerCase().includes(query) || c.id.toLowerCase().includes(query) || c.description.toLowerCase().includes(query);
-      if (!match) return '';
+  // Group by moduleId
+  const modules = {};
+  courses.forEach((c, idx) => {
+    const mId = c.moduleId || 'M1';
+    if (!modules[mId]) {
+      modules[mId] = { id: mId, title: c.moduleTitle || 'MODULE', items: [] };
+    }
+    modules[mId].items.push({ course: c, index: idx });
+  });
+
+  let html = '';
+  Object.values(modules).forEach(m => {
+    const filtered = m.items.filter(({ course: c }) => {
+      const desc = (c.desc || c.description || '').toLowerCase();
+      return !query || c.title.toLowerCase().includes(query) || c.id.toLowerCase().includes(query) || desc.includes(query);
+    });
+    if (filtered.length === 0) return;
+
+    html += `<div class="sidebar-module-header">${esc(m.title)}</div>`;
+    filtered.forEach(({ course: c, index: idx }) => {
       const stagesDone = (academyDone[c.id] || []).length;
-      const isDone = stagesDone >= 6;
+      const isDone = stagesDone >= c.stages.length;
       const isActive = idx === academyCourseIdx;
-      return `
+      html += `
         <div class="labitem ${isActive ? 'active' : ''}" onclick="selectAcademyCourse(${idx})">
-          <div class="num" style="min-width:28px;font-weight:800;color:var(--accent);font-family:ui-monospace,monospace">${c.id}</div>
-          <div class="labname" style="font-size:12.5px;font-weight:${isActive ? '800' : '600'};color:var(--text)">${esc(c.title)}</div>
-          ${isDone ? '<div class="check" style="margin-left:auto;color:var(--good);font-weight:800">✓</div>' : ''}
+          <div class="num" style="min-width:32px;font-weight:800;color:var(--accent);font-family:ui-monospace,monospace">${c.id}</div>
+          <div class="labname" style="font-size:12px;font-weight:${isActive ? '800' : '600'};color:var(--text);line-height:1.35">${esc(c.title)}</div>
+          ${isDone ? '<div class="check" style="margin-left:auto;color:var(--good);font-weight:800">✓</div>' : `<div style="margin-left:auto;font-size:10px;color:var(--muted);font-weight:700">${stagesDone}/${c.stages.length}</div>`}
         </div>
       `;
-    })
-    .join('');
+    });
+  });
+
+  list.innerHTML = html;
 }
 
 function selectAcademyCourse(idx) {
@@ -2642,6 +2675,12 @@ function selectAcademyStage(i) {
   renderAcademyClass(academyCourseIdx, i);
 }
 
+function nextAcademyCourse() {
+  if (academyCourseIdx < window.ACADEMY_COURSES.length - 1) {
+    selectAcademyCourse(academyCourseIdx + 1);
+  }
+}
+
 function renderAcademyClass(cIdx, sIdx) {
   if (!window.ACADEMY_COURSES || !window.ACADEMY_COURSES[cIdx]) return;
   const course = window.ACADEMY_COURSES[cIdx];
@@ -2655,11 +2694,30 @@ function renderAcademyClass(cIdx, sIdx) {
 
   main.innerHTML = `
     <div class="academy-wrap">
-      <!-- ── Class Header with Objectives ── -->
+      <!-- ── Class Header with Objectives & VM Identifier ── -->
       <section class="classhead">
-        <div class="eyebrow">${course.id} · SOC INVESTIGATION MODULE</div>
-        <h2>${esc(course.title)}</h2>
-        <p>${esc(course.description)}</p>
+        <div class="eyebrow">${esc(course.moduleId || 'SOC')} · ${esc(course.moduleTitle || 'FOUNDATION TRACK')}</div>
+        <h2>${course.id}. ${esc(course.title)}</h2>
+        <p>${esc(course.desc || course.description || '')}</p>
+
+        <!-- 🖥️ Target Lab VM Identifier -->
+        ${course.vm ? `
+        <div class="vm-ident-card">
+          <div class="vm-header">
+            <span class="vm-badge">🖥️ TARGET LAB VM / TELEMETRY NODE</span>
+            <span class="vm-status-pill online"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:5px"></span>${esc(course.vm.status || 'ONLINE ●')}</span>
+          </div>
+          <div class="vm-grid">
+            <div class="vm-item"><span class="vm-lbl">VM Hostname</span><b class="vm-val">${esc(course.vm.name)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">OS / Environment</span><b class="vm-val">${esc(course.vm.os)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Target IP Address</span><b class="vm-val monospaced">${esc(course.vm.ip)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Infrastructure Role</span><b class="vm-val">${esc(course.vm.role)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">VPN Mesh Agent</span><b class="vm-val monospaced">${esc(course.vm.vpnAgent)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Service / Ports</span><b class="vm-val monospaced">${esc(course.service)}</b></div>
+          </div>
+        </div>
+        ` : ''}
+
         <div class="objectives">
           ${course.objectives.map((obj, i) => `
             <div class="obj">
@@ -2670,15 +2728,15 @@ function renderAcademyClass(cIdx, sIdx) {
         </div>
       </section>
 
-      <!-- ── 6-Stage Investigation Timeline ── -->
+      <!-- ── 13-Stage Competency Journey Timeline ── -->
       <div class="timeline">
         ${course.stages.map((st, i) => {
           const isActive = i === sIdx;
           const isDone = doneStages.includes(i);
           return `
             <button class="stagebtn ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}" onclick="selectAcademyStage(${i})">
-              <div style="font-size:9.5px;color:var(--muted);font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase">STAGE ${i + 1}</div>
-              <div class="stage-title" style="font-size:11.5px;font-weight:750;color:${isActive ? 'var(--accent)' : 'var(--text)'};line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(st.name)}</div>
+              <div style="font-size:9px;color:var(--muted);font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase">STAGE ${(i + 1).toString().padStart(2, '0')}</div>
+              <div class="stage-title" style="font-size:11px;font-weight:750;color:${isActive ? 'var(--accent)' : 'var(--text)'};line-height:1.3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(st.name.replace(/^\d+\s*/, ''))}</div>
             </button>
           `;
         }).join('')}
@@ -2696,8 +2754,8 @@ function renderAcademyClass(cIdx, sIdx) {
           <p class="explain">${esc(stage.explain)}</p>
 
           <div class="worked">
-            <b style="color:var(--accent);display:block;margin-bottom:4px">WORKED CASE EVIDENCE</b>
-            <div>${esc(stage.worked)}</div>
+            <b style="color:var(--accent);display:block;margin-bottom:4px">WORKED CASE EVIDENCE & TECHNICAL BREAKDOWN</b>
+            <div style="white-space:pre-wrap;font-family:inherit">${esc(stage.worked)}</div>
           </div>
 
           <!-- 5W1H Grid -->
@@ -2712,11 +2770,11 @@ function renderAcademyClass(cIdx, sIdx) {
 
           <!-- Beginner Traps & Mental Model -->
           <div class="box mistake">
-            <b>BEGINNER MISTAKE</b>
+            <b>BEGINNER MISTAKE / TRAP</b>
             <span>${esc(stage.mistake)}</span>
           </div>
           <div class="box think">
-            <b>WHAT L1 SHOULD THINK</b>
+            <b>WHAT A SOC L1 ANALYST SHOULD THINK</b>
             <span>${esc(stage.think)}</span>
           </div>
 
@@ -2735,40 +2793,43 @@ function renderAcademyClass(cIdx, sIdx) {
 
           <!-- Hands-on Evidence Command Runner -->
           <div class="command-box">
-            <b style="color:var(--accent);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Hands-On Investigation Evidence</b>
+            <b style="color:var(--accent);font-size:10px;letter-spacing:.1em;text-transform:uppercase">Hands-On Investigation Evidence &amp; Simulator</b>
             <code class="cmd">$ ${esc(stage.command)}</code>
-            <button class="run-btn" onclick="runAcademyCommand('${esc(stage.command)}', '${esc(course.source)}', '${esc(course.destination)}', '${esc(course.service)}')">
-              ▶ Run in training simulator
+            <button class="run-btn" onclick="runAcademyCommand(${cIdx}, ${sIdx})">
+              ▶ Run on target VM simulator
             </button>
-            <div class="term-box" id="academyTerm">Terminal ready. Click 'Run' to observe live packet/socket telemetry.</div>
+            <div class="term-box" id="academyTerm">Terminal ready. Click 'Run' to observe live simulated packet/socket telemetry on ${esc(course.vm ? course.vm.name : 'target host')}.</div>
           </div>
 
           <!-- Bottom Navigation -->
           <div class="bottom-actions">
             <button onclick="prevAcademyStage()" ${sIdx === 0 ? 'disabled' : ''}>← Previous stage</button>
-            <button class="continue-btn" onclick="checkAcademyAnswer()">${sIdx === course.stages.length - 1 ? 'Submit class decision' : 'Check answer & continue →'}</button>
+            <button class="continue-btn" onclick="checkAcademyAnswer()">${sIdx === course.stages.length - 1 ? 'Submit lab verification' : 'Check answer & continue →'}</button>
           </div>
 
-          <!-- Class Finished Banner -->
+          <!-- Lab Finished Banner -->
           <div class="finish-box" id="academyFinish" style="display:${isClassDone ? 'block' : 'none'}">
-            <h3>✓ Class Completed!</h3>
-            <p style="font-size:12px;margin:0">All six stages completed with verified evidence. Carry these findings forward into the next investigation.</p>
+            <h3>✓ Lab Completed!</h3>
+            <p style="font-size:12px;margin:0">All 13 stages completed with verified technical evidence. You are ready to advance to the next competency lab.</p>
+            <button class="continue-btn" onclick="nextAcademyCourse()" style="margin-top:12px">Proceed to Next Lab →</button>
           </div>
         </section>
 
         <!-- Right: Active Case & Dynamic Animated SVG Map -->
         <aside class="side-case">
           <section class="card case-data">
-            <div style="color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.14em">ACTIVE CASE CONTEXT</div>
-            <div><span>CLASS</span><b>${course.id}</b></div>
+            <div style="color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.14em">ACTIVE CASE &amp; VM CONTEXT</div>
+            <div><span>LAB ID</span><b>${course.id}</b></div>
+            <div><span>TARGET VM</span><b>${course.vm ? course.vm.name : 'sxl-node'}</b></div>
+            <div><span>TARGET IP</span><b>${course.vm ? course.vm.ip : course.destination}</b></div>
             <div><span>SOURCE</span><b>${course.source}</b></div>
-            <div><span>DESTINATION</span><b>${course.destination}</b></div>
             <div><span>SERVICE</span><b>${course.service}</b></div>
+            <div><span>VPN AGENT</span><b>${course.vm ? course.vm.vpnAgent : 'mesh-01'}</b></div>
             <div><span>STAGE</span><b>${(sIdx + 1)} / ${course.stages.length}</b></div>
           </section>
 
           <section class="card">
-            <div style="color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.14em">INVESTIGATION MAP</div>
+            <div style="color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.14em">INFRASTRUCTURE TRAJECTORY</div>
             <div class="svg-wrap">
               ${renderAcademySvg(course, sIdx)}
             </div>
@@ -2807,7 +2868,7 @@ function renderAcademySvg(course, sIdx) {
       <text x="512" y="119" text-anchor="middle" style="font-size:9px;fill:var(--muted)">TARGET / SERVICE</text>
 
       <text x="28" y="174" style="font-size:9.5px;fill:var(--muted)">
-        Evidence flow: Stage ${(sIdx + 1)} (${esc(course.stages[sIdx].name)}) — telemetry highlights active control point.
+        Evidence flow: Stage ${(sIdx + 1)} (${esc(course.stages[sIdx].name)}) — ${esc(course.vm ? course.vm.name + ' (' + course.vm.ip + ')' : 'active telemetry')}
       </text>
     </svg>
   `;
@@ -2876,10 +2937,23 @@ function prevAcademyStage() {
   }
 }
 
-function runAcademyCommand(cmd, src, dst, srv) {
+function runAcademyCommand(cIdx, sIdx) {
+  const course = window.ACADEMY_COURSES[cIdx];
+  const stage = course.stages[sIdx];
   const term = document.getElementById('academyTerm');
   if (!term) return;
-  term.textContent = `$ ${cmd}\n[shadowxlab kernel simulator v8]\n${src} -> ${dst} ${srv}\naction=OBSERVED  timestamp=${new Date().toISOString().slice(11, 19)}  state=ESTABLISHED\nflags=[SYN,ACK] ttl=64 window=65535\npacket_verdict: INSPECTED & RECORDED`;
+
+  let simOutput = `[target: ${course.vm ? course.vm.name : 'sxl-node'} (${course.vm ? course.vm.ip : course.destination})]\n$ ${stage.command}\n\n`;
+  if (stage.worked && stage.worked.includes('Output observed:\n')) {
+    simOutput += stage.worked.split('Output observed:\n')[1];
+  } else if (stage.type === 'attack') {
+    simOutput += `[!] ADVERSARY ACTION DETECTED\nTimestamp: ${new Date().toISOString()}\nTarget: ${course.vm ? course.vm.name : 'node'}\nStatus: PAYLOAD EXECUTED\nEvent logged to central SIEM index.`;
+  } else if (stage.type === 'defend') {
+    simOutput += `[+] DEFENSIVE TELEMETRY CORRELATION\nQuery returned matching security events.\nHost: ${course.vm ? course.vm.name : 'node'}\nAlert Rule: [HIGH-FIDELITY MATCH] Evidence preserved.`;
+  } else {
+    simOutput += `[shadowxlab telemetry kernel]\n${course.source} -> ${course.destination} (${course.service})\naction=RECORDED  time=${new Date().toISOString().slice(11, 19)}  state=ESTABLISHED\npacket_verdict: TELEMETRY PARSED & INDEXED`;
+  }
+  term.textContent = simOutput;
 }
 
 function renderPrerequisitesView() {
@@ -2891,7 +2965,7 @@ function renderPrerequisitesView() {
         <div class="prereq-head">
           <div class="eyebrow">START HERE · HARDWARE · SOFTWARE · APPS · TOOLS</div>
           <h2>Prerequisites &amp; Lab Stack Requirements</h2>
-          <p>Know exactly what you need before starting the 25-class SOC L1 path. The browser course runs seamlessly offline. A full multi-VM range setup is provided below for hands-on practice.</p>
+          <p>Know exactly what you need before starting the 40-lab SOC L1 Foundation Track. The browser course runs seamlessly offline with full-topic concept depth and simulated VM nodes. A multi-VM range setup is provided below for advanced external practice.</p>
         </div>
 
         <div class="prereq-grid">
@@ -3056,7 +3130,7 @@ function renderPrerequisitesView() {
         </div>
 
         <div class="prereq-note">
-          <strong>Ready to start?</strong> Click on <strong>"🎓 25-Class Academy"</strong> above to begin Class C01 (Network Fundamentals), or switch to <strong>"⚡ 45 Hands-On Labs"</strong> to interact directly with the live command simulators.
+          <strong>Ready to start?</strong> Click on <strong>"🎓 40-Lab Foundation Track"</strong> above to begin Lab L01 (What Is an IT Infrastructure?), or switch to <strong>"⚡ 45 Hands-On Labs"</strong> to interact directly with the live command simulators.
         </div>
       </section>
     </div>
