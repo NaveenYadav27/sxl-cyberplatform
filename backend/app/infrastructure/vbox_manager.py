@@ -797,4 +797,293 @@ class VirtualBoxManager:
             "timestamp": datetime.utcnow().isoformat() + "Z"
         }
 
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # ─── EXTENDED MACHINE SETTINGS, LOGS, SCREENSHOT & MEDIA CONTROLS ─────────
+    # ══════════════════════════════════════════════════════════════════════════
+
+    def get_vm_extended_info(self, vm_id: str) -> Dict[str, Any]:
+        """Fetch complete VirtualBox settings: RAM, CPU, VRAM, Graphics, Boot order, Paths."""
+        if not self.vbox_bin:
+            return {}
+
+        info = {
+            "uuid": vm_id,
+            "memory_mb": 1024,
+            "cpus": 1,
+            "vram_mb": 16,
+            "graphics_controller": "vmsvga",
+            "accelerate3d": False,
+            "boot_order": ["disk", "dvd", "net"],
+            "cfg_file": "",
+            "log_folder": "",
+            "optical_drive": None,
+            "optical_attached": "emptydrive",
+            "storage_controllers": []
+        }
+
+        try:
+            res = subprocess.run([self.vbox_bin, "showvminfo", vm_id, "--machinereadable"], capture_output=True, text=True, timeout=5)
+            if res.returncode == 0:
+                raw = res.stdout
+                for line in raw.splitlines():
+                    if line.startswith("memory="):
+                        info["memory_mb"] = int(line.split("=", 1)[1])
+                    elif line.startswith("cpus="):
+                        info["cpus"] = int(line.split("=", 1)[1])
+                    elif line.startswith("vram="):
+                        info["vram_mb"] = int(line.split("=", 1)[1])
+                    elif line.startswith("graphicscontroller="):
+                        info["graphics_controller"] = line.split("=", 1)[1].strip('"')
+                    elif line.startswith("accelerate3d="):
+                        info["accelerate3d"] = (line.split("=", 1)[1].strip('"').lower() == "on")
+                    elif line.startswith("CfgFile="):
+                        info["cfg_file"] = line.split("=", 1)[1].strip('"')
+                    elif line.startswith("LogFolder="):
+                        info["log_folder"] = line.split("=", 1)[1].strip('"')
+
+                # Boot order
+                boot_items = []
+                for b_idx in range(1, 5):
+                    m_boot = re.search(fr'boot{b_idx}="([^"]+)"', raw)
+                    if m_boot and m_boot.group(1) != "none":
+                        boot_items.append(m_boot.group(1))
+                if boot_items:
+                    info["boot_order"] = boot_items
+
+                # Optical drive detection (IDE or SATA)
+                m_opt = re.search(r'"(IDE|SATA)-(\d+)-(\d+)"="([^"]+)"', raw)
+                if m_opt:
+                    info["optical_drive"] = {
+                        "controller": m_opt.group(1),
+                        "port": int(m_opt.group(2)),
+                        "device": int(m_opt.group(3))
+                    }
+                    info["optical_attached"] = m_opt.group(4)
+        except Exception as e:
+            logger.error(f"Error getting extended info for {vm_id}: {e}")
+
+        return info
+
+    def update_vm_settings(self, vm_id: str, memory_mb: Optional[int] = None, cpus: Optional[int] = None,
+                           vram_mb: Optional[int] = None, graphics_controller: Optional[str] = None,
+                           boot1: Optional[str] = None, boot2: Optional[str] = None, boot3: Optional[str] = None) -> Dict[str, Any]:
+        """Modify hardware settings (RAM, CPUs, VRAM, Graphics, Boot) on poweroff VM."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        cmd = [self.vbox_bin, "modifyvm", vm_id]
+        if memory_mb is not None:
+            cmd.extend(["--memory", str(memory_mb)])
+        if cpus is not None:
+            cmd.extend(["--cpus", str(cpus)])
+        if vram_mb is not None:
+            cmd.extend(["--vram", str(vram_mb)])
+        if graphics_controller:
+            cmd.extend(["--graphicscontroller", graphics_controller])
+        if boot1:
+            cmd.extend(["--boot1", boot1])
+        if boot2:
+            cmd.extend(["--boot2", boot2])
+        if boot3:
+            cmd.extend(["--boot3", boot3])
+
+        try:
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"Hardware settings updated for '{vm_id}'."}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def discard_saved_state(self, vm_id: str) -> Dict[str, Any]:
+        """Discard saved state of a VM to return it to poweroff state."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        try:
+            res = subprocess.run([self.vbox_bin, "discardstate", vm_id], capture_output=True, text=True, timeout=15)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"Saved state discarded for '{vm_id}'."}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def send_keys(self, vm_id: str, combo: str = "ctrl-alt-del") -> Dict[str, Any]:
+        """Send keyboard scancodes to a running VM (e.g. Ctrl+Alt+Del)."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        # Scancodes for Ctrl+Alt+Del press and release:
+        # 1d (Ctrl press), 38 (Alt press), 53 (Del press), d3 (Del release), b8 (Alt release), 9d (Ctrl release)
+        scancodes = ["1d", "38", "53", "d3", "b8", "9d"]
+        try:
+            cmd = [self.vbox_bin, "controlvm", vm_id, "keyboardputscancode"] + scancodes
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"Sent '{combo}' to VM '{vm_id}'."}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def take_screenshot(self, vm_id: str) -> Dict[str, Any]:
+        """Capture a live PNG screenshot of the running VM display and return as base64 data URL."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        import tempfile
+        import base64
+
+        tmp_png = os.path.join(tempfile.gettempdir(), f"vbox_shot_{os.getpid()}_{datetime.now().strftime('%H%M%S')}.png")
+        try:
+            res = subprocess.run([self.vbox_bin, "controlvm", vm_id, "screenshotpng", tmp_png], capture_output=True, text=True, timeout=8)
+            if res.returncode == 0 and os.path.exists(tmp_png):
+                with open(tmp_png, "rb") as f:
+                    b64 = base64.b64encode(f.read()).decode("utf-8")
+                try:
+                    os.remove(tmp_png)
+                except Exception:
+                    pass
+                return {
+                    "status": "ok",
+                    "image_data": f"data:image/png;base64,{b64}",
+                    "timestamp": datetime.utcnow().isoformat() + "Z"
+                }
+            return {"status": "error", "message": res.stderr.strip() or "Failed to capture screenshot. VM may be powered off."}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def get_vm_logs(self, vm_id: str, max_lines: int = 200) -> Dict[str, Any]:
+        """Read recent log entries from VBox.log for this VM."""
+        ext = self.get_vm_extended_info(vm_id)
+        log_folder = ext.get("log_folder")
+        if not log_folder and ext.get("cfg_file"):
+            log_folder = os.path.join(os.path.dirname(ext["cfg_file"]), "Logs")
+
+        if not log_folder or not os.path.exists(log_folder):
+            # Try default VirtualBox VMs path
+            default_user_dir = os.path.expanduser("~")
+            log_folder = os.path.join(default_user_dir, "VirtualBox VMs", vm_id, "Logs")
+
+        log_file = os.path.join(log_folder, "VBox.log")
+        if not os.path.exists(log_file):
+            return {"status": "error", "message": f"Log file not found at {log_file}."}
+
+        try:
+            with open(log_file, "r", encoding="utf-8", errors="replace") as f:
+                lines = f.readlines()
+            return {
+                "status": "ok",
+                "file": log_file,
+                "total_lines": len(lines),
+                "lines": [l.rstrip() for l in lines[-max_lines:]]
+            }
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def open_vm_folder(self, vm_id: str) -> Dict[str, Any]:
+        """Open the VM directory in Windows Explorer."""
+        ext = self.get_vm_extended_info(vm_id)
+        cfg_file = ext.get("cfg_file")
+        if cfg_file and os.path.exists(cfg_file):
+            folder = os.path.dirname(cfg_file)
+            try:
+                subprocess.Popen(["explorer.exe", folder])
+                return {"status": "ok", "message": f"Opened folder: {folder}"}
+            except Exception as e:
+                return {"status": "error", "message": str(e)}
+        return {"status": "error", "message": "VM configuration directory not found."}
+
+    def mount_guest_additions(self, vm_id: str) -> Dict[str, Any]:
+        """Mount VBoxGuestAdditions.iso into the VM optical drive."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        # Locate GuestAdditions ISO
+        iso_candidates = [
+            os.path.join(os.path.dirname(self.vbox_bin), "VBoxGuestAdditions.iso"),
+            r"C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso",
+            r"C:\Program Files (x86)\Oracle\VirtualBox\VBoxGuestAdditions.iso",
+        ]
+        iso_path = None
+        for p in iso_candidates:
+            if os.path.exists(p):
+                iso_path = p
+                break
+
+        if not iso_path:
+            iso_path = "additions"
+
+        return self.mount_iso(vm_id, iso_path)
+
+    def mount_iso(self, vm_id: str, iso_path: str) -> Dict[str, Any]:
+        """Mount an ISO image or additions to the optical drive."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        ext = self.get_vm_extended_info(vm_id)
+        ctrl_name = "IDE"
+        port = 1
+        device = 0
+        if ext.get("optical_drive"):
+            ctrl_name = ext["optical_drive"]["controller"]
+            port = ext["optical_drive"]["port"]
+            device = ext["optical_drive"]["device"]
+
+        try:
+            cmd = [
+                self.vbox_bin, "storageattach", vm_id,
+                "--storagectl", ctrl_name,
+                "--port", str(port),
+                "--device", str(device),
+                "--type", "dvddrive",
+                "--medium", iso_path
+            ]
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"Mounted '{iso_path}' to optical drive ({ctrl_name}:{port})."}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def eject_iso(self, vm_id: str) -> Dict[str, Any]:
+        """Eject optical drive medium."""
+        return self.mount_iso(vm_id, "emptydrive")
+
+    def export_ova(self, vm_id: str, output_path: Optional[str] = None) -> Dict[str, Any]:
+        """Export VM to an OVA appliance file."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        if not output_path:
+            downloads = os.path.join(os.path.expanduser("~"), "Downloads")
+            clean_name = re.sub(r'[^a-zA-Z0-9_-]', '_', vm_id)
+            output_path = os.path.join(downloads, f"{clean_name}_ShadowXLab.ova")
+
+        try:
+            cmd = [self.vbox_bin, "export", vm_id, "--output", output_path]
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"Exported OVA to: {output_path}", "file": output_path}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    def remove_vm(self, vm_id: str, delete_files: bool = False) -> Dict[str, Any]:
+        """Unregister VM from VirtualBox with optional file deletion."""
+        if not self.vbox_bin:
+            return {"status": "error", "message": "VirtualBox not found."}
+
+        cmd = [self.vbox_bin, "unregistervm", vm_id]
+        if delete_files:
+            cmd.append("--delete")
+
+        try:
+            res = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
+            if res.returncode == 0:
+                return {"status": "ok", "message": f"VM '{vm_id}' unregistered successfully."}
+            return {"status": "error", "message": res.stderr.strip()}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
 vbox_manager = VirtualBoxManager()

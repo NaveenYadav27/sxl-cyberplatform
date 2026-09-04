@@ -240,3 +240,113 @@ async def auto_bind_labs():
 async def test_vm_connectivity(payload: ConnectivityTestRequest):
     """Test live ICMP ping latency and TCP port socket reachability to a VM."""
     return vbox_manager.test_connectivity(ip=payload.ip, port=payload.port)
+
+
+class UpdateSettingsRequest(BaseModel):
+    memory_mb: Optional[int] = None
+    cpus: Optional[int] = None
+    vram_mb: Optional[int] = None
+    graphics_controller: Optional[str] = None
+    boot1: Optional[str] = None
+    boot2: Optional[str] = None
+    boot3: Optional[str] = None
+
+class MountIsoRequest(BaseModel):
+    iso_path: str
+
+class ExportOvaRequest(BaseModel):
+    output_path: Optional[str] = None
+
+class RemoveVmRequest(BaseModel):
+    delete_files: bool = False
+
+@router.get("/vms/{vm_id}/settings")
+async def get_vm_settings(vm_id: str):
+    """Get full hardware settings for a VM (RAM, CPUs, VRAM, Boot, Graphics, Storage)."""
+    return {
+        "status": "ok",
+        "settings": vbox_manager.get_vm_extended_info(vm_id)
+    }
+
+@router.post("/vms/{vm_id}/settings")
+async def update_vm_settings(vm_id: str, payload: UpdateSettingsRequest):
+    """Modify VM hardware settings (RAM, CPUs, VRAM, Graphics, Boot)."""
+    res = vbox_manager.update_vm_settings(
+        vm_id, memory_mb=payload.memory_mb, cpus=payload.cpus,
+        vram_mb=payload.vram_mb, graphics_controller=payload.graphics_controller,
+        boot1=payload.boot1, boot2=payload.boot2, boot3=payload.boot3
+    )
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/discard-state")
+async def discard_saved_state(vm_id: str):
+    """Discard saved state to poweroff VM."""
+    res = vbox_manager.discard_saved_state(vm_id)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/keys")
+async def send_vm_keys(vm_id: str, combo: str = "ctrl-alt-del"):
+    """Send keyboard scancodes to running VM (e.g. Ctrl+Alt+Del)."""
+    res = vbox_manager.send_keys(vm_id, combo=combo)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.get("/vms/{vm_id}/screenshot")
+async def get_vm_screenshot(vm_id: str):
+    """Capture live screenshot from running VM screen."""
+    return vbox_manager.take_screenshot(vm_id)
+
+@router.get("/vms/{vm_id}/logs")
+async def get_vm_logs(vm_id: str, max_lines: int = 150):
+    """Read recent lines from VBox.log."""
+    return vbox_manager.get_vm_logs(vm_id, max_lines=max_lines)
+
+@router.post("/vms/{vm_id}/open-folder")
+async def open_vm_folder(vm_id: str):
+    """Open VM folder in Windows Explorer."""
+    return vbox_manager.open_vm_folder(vm_id)
+
+@router.post("/vms/{vm_id}/mount-guest-additions")
+async def mount_guest_additions(vm_id: str):
+    """Mount VBoxGuestAdditions.iso to optical drive."""
+    res = vbox_manager.mount_guest_additions(vm_id)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/mount-iso")
+async def mount_iso(vm_id: str, payload: MountIsoRequest):
+    """Mount custom ISO to optical drive."""
+    res = vbox_manager.mount_iso(vm_id, payload.iso_path)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/eject-iso")
+async def eject_iso(vm_id: str):
+    """Eject optical drive."""
+    res = vbox_manager.eject_iso(vm_id)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/export-ova")
+async def export_ova(vm_id: str, payload: ExportOvaRequest):
+    """Export VM to OVA package."""
+    res = vbox_manager.export_ova(vm_id, payload.output_path)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
+
+@router.post("/vms/{vm_id}/remove")
+async def remove_vm(vm_id: str, payload: RemoveVmRequest):
+    """Unregister VM from VirtualBox."""
+    res = vbox_manager.remove_vm(vm_id, delete_files=payload.delete_files)
+    if res.get("status") == "error":
+        raise HTTPException(status_code=400, detail=res.get("message"))
+    return res
