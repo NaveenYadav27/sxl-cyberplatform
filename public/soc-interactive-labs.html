@@ -326,6 +326,64 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 .vm-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(3px)}
 .vm-modal-content{background:var(--card-bg);border:1.5px solid var(--line);border-radius:14px;max-width:480px;width:100%;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.35);font-family:inherit}
 
+
+/* ─── High Clarity Lab Scope, Coverage & Objectives Matrix ─── */
+.lab-coverage-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0 14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.cov-item{display:flex;flex-direction:column;gap:3px}
+.cov-lbl{font-size:9px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.cov-val{font-size:12px;color:var(--text);font-weight:750;line-height:1.35}
+.cov-val.monospaced{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent)}
+
+.phase-roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0 10px}
+@media(max-width:850px){.phase-roadmap{grid-template-columns:repeat(2,1fr)}}
+.phase-card{border:1px solid var(--line);border-radius:9px;background:var(--card-bg);padding:9px 12px;transition:all .2s ease;position:relative}
+.phase-card.active{border-color:var(--accent);background:var(--subtle);box-shadow:0 0 12px rgba(227,30,36,.2)}
+.phase-card.completed{border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.05)}
+.phase-tag{font-size:8.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.phase-card.active .phase-tag{color:var(--accent)}
+.phase-card.completed .phase-tag{color:var(--good)}
+.phase-title{font-size:11px;font-weight:800;color:var(--text);line-height:1.3}
+.phase-stages{font-size:9.5px;color:var(--muted);margin-top:3px}
+
+.objectives-header{display:flex;align-items:center;justify-content:space-between;margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.objectives-title{font-size:11.5px;font-weight:900;letter-spacing:.12em;color:var(--text);text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.obj-toggle-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:10px;font-weight:750;padding:3px 8px;border-radius:6px;cursor:pointer;transition:all .15s}
+.obj-toggle-btn:hover{border-color:var(--accent);color:var(--text)}
+
+.objectives{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:10px}
+.obj{border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:12px;background:var(--panel);color:var(--text);line-height:1.5;word-break:break-word;overflow-wrap:break-word;transition:all .2s cubic-bezier(0.4,0,0.2,1);position:relative}
+.obj:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 14px rgba(227,30,36,.18)}
+.obj-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.obj-badge{font-size:9px;font-weight:950;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+.obj-status{font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:12px}
+.obj.active-focus{border-color:#38bdf8;background:rgba(56,189,248,.07);box-shadow:0 0 16px rgba(56,189,248,.22)}
+.obj.active-focus .obj-badge{color:#38bdf8}
+.obj.active-focus .obj-status{background:rgba(56,189,248,.2);color:#38bdf8;border:1px solid rgba(56,189,248,.4)}
+.obj.completed{border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.05)}
+.obj.completed .obj-badge{color:var(--good)}
+.obj.completed .obj-status{background:rgba(16,185,129,.15);color:var(--good);border:1px solid rgba(16,185,129,.3)}
+
+/* ─── Active Stage Concept Banner & Alignment ─── */
+.stage-obj-banner{background:linear-gradient(135deg,rgba(56,189,248,.1),rgba(227,30,36,.06));border:1px solid rgba(56,189,248,.25);border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.stage-obj-banner .icon{font-size:18px;flex-shrink:0}
+.stage-obj-banner .text{font-size:11.5px;line-height:1.45;color:var(--text)}
+.stage-obj-banner b{color:#38bdf8;margin-right:4px}
+
+.concept-deep-dive{background:var(--card-bg);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:12px 0}
+.concept-deep-dive h4{font-size:13px;margin:0 0 8px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:900}
+.concept-deep-dive p{margin:0;font-size:13px;line-height:1.75;color:var(--text)}
+
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+@media(max-width:768px){.compare-grid{grid-template-columns:1fr}}
+.compare-box{border-radius:10px;padding:12px 14px;font-size:12px;line-height:1.6}
+.compare-box.trap{background:rgba(239,68,68,.08);border:1.5px solid rgba(239,68,68,.3);color:var(--text)}
+.compare-box.trap:hover{border-color:#ef4444;box-shadow:0 4px 16px rgba(239,68,68,.25)}
+.compare-box.mindset{background:rgba(16,185,129,.08);border:1.5px solid rgba(16,185,129,.3);color:var(--text)}
+.compare-box.mindset:hover{border-color:var(--good);box-shadow:0 4px 16px rgba(16,185,129,.25)}
+.compare-box b{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.1em;margin-bottom:6px;text-transform:uppercase}
+.compare-box.trap b{color:#ef4444}
+.compare-box.mindset b{color:var(--good)}
+
 </style>
 <script src="academy_data.js"></script>
 <script src="networking_tools.js"></script>
@@ -2952,6 +3010,67 @@ function nextAcademyCourse() {
   }
 }
 
+
+function getStagePhaseInfo(sIdx) {
+  if (sIdx <= 3) {
+    return {
+      phase: 1,
+      title: "Phase 1: Foundational Concept & RFC Standards",
+      desc: "Zero knowledge mental models, protocol mechanics, authoritative definitions, and 5W1H operational breakdown.",
+      objIdx: Math.floor(sIdx / 2)
+    };
+  } else if (sIdx <= 6) {
+    return {
+      phase: 2,
+      title: "Phase 2: Live Host Observation & Guided Practice",
+      desc: "Live system state verification, ARP/route tables, guided command execution, and packet stream filtering.",
+      objIdx: sIdx === 4 ? 2 : (sIdx === 5 ? 2 : 3)
+    };
+  } else if (sIdx <= 10) {
+    return {
+      phase: 3,
+      title: "Phase 3: Attack, Blue Defense, Break & Remediation",
+      desc: "Adversary MITRE emulation, SIEM correlation rule verification, injected service break, and root-cause fix.",
+      objIdx: 4
+    };
+  } else {
+    return {
+      phase: 4,
+      title: "Phase 4: Hiring Interview Defense & Competency Sign-off",
+      desc: "Architectural articulation in technical interviews and verified competency milestone advancement.",
+      objIdx: 5
+    };
+  }
+}
+
+function getStageTypeHeading(st, sIdx) {
+  const headings = [
+    { type: 'zero_knowledge', icon: '🧠', title: '01 · ZERO KNOWLEDGE · INTUITIVE MENTAL MODEL', desc: 'No jargon. Relatable real-world analogy establishing why this technology exists.' },
+    { type: 'fundamentals', icon: '📐', title: '02 · ARCHITECTURAL MECHANICS & PROTOCOLS', desc: 'RFC protocol mechanics, packet structures, daemon architecture, and default ports.' },
+    { type: 'definition', icon: '📖', title: '03 · AUTHORITATIVE RFC DEFINITIONS & TOOLS', desc: 'Standard RFC terminology, command-line tool syntax, and configuration files.' },
+    { type: 'understand', icon: '🧭', title: '04 · THE 5W1H SOC OPERATIONAL BLUEPRINT', desc: 'The 6 operational investigative dimensions: What, Why, When, Where, Who, and How.' },
+    { type: 'see', icon: '👁️', title: '05 · LIVE SYSTEM GROUND TRUTH OBSERVATION', desc: 'Inspecting active host interfaces, routing table, ARP cache, and listening sockets.' },
+    { type: 'do', icon: '💻', title: '06 · GUIDED CLI INVESTIGATION ON TARGET VM', desc: 'Step-by-step verified execution against the bound live target virtual machine.' },
+    { type: 'practise', icon: '🔬', title: '07 · INDEPENDENT FORENSIC TELEMETRY TRIAGE', desc: 'Filtering raw logs and packet captures to extract indicators of compromise (IOCs).' },
+    { type: 'attack', icon: '⚔️', title: '08 · LIVE ADVERSARY ATTACK (RED TEAM EMULATION)', desc: 'Simulating attacker tactics, port scans, password spraying, or payload delivery.' },
+    { type: 'defend', icon: '🛡️', title: '09 · BLUE TEAM DETECTION & SIEM CORRELATION', desc: 'Triage SIEM alerts, raw event ID mapping, and hostile activity containment.' },
+    { type: 'break', icon: '⚠️', title: '10 · INJECTED FAILURE & OPERATIONAL DEGRADATION', desc: 'Observing how firewall drops, misconfigurations, and errors degrade telemetry.' },
+    { type: 'fix', icon: '🔧', title: '11 · ROOT-CAUSE REMEDIATION & HARDENING', desc: 'Correcting configuration parameters, inserting firewall rules, and reloading daemons.' },
+    { type: 'interview', icon: '🎙️', title: '12 · TECHNICAL HIRING INTERVIEW PREPARATION', desc: 'Explaining architecture, attack detection, and triage methodology like a senior analyst.' },
+    { type: 'proceed', icon: '🏆', title: '13 · COMPETENCY ADVANCEMENT & MILESTONE SIGN-OFF', desc: 'Verified technical evidence completed. Advance to the next foundation lab.' }
+  ];
+  return headings[sIdx] || { type: 'general', icon: '⚡', title: st.name.toUpperCase(), desc: 'Practical investigation stage.' };
+}
+
+let showObjectivesMatrix = true;
+function toggleObjectivesMatrix() {
+  showObjectivesMatrix = !showObjectivesMatrix;
+  const el = document.getElementById('objectivesGrid');
+  const btn = document.getElementById('objToggleBtn');
+  if (el) el.style.display = showObjectivesMatrix ? 'grid' : 'none';
+  if (btn) btn.textContent = showObjectivesMatrix ? '▲ Collapse Syllabus' : '▼ Expand Syllabus';
+}
+
 function renderAcademyClass(cIdx, sIdx) {
   if (!window.ACADEMY_COURSES || !window.ACADEMY_COURSES[cIdx]) return;
   const course = window.ACADEMY_COURSES[cIdx];
@@ -2968,19 +3087,34 @@ function renderAcademyClass(cIdx, sIdx) {
   const dynWorked = resolveDynamicText(stage.worked, course, effectiveVm);
   const dynExplain = resolveDynamicText(stage.explain, course, effectiveVm);
 
+  const phaseInfo = getStagePhaseInfo(sIdx);
+  const stageHeader = getStageTypeHeading(stage, sIdx);
+
   main.innerHTML = `
     <div class="academy-wrap">
-      <!-- ── Class Header with Objectives & VM Identifier ── -->
+      <!-- ── Class Header with Full Scope, Coverage & VM Identifier ── -->
       <section class="classhead">
-        <div class="eyebrow">${esc(course.moduleId || 'SOC')} · ${esc(course.moduleTitle || 'FOUNDATION TRACK')}</div>
-        <h2>${course.id}. ${esc(course.title)}</h2>
-        <p>${esc(course.desc || course.description || '')}</p>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div>
+            <div class="eyebrow">${esc(course.moduleId || 'SOC')} · ${esc(course.moduleTitle || 'FOUNDATION TRACK')}</div>
+            <h2>${course.id}. ${esc(course.title)}</h2>
+            <p style="font-size:13.5px;color:var(--text);margin-top:4px">${esc(course.desc || course.description || '')}</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="badge ${course.vm && course.vm.os && course.vm.os.toLowerCase().includes('windows') ? 'win' : 'nix'}" style="font-size:10px;padding:3px 10px">
+              ${course.vm ? course.vm.os : 'Enterprise Linux / Net'}
+            </span>
+            <span class="badge" style="font-size:10px;padding:3px 10px;border-color:var(--accent);color:var(--accent)">
+              13 Milestones · ${doneStages.length}/13 Complete
+            </span>
+          </div>
+        </div>
 
         <!-- 🖥️ Target Lab VM Identifier -->
         ${course.vm ? `
         <div class="vm-ident-card">
           <div class="vm-header">
-            <span class="vm-badge">🖥️ TARGET LAB VM / TELEMETRY NODE</span>
+            <span class="vm-badge">🖥️ TARGET LAB VM &amp; ACTIVE TELEMETRY NODE</span>
             <div style="display:flex;align-items:center;gap:8px">
               <button class="vm-edit-btn" onclick="openVmBindingModal('${course.id}')" title="Configure target IP or bind live VirtualBox VM">
                 ✏️ Edit IP / Bind Live VM
@@ -2994,18 +3128,60 @@ function renderAcademyClass(cIdx, sIdx) {
             <div class="vm-item"><span class="vm-lbl">Target IP Address</span><b class="vm-val monospaced" style="font-size:13px;color:var(--accent)">${esc(effectiveVm.ip)}</b></div>
             <div class="vm-item"><span class="vm-lbl">Infrastructure Role</span><b class="vm-val">${esc(effectiveVm.role)}</b></div>
             <div class="vm-item"><span class="vm-lbl">VPN Mesh Agent</span><b class="vm-val monospaced">${esc(effectiveVm.vpnAgent)}</b></div>
-            <div class="vm-item"><span class="vm-lbl">Service / Ports</span><b class="vm-val monospaced">${esc(course.service)}</b></div>
+            <div class="vm-item"><span class="vm-lbl">Exposed Sockets</span><b class="vm-val monospaced">${esc(course.service)}</b></div>
           </div>
         </div>
         ` : ''}
 
-        <div class="objectives">
-          ${course.objectives.map((obj, i) => `
-            <div class="obj">
-              <b>OUTCOME ${i + 1}</b>
-              ${esc(obj)}
-            </div>
-          `).join('')}
+        <!-- 🧭 4-Phase Learning Journey Roadmap -->
+        <div class="phase-roadmap">
+          <div class="phase-card ${phaseInfo.phase === 1 ? 'active' : (sIdx > 3 ? 'completed' : '')}">
+            <div class="phase-tag">${phaseInfo.phase === 1 ? '⚡ ACTIVE PHASE 1' : (sIdx > 3 ? '✓ COMPLETED' : 'PHASE 1')}</div>
+            <div class="phase-title">Concepts &amp; Standards</div>
+            <div class="phase-stages">Stages 01–04 · Mental model &amp; 5W1H</div>
+          </div>
+          <div class="phase-card ${phaseInfo.phase === 2 ? 'active' : (sIdx > 6 ? 'completed' : '')}">
+            <div class="phase-tag">${phaseInfo.phase === 2 ? '⚡ ACTIVE PHASE 2' : (sIdx > 6 ? '✓ COMPLETED' : 'PHASE 2')}</div>
+            <div class="phase-title">Observation &amp; Guided CLI</div>
+            <div class="phase-stages">Stages 05–07 · Live sockets &amp; triage</div>
+          </div>
+          <div class="phase-card ${phaseInfo.phase === 3 ? 'active' : (sIdx > 10 ? 'completed' : '')}">
+            <div class="phase-tag">${phaseInfo.phase === 3 ? '⚡ ACTIVE PHASE 3' : (sIdx > 10 ? '✓ COMPLETED' : 'PHASE 3')}</div>
+            <div class="phase-title">Attack, Defense &amp; Fix</div>
+            <div class="phase-stages">Stages 08–11 · MITRE attack &amp; patch</div>
+          </div>
+          <div class="phase-card ${phaseInfo.phase === 4 ? 'active' : (sIdx >= 12 && isClassDone ? 'completed' : '')}">
+            <div class="phase-tag">${phaseInfo.phase === 4 ? '⚡ ACTIVE PHASE 4' : (sIdx >= 12 && isClassDone ? '✓ MASTERED' : 'PHASE 4')}</div>
+            <div class="phase-title">Interview Readiness</div>
+            <div class="phase-stages">Stages 12–13 · Technical defense</div>
+          </div>
+        </div>
+
+        <!-- 🎯 Measurable Learning Objectives & Coverage -->
+        <div class="objectives-header">
+          <div class="objectives-title">
+            <span>🎯 Measurable Learning Objectives &amp; Technical Coverage</span>
+            <span style="font-size:10px;color:var(--muted);font-weight:700">(Stage ${(sIdx + 1)} maps to Objective ${(phaseInfo.objIdx + 1)})</span>
+          </div>
+          <button class="obj-toggle-btn" id="objToggleBtn" onclick="toggleObjectivesMatrix()">
+            ${showObjectivesMatrix ? '▲ Collapse Syllabus' : '▼ Expand Syllabus'}
+          </button>
+        </div>
+
+        <div class="objectives" id="objectivesGrid" style="display:${showObjectivesMatrix ? 'grid' : 'none'}">
+          ${course.objectives.map((obj, i) => {
+            const isFocus = i === phaseInfo.objIdx;
+            const isDone = (i === 0 && sIdx >= 2) || (i === 1 && sIdx >= 4) || (i === 2 && sIdx >= 6) || (i === 3 && sIdx >= 7) || (i === 4 && sIdx >= 11) || (i === 5 && isClassDone);
+            return `
+              <div class="obj ${isFocus ? 'active-focus' : ''} ${isDone ? 'completed' : ''}">
+                <div class="obj-top">
+                  <span class="obj-badge">OBJECTIVE ${(i + 1)}</span>
+                  <span class="obj-status">${isFocus ? '⚡ IN PROGRESS' : (isDone ? '✓ MASTERED' : 'UPCOMING')}</span>
+                </div>
+                ${esc(obj)}
+              </div>
+            `;
+          }).join('')}
         </div>
       </section>
 
@@ -3025,38 +3201,66 @@ function renderAcademyClass(cIdx, sIdx) {
 
       <!-- ── 2-Column Investigation View ── -->
       <div class="academy-main">
-        <!-- Left: Stage Card & 5W1H Engine -->
+        <!-- Left: Stage Card & Structured Concept Engine -->
         <section class="card">
           <div class="meta">
-            <span>STAGE ${(sIdx + 1)} OF ${course.stages.length}</span>
-            <span>${esc(stage.name.toUpperCase())}</span>
+            <span>MILESTONE ${(sIdx + 1)} OF ${course.stages.length} · ${esc(stageHeader.title)}</span>
+            <span style="color:#38bdf8;font-weight:900">${esc(phaseInfo.title)}</span>
           </div>
-          <h3>${esc(stage.name)}</h3>
-          <p class="explain">${esc(dynExplain)}</p>
-
-          <div class="worked">
-            <b style="color:var(--accent);display:block;margin-bottom:4px">WORKED CASE EVIDENCE & TECHNICAL BREAKDOWN</b>
-            <div style="white-space:pre-wrap;font-family:inherit">${esc(dynWorked)}</div>
-          </div>
-
-          <!-- 5W1H Grid -->
-          <div class="teach">
-            <div><b>WHAT?</b><span>${esc(stage.what)}</span></div>
-            <div><b>WHY?</b><span>${esc(stage.why)}</span></div>
-            <div><b>WHEN?</b><span>${esc(stage.when)}</span></div>
-            <div><b>WHERE?</b><span>${esc(stage.where)}</span></div>
-            <div><b>WHO?</b><span>${esc(stage.who)}</span></div>
-            <div><b>HOW?</b><span>${esc(stage.how)}</span></div>
+          
+          <!-- Stage Objective Alignment Banner -->
+          <div class="stage-obj-banner">
+            <div class="icon">${stageHeader.icon}</div>
+            <div class="text">
+              <b>Mapped Learning Outcome ${(phaseInfo.objIdx + 1)}:</b>
+              <span>${esc(course.objectives[phaseInfo.objIdx] || course.objectives[0])}</span>
+            </div>
           </div>
 
-          <!-- Beginner Traps & Mental Model -->
-          <div class="box mistake">
-            <b>BEGINNER MISTAKE / TRAP</b>
-            <span>${esc(stage.mistake)}</span>
+          <h3 style="display:flex;align-items:center;gap:8px">
+            <span>${stageHeader.icon}</span> ${esc(stage.name)}
+          </h3>
+          <p style="color:var(--muted);font-size:12px;margin:0 0 12px;line-height:1.5">${esc(stageHeader.desc)}</p>
+
+          <!-- Core Concept Presentation & Deep Dive -->
+          <div class="concept-deep-dive">
+            <h4>💡 Core Theoretical Concept &amp; Mental Model</h4>
+            <p>${esc(dynExplain)}</p>
           </div>
-          <div class="box think">
-            <b>WHAT A SOC L1 ANALYST SHOULD THINK</b>
-            <span>${esc(stage.think)}</span>
+
+          <!-- Worked Case Study & Forensic Evidence -->
+          <div class="worked" style="margin-top:14px">
+            <b style="color:var(--accent);display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:11px;letter-spacing:.08em">
+              📋 INVESTIGATIVE CASE DOSSIER &amp; TECHNICAL PROOF
+            </b>
+            <div style="white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11.5px;line-height:1.6;color:var(--terminal-text)">${esc(dynWorked)}</div>
+          </div>
+
+          <!-- 🧭 The 5W1H SOC Operational Triage Blueprint -->
+          <div style="margin-top:18px">
+            <div style="font-size:11px;font-weight:950;letter-spacing:.12em;color:var(--text);text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+              🧭 5W1H SOC Operational Triage Blueprint
+            </div>
+            <div class="teach">
+              <div><b>📌 WHAT IS IT?</b><span>${esc(stage.what)}</span></div>
+              <div><b>❓ WHY CARE (RISK)?</b><span>${esc(stage.why)}</span></div>
+              <div><b>⏰ WHEN INVESTIGATED?</b><span>${esc(stage.when)}</span></div>
+              <div><b>📍 WHERE EVIDENCE LIVES?</b><span>${esc(stage.where)}</span></div>
+              <div><b>👤 WHO ACTS / GENERATES?</b><span>${esc(stage.who)}</span></div>
+              <div><b>🛠️ HOW TO TRIAGE &amp; CONTAIN?</b><span>${esc(stage.how)}</span></div>
+            </div>
+          </div>
+
+          <!-- Side-by-Side: Common Trap vs Senior SOC Mindset -->
+          <div class="compare-grid">
+            <div class="compare-box trap">
+              <b>🚨 Junior Analyst Trap (Mistake to Avoid)</b>
+              <span>${esc(stage.mistake)}</span>
+            </div>
+            <div class="compare-box mindset">
+              <b>🧠 Senior SOC Mindset (Tradecraft)</b>
+              <span>${esc(stage.think)}</span>
+            </div>
           </div>
 
           <!-- Knowledge Check Question -->
