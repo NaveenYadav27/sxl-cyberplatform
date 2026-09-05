@@ -3365,14 +3365,11 @@ async function executeLiveOnVm(cIdx, sIdx, cmd) {
     // Offline or simulator fallback
   }
 
-  term.textContent += `[+] Bound VM telemetry bridge online. Streaming live execution buffer:
-`;
+  term.textContent += `[+] Bound VM telemetry bridge online. Streaming live execution buffer:\n`;
   setTimeout(() => {
     let output = '';
-    if (stage.worked && stage.worked.includes('Output observed:
-')) {
-      output = stage.worked.split('Output observed:
-')[1].trim();
+    if (stage.worked && stage.worked.includes('Output observed:\n')) {
+      output = stage.worked.split('Output observed:\n')[1].trim();
     } else if (stage.type === 'attack') {
       output = `[!] ATTACK RUNNER: Target socket ${targetIp}:22 - Payload delivered.\n` +
                `Connection established. Process spawn UID: 1000 (analyst).\n` +
