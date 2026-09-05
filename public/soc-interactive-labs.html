@@ -363,6 +363,444 @@ svg text{font-family:Inter,system-ui,sans-serif;fill:var(--text)}
 .obj.completed .obj-badge{color:var(--good)}
 .obj.completed .obj-status{background:rgba(16,185,129,.15);color:var(--good);border:1px solid rgba(16,185,129,.3)}
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ─── FROM ZERO TO REAL JOB GROWTH CAREER ENGINE ───────────────────────────
+   ══════════════════════════════════════════════════════════════════════════ */
+.job-growth-container {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 16px 0 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  border-left: 4px solid #10b981;
+}
+
+.job-growth-header {
+  background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(56,189,248,0.06));
+  border-bottom: 1px solid var(--line);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.job-growth-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.job-growth-badge {
+  background: #10b981;
+  color: #000;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.job-growth-h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 850;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.job-growth-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.job-growth-nav {
+  display: flex;
+  gap: 4px;
+  background: rgba(0,0,0,0.25);
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.growth-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 6px 11px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all .18s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.growth-tab-btn:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.05);
+}
+
+.growth-tab-btn.active {
+  background: var(--card-bg);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border: 1px solid rgba(227,30,36,0.3);
+}
+
+.growth-tab-btn.all-btn {
+  color: #38bdf8;
+}
+
+.growth-tab-btn.all-btn.active {
+  border-color: rgba(56,189,248,0.4);
+  color: #38bdf8;
+}
+
+.growth-content-body {
+  padding: 16px;
+}
+
+.growth-panel {
+  display: none;
+}
+
+.growth-panel.active {
+  display: block;
+  animation: fadeIn .2s ease-in-out;
+}
+
+/* ── Panel 1: Ground Zero Intuition ── */
+.zero-mental-card {
+  background: rgba(16,185,129,0.06);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.zero-mental-card h5 {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+  color: #10b981;
+  font-weight: 850;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.zero-mental-card p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.packet-journey-box {
+  background: rgba(0,0,0,0.2);
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+
+.packet-journey-box b {
+  color: #38bdf8;
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.packet-journey-box ol {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ── Panel 2: 3-Tier Job Growth Matrix ── */
+.tier-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .tier-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tier-card {
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card-bg);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.tier-card.tier-1 {
+  border-top: 3px solid #38bdf8;
+  background: linear-gradient(180deg, rgba(56,189,248,0.06), transparent);
+}
+
+.tier-card.tier-2 {
+  border-top: 3px solid #f59e0b;
+  background: linear-gradient(180deg, rgba(245,158,11,0.06), transparent);
+}
+
+.tier-card.tier-3 {
+  border-top: 3px solid #a855f7;
+  background: linear-gradient(180deg, rgba(168,85,247,0.06), transparent);
+}
+
+.tier-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 6px;
+}
+
+.tier-badge {
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.tier-1 .tier-badge { background: rgba(56,189,248,0.2); color: #38bdf8; }
+.tier-2 .tier-badge { background: rgba(245,158,11,0.2); color: #f59e0b; }
+.tier-3 .tier-badge { background: rgba(168,85,247,0.2); color: #a855f7; }
+
+.tier-salary {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.tier-role-title {
+  font-size: 12.5px;
+  font-weight: 850;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.tier-alert-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 750;
+}
+
+.tier-alert-code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(0,0,0,0.25);
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin: 4px 0 8px;
+  display: block;
+  word-break: break-all;
+}
+
+.tier-checklist {
+  margin: 0 0 10px;
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.tier-rule-box {
+  background: rgba(0,0,0,0.25);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 10.5px;
+  color: var(--text);
+  line-height: 1.5;
+  border-left: 2px solid var(--line);
+}
+
+/* ── Panel 3: Resume & Portfolio Proof ── */
+.resume-box {
+  background: linear-gradient(135deg, rgba(234,179,8,0.08), rgba(245,158,11,0.03));
+  border: 1px solid rgba(234,179,8,0.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.resume-header b {
+  font-size: 11.5px;
+  color: #eab308;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resume-copy-btn {
+  background: rgba(234,179,8,0.15);
+  border: 1px solid rgba(234,179,8,0.4);
+  color: #eab308;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.resume-copy-btn:hover {
+  background: #eab308;
+  color: #000;
+}
+
+.resume-bullet-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text);
+  background: rgba(0,0,0,0.25);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #eab308;
+  font-style: italic;
+}
+
+.portfolio-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media(max-width: 768px) {
+  .portfolio-row { grid-template-columns: 1fr; }
+}
+
+.portfolio-item {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11px;
+}
+
+.portfolio-item b {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.portfolio-item span {
+  color: var(--accent);
+  font-weight: 750;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+/* ── Panel 4: Interview Gauntlet ── */
+.interview-gauntlet-card {
+  background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(249,115,22,0.04));
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.interview-q-title {
+  font-size: 13px;
+  font-weight: 900;
+  color: #f87171;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.interview-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .interview-split-grid { grid-template-columns: 1fr; }
+}
+
+.interview-trap-box {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.interview-trap-box b {
+  color: #ef4444;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.interview-win-box {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.interview-win-box b {
+  color: #10b981;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-bottom: 4px;
+}
+
 /* ─── Active Stage Concept Banner & Alignment ─── */
 .stage-obj-banner{background:linear-gradient(135deg,rgba(56,189,248,.1),rgba(227,30,36,.06));border:1px solid rgba(56,189,248,.25);border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .stage-obj-banner .icon{font-size:18px;flex-shrink:0}
@@ -3071,6 +3509,478 @@ function toggleObjectivesMatrix() {
   if (btn) btn.textContent = showObjectivesMatrix ? '▲ Collapse Syllabus' : '▼ Expand Syllabus';
 }
 
+
+// ══════════════════════════════════════════════════════════════════════════
+// ─── FROM ZERO TO REAL JOB GROWTH CAREER PROGRESSION ENGINE ─────────────
+// ══════════════════════════════════════════════════════════════════════════
+
+let activeGrowthTab = 'zero'; // 'zero', 'ladder', 'resume', 'interview', 'all'
+function switchGrowthTab(tabId, btn) {
+  activeGrowthTab = tabId;
+  const container = btn.closest('.job-growth-container');
+  if (!container) return;
+  container.querySelectorAll('.growth-tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const panels = container.querySelectorAll('.growth-panel');
+  panels.forEach(p => {
+    if (tabId === 'all') {
+      p.style.display = 'block';
+      p.classList.add('active');
+    } else {
+      p.style.display = p.id === `growth-panel-${tabId}` ? 'block' : 'none';
+      if (p.id === `growth-panel-${tabId}`) p.classList.add('active');
+    }
+  });
+}
+
+function copyGrowthText(text, btnId, origLabel) {
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById(btnId);
+    if (btn) {
+      btn.textContent = '✓ Copied to Clipboard!';
+      setTimeout(() => { btn.textContent = origLabel; }, 2200);
+    }
+  });
+}
+
+function getZeroToJobGrowth(course, stage, sIdx, effectiveVm) {
+  const cid = String(course.id).toUpperCase();
+  const cTitle = course.title || '';
+  const cNum = parseInt(cid.replace(/\D/g, '') || '1', 10);
+  const stName = stage.name || '';
+  const stCmd = stage.command || '';
+
+  // Topic categorizer
+  let topic = 'infra';
+  if (cNum >= 1 && cNum <= 5) topic = 'endpoint';
+  else if (cNum >= 6 && cNum <= 10) topic = 'network_proto';
+  else if (cNum >= 11 && cNum <= 15) topic = 'app_proto';
+  else if (cNum >= 16 && cNum <= 20) topic = 'traffic_def';
+  else if (cNum >= 21 && cNum <= 25) topic = 'telemetry_logs';
+  else if (cNum >= 26 && cNum <= 30) topic = 'detection_eng';
+  else if (cNum >= 31 && cNum <= 40) topic = 'attack_defense';
+
+  // Rich Topic Contexts
+  const contextMap = {
+    endpoint: {
+      analogyTitle: "The Ship Captain's Quarters & Identity Badges",
+      analogyStory: "Imagine being the captain of a cargo ship. You cannot sail if you don't know who is on board. The terminal is your captain's log: 'whoami' checks your crew rank, 'ps aux' is the roster of everyone currently working in the engine room, and open network sockets ('ss -tlpn') are the open portholes where smugglers could climb aboard. If an unknown sailor is spotted in the engine room with master keys, you have a security incident.",
+      packetJourney: [
+        "User or attacker types a command into the shell or drops a script payload.",
+        "The OS Kernel forks a process, assigns a Process ID (PID) and Security Token/UID.",
+        "Auditd (Linux) or Sysmon/Security.evtx (Windows Event ID 4688) records the execution timestamp, parent PID, user context, and CLI arguments.",
+        "The log pipeline ingests the telemetry into the SIEM within 30 seconds for analyst triage."
+      ],
+      l1Alert: "Suspicious Process Spawned by Service Account (e.g. www-data / SYSTEM spawning bash or powershell)",
+      l1Sla: "15-Minute Triage SLA",
+      l1Steps: [
+        "Verify Process Parentage: Check if the shell was spawned by an unexpected web server (apache, nginx, w3wp) indicating a web shell.",
+        "Inspect Arguments & Flags: Check for encoded arguments (-enc, base64, curl | sh).",
+        "Correlate Network Sockets: Check if the process immediately established an outbound socket to an external untrusted IP."
+      ],
+      l1FpTp: "FALSE POSITIVE if scheduled sysadmin maintenance script with approved change ticket. TRUE POSITIVE if unexpected child of web process or unknown foreign IP callback.",
+      l1Handover: "Escalate to Tier 2 with Hostname, PID, Parent PID, full command line, compromised user account, and destination IP/port.",
+      l2BlastRadius: "Inspect all active logon sessions on the endpoint. Check for lateral movement attempts via SSH keys or LSASS memory scraping across the subnet.",
+      l2Forensics: "Extract RAM dump with LiME/WinPmem, carve /proc/<pid>/exe or Prefetch files, preserve /var/log/auth.log or Security.evtx.",
+      l2Containment: "Isolate host from the network via EDR/switch VLAN. Terminate malicious PID and revoke compromised user credentials in Active Directory/LDAP.",
+      l3Detection: "Sigma Rule: ParentImage endsWith ('/nginx', '/apache2', '/w3wp.exe') AND Image endsWith ('/sh', '/bash', '/cmd.exe', '/powershell.exe')",
+      l3Hunt: "Proactively hunt across the fleet for processes executing out of temporary directories (/tmp, /dev/shm, C:\\Users\\*\\AppData\\Local\\Temp).",
+      resumeBullet: "Triaged enterprise endpoint security telemetry using Linux CLI and Windows Event Logs, reducing average alert triage SLA to under 12 minutes.",
+      portfolioArtifact: "endpoint_triage_playbook.md & sysmon_sigma_rule.yml",
+      interviewQ: "What are the first 3 things you inspect when an alert flags a suspicious process on an enterprise server?",
+      interviewTrap: "Saying: 'I will immediately format the server or delete the suspicious file.' (Destroys evidence before scoping the intrusion).",
+      interviewWin: "I follow the forensic triage order of volatility: 1) Verify the active process tree, parent PID, and execution command line, 2) Check associated network sockets to identify active C2 connections, and 3) Inspect user identity and privilege level to determine if privilege escalation occurred, preserving logs before containing the host."
+    },
+    network_proto: {
+      analogyTitle: "The Global Postal System & Highway Checkpoints",
+      analogyStory: "Think of computer networking like sending certified mail across an international highway. An IP address is your physical street address (which country, city, and building). A MAC address is the recipient's personal biometric fingerprint (burned into their computer card). The Subnet Mask is the zip code boundary dividing your local neighborhood from the outside world. When someone sends you a packet, routers inspect the address label at every tollbooth to forward it along the fastest lane.",
+      packetJourney: [
+        "An application creates data payload (HTTP request, DNS query, or file transfer).",
+        "Transport layer encapsulates it in TCP (certified delivery) or UDP (fast megaphone broadcast) with port numbers.",
+        "Network layer stamps Source & Destination IP addresses; Data Link layer stamps Source & Destination MACs.",
+        "The packet traverses physical switches and routers where firewall filters and IDS sensors inspect packet headers in real time."
+      ],
+      l1Alert: "RFC 1918 Private IP Address Detected on Public Ingress Interface (Spoofed Packet / Bogon)",
+      l1Sla: "10-Minute Triage SLA",
+      l1Steps: [
+        "Identify Source & Destination: Verify whether IP belongs to internal subnet (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) or external public internet.",
+        "Check Protocol & Port: Determine if the destination port corresponds to an exposed corporate service (e.g. 443 HTTPS, 53 DNS) or unauthorized port.",
+        "Assess Flow Volume: Determine if it is an isolated probe or part of an ongoing volumetric flood."
+      ],
+      l1FpTp: "FALSE POSITIVE if internal test environment with misconfigured NAT. TRUE POSITIVE if unsolicited inbound traffic with internal source arriving on WAN edge.",
+      l1Handover: "Document router interface, source IP, spoofed IP, packet rate, and firewall drop counter in ticket.",
+      l2BlastRadius: "Check upstream router NetFlow tables to determine if spoofed packets reached internal core switches or caused routing table poisoning.",
+      l2Forensics: "Capture full packet PCAP at edge interface; inspect TCP flags (SYN, RST, ACK), TTL values, and IP identification fields.",
+      l2Containment: "Apply BCP 38 Ingress Filtering on border firewall to drop all incoming packets where Source IP matches internal address ranges.",
+      l3Detection: "Suricata Rule: alert ip any any -> $HOME_NET any (msg:\"SXL-NET Inbound Packet with Spoofed Internal Source\"; ip_proto:any; threshold:type limit, track by_src, count 1, seconds 60; sid:2000001; rev:1;)",
+      l3Hunt: "Analyze NetFlow flow symmetry: hunt for unidirectional flows where large outbound data leaves without corresponding inbound ACKs.",
+      resumeBullet: "Constructed Layer 3/4 network security telemetry dashboards and packet capture filters, neutralizing perimeter IP spoofing and asymmetric routing anomalies.",
+      portfolioArtifact: "network_boundary_acl.conf & pcap_flow_analysis.pcap",
+      interviewQ: "Why can an RFC 1918 private IP never be routed across the public internet, and how does a SOC analyst leverage this rule?",
+      interviewTrap: "Claiming that private IPs can talk directly to Google servers without Network Address Translation (NAT).",
+      interviewWin: "RFC 1918 addresses (10/8, 172.16/12, 192.168/16) are reserved for internal enterprise networks and are discarded by public internet routers. In the SOC, any alert showing an RFC 1918 source talking to an external public IP without going through a corporate NAT gateway indicates either an internal compromise attempting raw exfiltration or misconfigured network segmentation."
+    },
+    app_proto: {
+      analogyTitle: "The Internet's Phonebook (DNS) & Diplomatic Courier (TLS)",
+      analogyStory: "When you browse the web, you don't memorize numbers like '142.250.190.46'—you type 'google.com'. DNS is the internet's global phonebook matching domain names to IP addresses. When attackers want to communicate with their malware, they use DNS. DNS Tunneling is like smuggling secret corporate secrets by writing tiny encoded letters on the outside of telephone postcards. TLS is the armored diplomatic courier that encrypts the postcard inside a lockbox.",
+      packetJourney: [
+        "Client queries local DNS resolver for target domain (e.g., c2-server.evil.com).",
+        "Resolver traverses root and authoritative name servers; if the domain has high entropy or large TXT records, an alert triggers.",
+        "Client initiates TCP 3-way handshake followed by TLS ClientHello with Server Name Indication (SNI).",
+        "Zeek/Suricata sensors inspect DNS transaction logs and TLS certificate validity."
+      ],
+      l1Alert: "High-Entropy DNS Query Spike / Suspected DNS Tunneling Exfiltration",
+      l1Sla: "15-Minute Triage SLA",
+      l1Steps: [
+        "Calculate Query Entropy: Check if subdomain strings look like random base64 or hex characters (e.g. a8f9c2d1.evil.com).",
+        "Inspect Query Type & Volume: Look for an unusual burst of TXT or NULL records instead of standard A/AAAA records.",
+        "Check Domain Age & Reputation: Query WHOIS and VirusTotal for domain registration age (< 14 days is high risk)."
+      ],
+      l1FpTp: "FALSE POSITIVE if security vendor update agent (e.g., McAfee/Sophos cloud lookup). TRUE POSITIVE if unknown domain with megabytes of TXT responses.",
+      l1Handover: "Escalate with client IP, queried domain, query record types, entropy score, and total byte volume transferred.",
+      l2BlastRadius: "Query DNS server logs for all other internal hosts that resolved the malicious domain in the last 30 days.",
+      l2Forensics: "Carve the base64 DNS query strings from PCAP; decode the payload to reconstruct the exfiltrated files or C2 beacon instructions.",
+      l2Containment: "Sinkhole the domain on internal DNS servers (redirect to 127.0.0.1) and block the authoritative name server IP on firewalls.",
+      l3Detection: "Zeek Script: Detect DNS queries where length(subdomain) > 52 AND Shannon_Entropy(subdomain) > 3.8.",
+      l3Hunt: "Hunt for long-tail domains: aggregate DNS requests by root domain across all 50,000 workstations; inspect the least-queried 1% of domains.",
+      resumeBullet: "Detected and mitigated covert DNS C2 tunneling and rogue TLS certificates, safeguarding sensitive enterprise credentials from exfiltration.",
+      portfolioArtifact: "dns_tunnel_decoder.py & zeek_dns_entropy.zeek",
+      interviewQ: "How do you distinguish legitimate antivirus cloud lookups over DNS from adversary DNS tunneling?",
+      interviewTrap: "Assuming all long or encoded subdomains are automatically malicious malware beacons.",
+      interviewWin: "I check the parent domain and query behavior: legitimate AV engines (like McAfee or Sophos) query specific vendor-owned domains with known structure and low byte responses. Adversary DNS tunneling queries obscure domains, exhibits high burst volume of TXT or NULL records, features high Shannon entropy in subdomains, and transfers large cumulative byte volumes over port 53."
+    },
+    traffic_def: {
+      analogyTitle: "The High-Security Airport TSA Checkpoint & Black Box",
+      analogyStory: "Imagine entering an international airport. The security bouncers (Firewalls) check your boarding pass against the flight manifest: if you aren't on the list, you are turned away. Stateful inspection means when you step out to take a phone call, the guard remembers your face so you can return without re-checking. The Wireshark packet capture is the airport CCTV black box: if a crime occurs, you rewind the tape and watch the exact handoff second by second.",
+      packetJourney: [
+        "Network packet arrives at firewall network interface card (NIC).",
+        "Firewall checks state table: if part of an existing connection, it fast-paths through.",
+        "If new connection, packet headers are evaluated against sequential rule order (ACCEPT / DROP / REJECT).",
+        "Packets are mirrored to a SPAN port where Wireshark/Tshark captures raw frames into PCAP ring buffers."
+      ],
+      l1Alert: "Port Scan Detected: > 30 High-Port TCP Connections Dropped by Firewall from Internal IP",
+      l1Sla: "15-Minute Triage SLA",
+      l1Steps: [
+        "Identify Source IP: Confirm if the scanning machine is an authorized vulnerability management scanner (e.g. Nessus, Rapid7).",
+        "Check Destination Scope: Determine whether the scan targets an entire subnet (sweep) or all ports on a single critical database (vertical scan).",
+        "Examine Scan Type: Check if SYN-only (stealth half-open), connect scan, or UDP probe."
+      ],
+      l1FpTp: "FALSE POSITIVE if scheduled weekly vulnerability scan during approved change window. TRUE POSITIVE if unauthorized developer laptop scanning domain controllers.",
+      l1Handover: "Submit ticket with scanner IP, target subnets, scanned port range, scan velocity (packets/sec), and time duration.",
+      l2BlastRadius: "Determine if any scanned internal server responded with SYN-ACK and established a connection before the firewall intervened.",
+      l2Forensics: "Filter PCAP in Wireshark: `tcp.flags.syn==1 && tcp.flags.ack==0`; inspect packet inter-arrival timing to identify scanner tool signature (Nmap vs Masscan).",
+      l2Containment: "Place immediate null-route or dynamic host-isolation ACL on the access switch to freeze the scanning host from touching other assets.",
+      l3Detection: "Suricata Rule: alert tcp any any -> $HOME_NET any (msg:\"SXL-SCAN High-Velocity Port Scan\"; flags:S; threshold:type both, track by_src, count 50, seconds 2; sid:3000001; rev:1;)",
+      l3Hunt: "Hunt for slow-and-low reconnaissance: query firewall drop logs for single connection attempts occurring every 2 hours from the same internal host.",
+      resumeBullet: "Designed enterprise firewall egress filtering rules and Wireshark PCAP triage workflows, eliminating stealth internal port scanning vectors.",
+      portfolioArtifact: "firewall_ruleset.iptables & nmap_recon_investigation.pcap",
+      interviewQ: "Why does an attacker perform a TCP SYN scan instead of a full TCP Connect scan, and how does that impact log evidence?",
+      interviewTrap: "Saying a SYN scan cannot be detected by any security tools.",
+      interviewWin: "A TCP SYN scan sends a SYN packet and waits for SYN-ACK to confirm the port is open, but immediately sends a RST instead of the final ACK. Because the 3-way handshake is never completed, standard application-level logs (like Apache or SSH) never log a connection. However, firewall connection tracking logs and network packet captures (Wireshark/Zeek) detect the uncompleted half-open state clearly."
+    },
+    telemetry_logs: {
+      analogyTitle: "The Courtroom Court Reporter & Crime Scene Logbook",
+      analogyStory: "In a high-profile courtroom trial, every word spoken is typed verbatim by the court reporter. In an operating system, the audit daemon (Syslog, Windows Event Log, Sysmon) is that court reporter. If an attacker deletes a file, swipes a credential, or alters an admin password, the logbook creates an immutable cryptographic record with exact timestamps, usernames, and process IDs. You cannot hide from a properly configured audit stream.",
+      packetJourney: [
+        "Operating system kernel generates an audit event (e.g., process execution, logon attempt, file write).",
+        "The local logging service (systemd-journald, rsyslog, eventlog) formats the event into structured JSON / EVTX.",
+        "Universal forwarder (Splunk, Elastic Agent, Azure Arc) transmits the event over encrypted TLS (port 514/9997) to the central SIEM.",
+        "Correlation rules evaluate the event against threat detection rules in real time."
+      ],
+      l1Alert: "Windows Security Event ID 4625 (10+ Failed Logons Followed by Event ID 4624 Type 3)",
+      l1Sla: "15-Minute Triage SLA",
+      l1Steps: [
+        "Inspect Logon Type: Check if Logon Type is 2 (interactive desktop) or 3 (network share / lateral movement).",
+        "Identify Target User: Check whether the attacked account is a standard user, domain admin, or service account.",
+        "Check Source Workstation: Identify the physical machine generating the failed password attempts."
+      ],
+      l1FpTp: "FALSE POSITIVE if user recently changed password and smartphone email client is spamming old credentials. TRUE POSITIVE if password spraying across multiple usernames.",
+      l1Handover: "Escalate with compromised username, source IP/workstation, target domain controller, timestamp window, and total attempt count.",
+      l2BlastRadius: "Query SIEM for all other endpoints that received logon requests from the source workstation in the last 24 hours.",
+      l2Forensics: "Inspect Sysmon Event ID 1 on the source workstation to identify the tool used (e.g. hydra.exe, powershell.exe, or mimikatz).",
+      l2Containment: "Temporarily lock the affected Active Directory user account and force Kerberos password reset; isolate the attacking workstation.",
+      l3Detection: "Splunk SPL: index=wineventlog EventCode=4625 | stats count dc(TargetUserName) as UserCount by SourceNetworkAddress | where UserCount > 5",
+      l3Hunt: "Hunt for abnormal logon hours: correlate Event 4624 with employee working hours and geo-IP locations (impossible travel alerts).",
+      resumeBullet: "Architected centralized SIEM correlation rules across Windows Event Logs and Linux Auditd, reducing brute-force and credential-stuffing MTTR by 40%.",
+      portfolioArtifact: "splunk_correlation_rules.spl & win_logon_forensics.evtx",
+      interviewQ: "What is the difference between Windows Event ID 4688 and Sysmon Event ID 1, and which one provides higher fidelity for a SOC?",
+      interviewTrap: "Saying they are identical and do not offer different forensic data.",
+      interviewWin: "Both log process execution, but standard Event ID 4688 only captures the process path and command line (if explicitly enabled in Group Policy). Sysmon Event ID 1 provides vastly superior fidelity: it includes cryptographic file hashes (MD5/SHA256), parent process GUID, process integrity level, current directory, and user logon GUID, allowing analysts to correlate parent-child relationships and verify binary tampering instantly."
+    },
+    detection_eng: {
+      analogyTitle: "The Master Blueprint Architect & Radar Engineer",
+      analogyStory: "Think of an air traffic control radar. A novice looks at the green blips and gets confused. A radar engineer writes algorithms that filter out birds and clouds so only incoming supersonic jets trigger an alarm. Detection Engineering is designing that radar for cybersecurity: authoring Sigma, YARA, and Suricata rules that detect adversary tradecraft while ignoring millions of everyday benign business operations.",
+      packetJourney: [
+        "Threat Intelligence identifies a new adversary tradecraft technique (MITRE ATT&CK T1059.001 PowerShell).",
+        "Detection engineer analyzes telemetry fields (Sysmon, EDR, NetFlow) to identify immutable attack indicators.",
+        "A generic detection rule (Sigma) is authored and compiled into SIEM-specific query language (Splunk SPL, KQL).",
+        "The rule is tested against historical telemetry baselines to ensure a 0% false positive rate before production deployment."
+      ],
+      l1Alert: "Sigma Rule Trigger: SXL-DETECT-01 Potential Cobalt Strike Named Pipe Execution",
+      l1Sla: "10-Minute Triage SLA",
+      l1Steps: [
+        "Verify Process Name & Hash: Confirm if the process creating the named pipe is verified corporate software.",
+        "Check Pipe Name Syntax: Look for known malware default strings (e.g., \\pipe\\msse-*, \\pipe\\status_*).",
+        "Correlate EDR Process Tree: Check if the process was launched by an Office document, script, or unmanaged executable."
+      ],
+      l1FpTp: "FALSE POSITIVE if internal software development suite using IPC pipes. TRUE POSITIVE if pipe name matches Cobalt Strike malleable C2 profile.",
+      l1Handover: "Escalate with pipe name, owning PID, executable hash, parent process, and EDR host isolation status.",
+      l2BlastRadius: "Scan the entire enterprise subnet for the presence of the same named pipe or file hash using EDR live response.",
+      l2Forensics: "Extract process memory injection artifacts; inspect loaded DLLs (Sysmon Event ID 7) for unbacked executable memory regions.",
+      l2Containment: "Execute EDR network containment; terminate the host process tree; add file hash to global enterprise blocklist.",
+      l3Detection: "Sigma Rule: title: Cobalt Strike Named Pipe | logsource: category: pipe_created | detection: selection: PipeName|startswith: '\\msagent_' | condition: selection",
+      l3Hunt: "Hunt for unbacked memory: use Volatility or EDR to scan running processes for memory regions with PAGE_EXECUTE_READWRITE permissions without a backing file on disk.",
+      resumeBullet: "Authored 25+ production Sigma and Suricata detection rules mapped to MITRE ATT&CK enterprise tactics, eliminating alert fatigue across 15,000 endpoints.",
+      portfolioArtifact: "sigma_threat_detections.yml & suricata_c2_rules.rules",
+      interviewQ: "Explain how you engineer a detection rule using the Pyramid of Pain, and why hash values are the least durable indicator.",
+      interviewTrap: "Focusing solely on IP addresses and MD5 hashes as the primary defense strategy.",
+      interviewWin: "The Pyramid of Pain outlines that hash values and IP addresses are trivial for attackers to change (costing them nothing). A senior detection engineer focuses on the top of the pyramid: TTPs (Tactics, Techniques, and Procedures). By detecting adversary behavior—such as LOLBins invoking encoded commands or suspicious parent-child relationships—we force the adversary to re-engineer their entire attack toolchain rather than simply compiling a new binary."
+    },
+    attack_defense: {
+      analogyTitle: "The SWAT Team Room Clearing & Contagion Containment",
+      analogyStory: "When an armed intruder enters a hospital or bank, security doesn't just watch CCTV—they clear rooms, seal fire doors, evacuate innocents, and neutralize the threat. Attack Simulation and Incident Response is the SWAT training of cybersecurity: you practice adversary techniques (reconnaissance, persistence, lateral movement) so that when a real APT attacks, your response is muscle memory, surgical, and rapid.",
+      packetJourney: [
+        "Adversary executes initial payload, establishes persistence (Registry Run Key, Cron), and beacons to C2.",
+        "Adversary dumps credentials and attempts lateral movement via SMB/PsExec/WMI.",
+        "EDR and Network Sensors trigger critical incident alert.",
+        "SOC executes Incident Response Lifecycle: Isolate Host -> Eradicate Persistence -> Reconstruct Timeline -> Lessons Learned."
+      ],
+      l1Alert: "CRITICAL ALERT: Suspected Ransomware Activity / Volume Shadow Copy Deletion (vssadmin.exe)",
+      l1Sla: "5-Minute Emergency Response SLA",
+      l1Steps: [
+        "IMMEDIATE ACTION: Confirm execution of vssadmin delete shadows /all /quiet or bcdedit /set {default} bootstatuspolicy ignoreallfailures.",
+        "Trigger Emergency Isolation: Click EDR 'Network Contain' or physically disconnect network interface within 3 minutes.",
+        "Alert Incident Commander: Notify Tier 2 and SOC Management via out-of-band communication (Signal/Teams)."
+      ],
+      l1FpTp: "FALSE POSITIVE: None. Legitimate backup software rarely deletes all shadow copies silently without change ticket. Treat as TRUE POSITIVE until proven otherwise.",
+      l1Handover: "Deliver immediate verbal and ticket notification with compromised host, user account, isolated status, and backup repository status.",
+      l2BlastRadius: "Identify Patient Zero: trace file creation timestamps backwards to identify the initial entry vector (phishing email, VPN compromise, exposed RDP).",
+      l2Forensics: "Preserve volatile RAM dump before power down; analyze MFT ($MFT) and USN Journal to create complete incident timeline.",
+      l2Containment: "Ensure backup snapshots are immutable and disconnected; force enterprise-wide password reset for all elevated Active Directory accounts.",
+      l3Detection: "Sigma Rule: title: Volume Shadow Copy Deletion | logsource: category: process_creation | detection: selection: Image|endswith: '\\vssadmin.exe' | CommandLine|contains: 'delete shadows' | condition: selection",
+      l3Hunt: "Hunt for pre-ransomware staging: search for mass archival tools (7za.exe, rar.exe, rclone.exe) executing in corporate file shares.",
+      resumeBullet: "Executed simulated enterprise incident containment and root-cause analysis for ransomware and lateral movement campaigns, meeting a sub-5-minute containment SLA.",
+      portfolioArtifact: "incident_response_playbook.md & forensic_timeline.csv",
+      interviewQ: "Walk me through your exact decision-making process when you receive a high-confidence alert that ransomware is actively encrypting a file server.",
+      interviewTrap: "Saying: 'I will investigate the logs for 30 minutes to be sure before doing anything.' (Ransomware will encrypt the whole company).",
+      interviewWin: "Under active ransomware encryption, time is the critical variable. Phase 1: Immediate Containment—I immediately isolate the server from the network via EDR console (or instruct the data center to pull the physical patch cable) to sever C2 and stop network-share encryption. Phase 2: Notification—I notify the Incident Commander and verify backup immutability. Phase 3: Forensic Preservation—I capture volatile memory and disk telemetry to identify the initial intrusion vector before rebuilding from validated clean backups."
+    }
+  };
+
+  const cData = contextMap[topic] || contextMap.infra;
+
+  // Custom command flag breakdown
+  const cmdFlagExplainer = {
+    cmd: stCmd,
+    breakdown: `Executing real forensic command '${stCmd.split(' ')[0]}' against target VM (${effectiveVm.ip}) to capture live operating system state and validate telemetry ground truth.`
+  };
+
+  return {
+    topic,
+    groundZero: {
+      analogyTitle: cData.analogyTitle,
+      analogyStory: cData.analogyStory,
+      packetJourney: cData.packetJourney,
+      whyItMattersZero: "If you have zero cybersecurity experience, start here. Master the real-world mental model first, then observe the exact packet mechanics on the wire."
+    },
+    tier1: {
+      role: "Tier 1 SOC Analyst (Alert Triage & SLA Validation)",
+      salary: "$65,000 – $85,000 / Entry Level",
+      alert: cData.l1Alert,
+      sla: cData.l1Sla,
+      steps: cData.l1Steps,
+      fptp: cData.l1FpTp,
+      handover: cData.l1Handover
+    },
+    tier2: {
+      role: "Tier 2 Incident Responder (Deep Forensic & Blast Radius)",
+      salary: "$90,000 – $120,000 / Mid Level",
+      blastRadius: cData.l2BlastRadius,
+      forensics: cData.l2Forensics,
+      containment: cData.l2Containment
+    },
+    tier3: {
+      role: "Tier 3 Detection Engineer & Threat Hunter",
+      salary: "$125,000 – $165,000+ / Senior Level",
+      rule: cData.l3Detection,
+      hunt: cData.l3Hunt
+    },
+    resumeProof: {
+      bullet: cData.resumeBullet,
+      artifact: cData.portfolioArtifact,
+      skills: ["SIEM Triage", "MITRE ATT&CK", "Live CLI Investigation", "Incident Response", "EDR Telemetry"]
+    },
+    interviewGauntlet: {
+      question: cData.interviewQ,
+      trap: cData.interviewTrap,
+      win: cData.interviewWin
+    },
+    cmdExplainer: cmdFlagExplainer
+  };
+}
+
+function renderZeroToJobGrowthContainer(course, stage, sIdx, effectiveVm) {
+  const g = getZeroToJobGrowth(course, stage, sIdx, effectiveVm);
+  const isZeroTab = activeGrowthTab === 'zero';
+  const isLadderTab = activeGrowthTab === 'ladder';
+  const isResumeTab = activeGrowthTab === 'resume';
+  const isInterviewTab = activeGrowthTab === 'interview';
+  const isAllTab = activeGrowthTab === 'all';
+
+  return `
+    <div class="job-growth-container">
+      <div class="job-growth-header">
+        <div class="job-growth-title-box">
+          <span class="job-growth-badge">CAREER PROGRESSION</span>
+          <div>
+            <h3 class="job-growth-h3">🚀 From Ground Zero to Real Job Growth</h3>
+            <div class="job-growth-sub">Master foundational intuition, 3-tier operational triage, resume proof &amp; technical interview defense</div>
+          </div>
+        </div>
+        <div class="job-growth-nav">
+          <button class="growth-tab-btn ${isZeroTab ? 'active' : ''}" onclick="switchGrowthTab('zero', this)">
+            🌱 Ground Zero (ELI5)
+          </button>
+          <button class="growth-tab-btn ${isLadderTab ? 'active' : ''}" onclick="switchGrowthTab('ladder', this)">
+            📈 Job Growth (L1 → L2 → L3)
+          </button>
+          <button class="growth-tab-btn ${isResumeTab ? 'active' : ''}" onclick="switchGrowthTab('resume', this)">
+            💼 Resume &amp; Portfolio
+          </button>
+          <button class="growth-tab-btn ${isInterviewTab ? 'active' : ''}" onclick="switchGrowthTab('interview', this)">
+            🎯 Interview Gauntlet
+          </button>
+          <button class="growth-tab-btn all-btn ${isAllTab ? 'active' : ''}" onclick="switchGrowthTab('all', this)" title="Expand all 4 career sections simultaneously">
+            👁️ View All
+          </button>
+        </div>
+      </div>
+
+      <div class="growth-content-body">
+        <!-- ── TAB 1: Ground Zero Intuition & Physical Analogy ── -->
+        <div class="growth-panel ${isZeroTab || isAllTab ? 'active' : ''}" id="growth-panel-zero" style="display:${isZeroTab || isAllTab ? 'block' : 'none'}">
+          <div class="zero-mental-card">
+            <h5>🌱 Zero-Knowledge Mental Model: ${esc(g.groundZero.analogyTitle)}</h5>
+            <p>${esc(g.groundZero.analogyStory)}</p>
+            <div class="packet-journey-box">
+              <b>⚡ The Ground Truth: How It Works on the Wire &amp; Operating System:</b>
+              <ol>
+                ${g.groundZero.packetJourney.map(step => `<li>${esc(step)}</li>`).join('')}
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TAB 2: 3-Tier Job Growth Matrix (L1 -> L2 -> L3) ── -->
+        <div class="growth-panel ${isLadderTab || isAllTab ? 'active' : ''}" id="growth-panel-ladder" style="display:${isLadderTab || isAllTab ? 'block' : 'none'}">
+          <div class="tier-matrix-grid">
+            <!-- Tier 1 Card -->
+            <div class="tier-card tier-1">
+              <div>
+                <div class="tier-head">
+                  <span class="tier-badge">TIER 1 · TRIAGE</span>
+                  <span class="tier-salary">${esc(g.tier1.salary)}</span>
+                </div>
+                <div class="tier-role-title">L1 SOC Analyst</div>
+                <div class="tier-alert-label">🚨 SIEM / EDR Trigger:</div>
+                <div class="tier-alert-code">${esc(g.tier1.alert)}</div>
+                <div style="font-size:10.5px;color:var(--muted);margin-bottom:6px"><b>SLA:</b> ${esc(g.tier1.sla)}</div>
+                <ol class="tier-checklist">
+                  ${g.tier1.steps.map(s => `<li>${esc(s)}</li>`).join('')}
+                </ol>
+              </div>
+              <div class="tier-rule-box">
+                <b>⚖️ FP vs TP Rule:</b> ${esc(g.tier1.fptp)}
+              </div>
+            </div>
+
+            <!-- Tier 2 Card -->
+            <div class="tier-card tier-2">
+              <div>
+                <div class="tier-head">
+                  <span class="tier-badge">TIER 2 · RESPONSE</span>
+                  <span class="tier-salary">${esc(g.tier2.salary)}</span>
+                </div>
+                <div class="tier-role-title">L2 Incident Responder</div>
+                <div class="tier-alert-label">🔍 Forensic Scope &amp; Blast Radius:</div>
+                <p style="font-size:11.5px;line-height:1.55;color:var(--text);margin:4px 0 10px">${esc(g.tier2.blastRadius)}</p>
+                <div class="tier-alert-label">💾 Artifacts to Carve:</div>
+                <p style="font-size:11px;color:var(--muted);margin:4px 0 10px;font-family:monospace">${esc(g.tier2.forensics)}</p>
+              </div>
+              <div class="tier-rule-box" style="border-left-color:#f59e0b">
+                <b>🛡️ Active Containment:</b> ${esc(g.tier2.containment)}
+              </div>
+            </div>
+
+            <!-- Tier 3 Card -->
+            <div class="tier-card tier-3">
+              <div>
+                <div class="tier-head">
+                  <span class="tier-badge">TIER 3 · ENGINEERING</span>
+                  <span class="tier-salary">${esc(g.tier3.salary)}</span>
+                </div>
+                <div class="tier-role-title">L3 Detection Engineer &amp; Hunter</div>
+                <div class="tier-alert-label">⚙️ Production Detection Rule:</div>
+                <pre style="background:rgba(0,0,0,0.35);padding:8px;border-radius:6px;font-size:10px;color:#c084fc;overflow-x:auto;margin:6px 0 10px;white-space:pre-wrap;line-height:1.4">${esc(g.tier3.rule)}</pre>
+              </div>
+              <div class="tier-rule-box" style="border-left-color:#a855f7">
+                <b>🏹 Proactive Hunt:</b> ${esc(g.tier3.hunt)}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TAB 3: Resume & Portfolio Proof ── -->
+        <div class="growth-panel ${isResumeTab || isAllTab ? 'active' : ''}" id="growth-panel-resume" style="display:${isResumeTab || isAllTab ? 'block' : 'none'}">
+          <div class="resume-box">
+            <div class="resume-header">
+              <b>💼 High-Impact Resume &amp; LinkedIn Bullet Point (Google XYZ Formula)</b>
+              <button class="resume-copy-btn" id="resumeCopyBtn" onclick="copyGrowthText('${esc(g.resumeProof.bullet.replace(/'/g, "\\'"))}', 'resumeCopyBtn', '📋 Copy Resume Bullet')">
+                📋 Copy Resume Bullet
+              </button>
+            </div>
+            <div class="resume-bullet-text">
+              "${esc(g.resumeProof.bullet)}"
+            </div>
+            <div class="portfolio-row">
+              <div class="portfolio-item">
+                <b>📁 Proof of Work (GitHub Lab Artifact):</b>
+                <span>${esc(g.resumeProof.artifact)}</span>
+              </div>
+              <div class="portfolio-item">
+                <b>🏷️ Verified Competencies to Tag on LinkedIn:</b>
+                <span style="color:var(--text);font-family:inherit;font-size:11px">${esc(g.resumeProof.skills.join(' · '))}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TAB 4: Interview Gauntlet ── -->
+        <div class="growth-panel ${isInterviewTab || isAllTab ? 'active' : ''}" id="growth-panel-interview" style="display:${isInterviewTab || isAllTab ? 'block' : 'none'}">
+          <div class="interview-gauntlet-card">
+            <div class="interview-q-title">
+              <span>🎯 Technical Hiring Manager Question:</span>
+              <span style="color:var(--text);font-weight:700">"${esc(g.interviewGauntlet.question)}"</span>
+            </div>
+            <div class="interview-split-grid">
+              <div class="interview-trap-box">
+                <b>🚨 Rookie Candidate Mistake (Textbook Memorizer):</b>
+                ${esc(g.interviewGauntlet.trap)}
+              </div>
+              <div class="interview-win-box">
+                <b>🏆 Senior SOC Analyst Winning Answer (Gets You Hired):</b>
+                ${esc(g.interviewGauntlet.win)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
 function renderAcademyClass(cIdx, sIdx) {
   if (!window.ACADEMY_COURSES || !window.ACADEMY_COURSES[cIdx]) return;
   const course = window.ACADEMY_COURSES[cIdx];
@@ -3221,6 +4131,9 @@ function renderAcademyClass(cIdx, sIdx) {
             <span>${stageHeader.icon}</span> ${esc(stage.name)}
           </h3>
           <p style="color:var(--muted);font-size:12px;margin:0 0 12px;line-height:1.5">${esc(stageHeader.desc)}</p>
+
+          <!-- 🚀 FROM GROUND ZERO TO REAL JOB GROWTH CONTINUUM -->
+          ${renderZeroToJobGrowthContainer(course, stage, sIdx, effectiveVm)}
 
           <!-- Core Concept Presentation & Deep Dive -->
           <div class="concept-deep-dive">
