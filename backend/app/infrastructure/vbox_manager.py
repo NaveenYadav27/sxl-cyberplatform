@@ -300,6 +300,13 @@ class VirtualBoxManager:
         if mode_clean not in ["gui", "headless", "separate"]:
             mode_clean = "gui"
 
+        # Ensure GUI window is placed onto the primary monitor (100, 100) and not an offscreen phantom monitor
+        if mode_clean == "gui":
+            try:
+                subprocess.run([self.vbox_bin, "setextradata", vm_id, "GUI/LastNormalWindowPosition", "100,100,1024,768"], capture_output=True, timeout=5)
+            except Exception as pos_err:
+                logger.debug(f"Could not set window position: {pos_err}")
+
         try:
             res = subprocess.run([self.vbox_bin, "startvm", vm_id, "--type", mode_clean], capture_output=True, text=True, timeout=15)
             if res.returncode == 0 or "already locked" in res.stderr:
