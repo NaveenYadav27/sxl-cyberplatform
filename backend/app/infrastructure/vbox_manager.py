@@ -300,6 +300,14 @@ class VirtualBoxManager:
         if mode_clean not in ["gui", "headless", "separate"]:
             mode_clean = "gui"
 
+        # Check if VM is already running
+        try:
+            chk = subprocess.run([self.vbox_bin, "list", "runningvms"], capture_output=True, text=True, timeout=5)
+            if vm_id in chk.stdout:
+                return {"status": "ok", "message": f"VM '{vm_id}' is already running.", "output": "VM is currently running."}
+        except Exception:
+            pass
+
         # Ensure GUI window is placed onto the primary monitor (100, 100) and not an offscreen phantom monitor
         if mode_clean == "gui":
             try:
@@ -308,10 +316,18 @@ class VirtualBoxManager:
                 logger.debug(f"Could not set window position: {pos_err}")
 
         try:
-            res = subprocess.run([self.vbox_bin, "startvm", vm_id, "--type", mode_clean], capture_output=True, text=True, timeout=15)
-            if res.returncode == 0 or "already locked" in res.stderr:
+            res = subprocess.run([self.vbox_bin, "startvm", vm_id, "--type", mode_clean], capture_output=True, text=True, timeout=60)
+            if res.returncode == 0 or "already locked" in res.stderr.lower():
                 return {"status": "ok", "message": f"VM '{vm_id}' started in {mode_clean} mode.", "output": res.stdout.strip()}
             return {"status": "error", "message": res.stderr.strip()}
+        except subprocess.TimeoutExpired:
+            try:
+                chk = subprocess.run([self.vbox_bin, "list", "runningvms"], capture_output=True, text=True, timeout=5)
+                if vm_id in chk.stdout:
+                    return {"status": "ok", "message": f"VM '{vm_id}' started successfully.", "output": "VM is now running."}
+            except Exception:
+                pass
+            return {"status": "error", "message": f"VM startup command took longer than 60 seconds."}
         except Exception as e:
             return {"status": "error", "message": str(e)}
 
